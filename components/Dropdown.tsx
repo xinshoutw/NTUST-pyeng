@@ -36,11 +36,11 @@ export default function Dropdown({label, options, selected, onSelect, isOpen, on
 
     return (
         <div ref={dropdownRef} className="relative inline-block text-left">
-            <span className="font-medium text-gray-700 mr-2">{label}:</span>
+            <span className="font-medium text-gray-700 dark:text-gray-300 mr-2">{label}:</span>
             <button
                 type="button"
                 onClick={onToggle}
-                className="py-2 px-4 bg-white border rounded shadow-sm hover:bg-gray-100 transition select-none relative z-50"
+                className="py-2 px-4 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-100 dark:hover:bg-gray-600 transition select-none relative z-50 text-gray-700 dark:text-gray-200"
             >
                 {current ? current.label : 'All'}
             </button>
@@ -51,7 +51,7 @@ export default function Dropdown({label, options, selected, onSelect, isOpen, on
                         animate={{opacity: 1, scale: 1, y: 0}}
                         exit={{opacity: 0, scale: 0.95, y: -10}}
                         transition={{duration: 0.1}}
-                        className="origin-top-left absolute mt-2 w-40 bg-white border rounded shadow-lg z-[9999]"
+                        className="origin-top-left absolute mt-2 w-40 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-lg z-[9999]"
                     >
                         {options.map((opt) => (
                             <button
@@ -61,7 +61,7 @@ export default function Dropdown({label, options, selected, onSelect, isOpen, on
                                     onSelect(opt.value);
                                     onToggle();
                                 }}
-                                className="block w-full text-left px-4 py-2 hover:bg-gray-100 select-none"
+                                className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 select-none"
                             >
                                 {opt.label}
                             </button>

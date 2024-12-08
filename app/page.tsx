@@ -1,20 +1,42 @@
-import {fetchParts, fetchTopics, fetchWords} from './utils';
+import {cookies} from 'next/headers';
 import WordsGrid from '../components/WordsGrid';
+import {fetchParts, fetchTopics, fetchWords} from './utils';
 import {Word} from './types';
 
 export default async function HomePage() {
-    const initialPart = 1;
-    const initialTopic = 'pvqc-ict';
-    const wordData = await fetchWords(initialPart, initialTopic);
-    const topicData = await fetchTopics(initialPart);
-    const partData = await fetchParts(initialTopic);
+    const cookieStore = await cookies();
+    const savedPart = cookieStore.get('lastPart')?.value;
+    const savedTopic = cookieStore.get('lastTopic')?.value;
+
+    let initialPart: number | null = null;
+    let initialTopic: string | null = null;
+    let initialWords: Word[] | null = null;
+    let initialParts: number[] | null = null;
+    let initialTopics: string[] | null = null;
+
+    if (savedPart && savedTopic) {
+        initialPart = isNaN(Number(savedPart)) ? null : Number(savedPart);
+        initialTopic = savedTopic !== 'all' ? savedTopic : null;
+
+        // Fetch words based on savedPart and savedTopic
+        const wordData = await fetchWords(initialPart!, initialTopic || '');
+        initialWords = wordData.words;
+
+        // Fetch topics and parts based on saved selections
+        const topicData = await fetchTopics(initialPart || 1);
+        const partData = await fetchParts(initialTopic || 'pvqc-ict');
+
+        initialTopics = ['all', ...topicData.topics.filter(t => t !== 'all')];
+        initialParts = [...(partData.parts || [])].sort((a, b) => a - b);
+    }
+
     return (
         <WordsGrid
             initialPart={initialPart}
             initialTopic={initialTopic}
-            initialWords={wordData.words as Word[]}
-            initialParts={partData.parts}
-            initialTopics={topicData.topics}
+            initialWords={initialWords}
+            initialParts={initialParts}
+            initialTopics={initialTopics}
         />
     );
 }

@@ -5,7 +5,15 @@ import {fetchParts, fetchTopics, fetchWords} from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
 
-function getCookie(name: string) {
+type Props = {
+    initialPart: number | null;
+    initialTopic: string | null;
+    initialWords: Word[] | null;
+    initialParts: number[] | null;
+    initialTopics: string[] | null;
+};
+
+function getCookie(name: string): string | null {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     return match ? decodeURIComponent(match[2]) : null;
 }
@@ -14,24 +22,22 @@ function setCookie(name: string, value: string, days = 365) {
     const d = new Date();
     d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
     const expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=" + encodeURIComponent(value) + "; " + expires + "; path=/";
+    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
 }
 
-type Props = {
-    initialPart: number;
-    initialTopic: string;
-    initialWords: Word[];
-    initialParts: number[];
-    initialTopics: string[];
-};
-
-export default function WordsGrid({initialPart, initialTopic, initialWords, initialParts, initialTopics}: Props) {
-    const [selectedPart, setSelectedPart] = useState<number | string>(initialPart);
-    const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic);
-    const [words, setWords] = useState<Word[]>(initialWords);
-    const [parts, setParts] = useState<number[]>(initialParts);
-    const [topics, setTopics] = useState<string[]>(initialTopics);
-    const [loading, setLoading] = useState(false);
+export default function WordsGrid({
+                                      initialPart,
+                                      initialTopic,
+                                      initialWords,
+                                      initialParts,
+                                      initialTopics
+                                  }: Props) {
+    const [selectedPart, setSelectedPart] = useState<number | string>(initialPart ?? 'all');
+    const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic ?? 'all');
+    const [words, setWords] = useState<Word[] | null>(initialWords);
+    const [parts, setParts] = useState<number[]>(initialParts ?? []);
+    const [topics, setTopics] = useState<string[]>(initialTopics ?? []);
+    const [loading, setLoading] = useState(!initialWords);
     const [openDropdown, setOpenDropdown] = useState<null | 'part' | 'topic'>(null);
     const [useGrid, setUseGrid] = useState(true);
 
@@ -68,13 +74,18 @@ export default function WordsGrid({initialPart, initialTopic, initialWords, init
 
             setTopics(newTopicOptions);
             setParts(newPartOptions);
+        } catch (error) {
+            console.error("Failed to load data:", error);
         } finally {
             setLoading(false);
         }
     }
 
     useEffect(() => {
-        loadData(selectedPart, selectedTopic);
+        if (initialWords && selectedPart === initialPart && selectedTopic === initialTopic) {
+            return;
+        }
+        loadData(selectedPart!, selectedTopic!);
     }, [selectedPart, selectedTopic]);
 
     useEffect(() => {
@@ -107,7 +118,7 @@ export default function WordsGrid({initialPart, initialTopic, initialWords, init
                 {/*>*/}
                 {/*    {useGrid ? 'Switch to Columns' : 'Switch to Grid'}*/}
                 {/*</button>*/}
-                <p className="text-gray-600 max-w-xl mx-auto">
+                <p className="max-w-xl mx-auto">
                     Do you see that involution guy?<br></br>
                     Yeah, it&#39;s you.
                 </p>
@@ -132,7 +143,7 @@ export default function WordsGrid({initialPart, initialTopic, initialWords, init
                 </div>
             </div>
             {loading && <div className="text-center text-gray-500">Loading...</div>}
-            {!loading && (
+            {!loading && words && (
                 useGrid ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
                         {words.map((w, index) => (

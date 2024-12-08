@@ -12,6 +12,7 @@ html, body {
     user-select: none;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: transparent;
+    @apply transition-colors duration-300;
 }
 
 button {
