@@ -2,7 +2,7 @@ import './globals.css'
 import {ReactNode} from 'react'
 import Footer from '../components/Footer'
 import Link from 'next/link'
-
+export const runtime = "edge";
 export const metadata = {
     title: 'NTUST 英單學習網',
     description: '電爛你的同學，讓他知道你根本不用這個網站',
