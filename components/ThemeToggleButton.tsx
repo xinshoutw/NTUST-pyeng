@@ -11,11 +11,16 @@ export default function ThemeToggleButton() {
         if (theme === 'dark') {
             setIsDark(true);
             document.documentElement.classList.add('dark');
-        } else {
+        } else if (theme === 'light') {
             setIsDark(false);
             document.documentElement.classList.remove('dark');
+        } else {
+            Cookies.set('theme', 'dark', {expires: 365});
+            setIsDark(true);
+            document.documentElement.classList.add('dark');
         }
     }, []);
+
 
     const toggleTheme = () => {
         if (isDark) {
