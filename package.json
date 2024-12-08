@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next-on-pages start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.6",
     "framer-motion": "^12.0.0-alpha.2",
     "next": "15.0.4",
     "react": "^19.0.0",
