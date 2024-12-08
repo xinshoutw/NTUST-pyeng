@@ -59,7 +59,7 @@ export default function WordsGrid({initialPart, initialTopic, initialWords, init
             setWords(wordData.words);
 
             const tPart = partNum || 1;
-            const tTopic = topicStr || 'calculus';
+            const tTopic = topicStr || 'academic';
             const topicData = await fetchTopics(tPart as number);
             const partData = await fetchParts(tTopic);
 
