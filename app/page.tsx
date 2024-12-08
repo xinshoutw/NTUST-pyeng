@@ -4,7 +4,7 @@ import {Word} from './types';
 
 export default async function HomePage() {
     const initialPart = 1;
-    const initialTopic = 'academic';
+    const initialTopic = 'pvqc-ict';
     const wordData = await fetchWords(initialPart, initialTopic);
     const topicData = await fetchTopics(initialPart);
     const partData = await fetchParts(initialTopic);

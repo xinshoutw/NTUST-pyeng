@@ -11,7 +11,7 @@ export default function PracticeClient() {
     const urlTopic = searchParams.get('topic');
 
     const part = urlPart ? Number(urlPart) : 2;
-    const topic = urlTopic || 'academic';
+    const topic = urlTopic || 'pvqc-ict';
 
     const [entries, setEntries] = useState<PracticeEntry[] | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
