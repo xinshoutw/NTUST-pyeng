@@ -5,8 +5,8 @@ import {Word} from './types';
 
 export default async function HomePage() {
     const cookieStore = await cookies();
-    const savedPart = cookieStore.get('lastPart')?.value;
-    const savedTopic = cookieStore.get('lastTopic')?.value;
+    const savedPart = cookieStore.get('lastPart')?.value || '1';
+    const savedTopic = cookieStore.get('lastTopic')?.value || 'pvqc-ict';
 
     let initialPart: number | null = null;
     let initialTopic: string | null = null;
