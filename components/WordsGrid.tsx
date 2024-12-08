@@ -160,13 +160,14 @@ export default function WordsGrid({
                     </div>
                 )
             )}
-
-            <a
-                href={`/practice?part=${currentPart || 1}&topic=${selectedTopic}`}
-                className="fixed bottom-4 right-4 py-3 px-4 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700 transition"
-            >
-                Practice
-            </a>
+            {selectedTopic !== 'all' && selectedPart !== 'all' &&
+                <a
+                    href={`/practice?part=${currentPart || 1}&topic=${selectedTopic}`}
+                    className="fixed bottom-4 right-4 py-3 px-4 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700 transition"
+                >
+                    Practice
+                </a>
+            }
         </div>
     );
 }
