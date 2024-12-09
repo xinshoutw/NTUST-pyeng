@@ -22,19 +22,24 @@ export default function PracticeClient() {
     const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
-        if (part == null || !topic) return;
+        if (!part || !topic) return;
 
         let mounted = true;
         (async () => {
-            const data = await fetchPractice(part, topic);
-            if (mounted) setEntries(data.entries);
+            try {
+                const data = await fetchPractice(part, topic);
+                if (mounted) setEntries(data.entries);
+            } catch {
+                setEntries([]);
+                return <div className="p-4 text-center text-gray-500">No practice data...</div>;
+            }
         })();
         return () => {
             mounted = false;
         };
     }, [part, topic]);
 
-    if (part == null || !topic) return <div className="p-4 text-center text-gray-500">No part/topic specified.</div>;
+    if (!part || !topic) return <div className="p-4 text-center text-gray-500">No part/topic specified.</div>;
     if (!entries) return <div className="p-4 text-center text-gray-500">Loading...</div>;
     const total = entries.length;
     if (total === 0) return <div className="p-4 text-center text-gray-500">No practice data...</div>;
@@ -43,7 +48,6 @@ export default function PracticeClient() {
     const correctAnswer = currentEntry.answer;
     const correctCount = total - errors;
     const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
-
     const choices = currentEntry.choices;
     const correctIndex = choices.findIndex(c => c.choice_text === correctAnswer);
 
