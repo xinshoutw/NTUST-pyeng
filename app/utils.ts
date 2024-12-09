@@ -1,7 +1,7 @@
 import {PracticeEntry, Word} from './types';
 
-// export const API_ENDPOINT = "https://py.xserver.tw/api"
-export const API_ENDPOINT = "http://0.0.0.0:8000/api"
+export const API_ENDPOINT = "https://py.xserver.tw/api"
+// export const API_ENDPOINT = "http://0.0.0.0:8000/api"
 
 export async function fetchWords(part?: number | null, topic?: string | null): Promise<{ words: Word[] }> {
     const params = new URLSearchParams();
