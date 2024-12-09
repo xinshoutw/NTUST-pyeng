@@ -18,11 +18,9 @@ export default async function HomePage() {
         initialPart = isNaN(Number(savedPart)) ? null : Number(savedPart);
         initialTopic = savedTopic !== 'all' ? savedTopic : null;
 
-        // Fetch words based on savedPart and savedTopic
         const wordData = await fetchWords(initialPart!, initialTopic || '');
         initialWords = wordData.words;
 
-        // Fetch topics and parts based on saved selections
         const topicData = await fetchTopics(initialPart || 1);
         const partData = await fetchParts(initialTopic || 'pvqc-ict');
 

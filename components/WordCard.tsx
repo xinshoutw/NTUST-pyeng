@@ -47,7 +47,7 @@ function WordCardComponent({wordData}: WordCardProps) {
                     </div>
                 )}
             </div>
-            <p className="text-gray-700 dark:text-gray-200 mb-4">{meaning}</p>
+            <p className="text-gray-700 dark:text-gray-200 mb-4 flex-grow">{meaning}</p>
             {(usPron || ukPron) && (
                 <div className="flex flex-wrap items-center space-x-2 mb-4">
                     {mainPos &&

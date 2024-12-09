@@ -172,8 +172,8 @@ export default function WordsGrid({
                     {useGrid ? 'Switch to Columns' : 'Switch to Grid'}
                 </button>*/}
                 <p className="max-w-xl mx-auto">
-                    Do you see that involution guy?<br></br>
-                    Yeah, it&#39;s you.
+                    <br/>
+                    由台科語言中心每週單字整理，配合劍橋辭典了解更多字義解釋與讀音
                 </p>
                 <div
                     className="flex flex-col md:flex-row md:flex-nowrap gap-4 justify-center items-center mt-6 relative z-10">
@@ -210,7 +210,7 @@ export default function WordsGrid({
                                 <motion.div
                                     variants={itemVariants}
                                     key={w.word + index}
-                                    className="flex flex-col h-full" // 確保字卡填滿容器
+                                    className="flex flex-col h-full"
                                 >
                                     <WordCard wordData={w}/>
                                 </motion.div>
@@ -228,7 +228,7 @@ export default function WordsGrid({
                                 <motion.div
                                     variants={itemVariants}
                                     key={w.word + index}
-                                    className="break-inside-avoid flex flex-col h-full" // 確保字卡填滿容器
+                                    className="break-inside-avoid flex flex-col h-full"
                                 >
                                     <WordCard wordData={w}/>
                                 </motion.div>

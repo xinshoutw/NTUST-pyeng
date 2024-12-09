@@ -110,7 +110,6 @@ export default function PracticeClient() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">Errors: {errors} / {total}</p>
             </div>
 
-            {/* 若不是最後一題或最後一題還未回答完畢 */}
             {(
                 <>
                     <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-100 mb-2">{currentEntry.question}</h3>
@@ -169,21 +168,6 @@ export default function PracticeClient() {
                     </div>
                 </>
             )}
-
-            {/* 若是最後一題且已回答，但尚未點Show Result */}
-            {/*{answeredLastQuestion && !showResults && (*/}
-            {/*    <div className="text-center mt-6">*/}
-            {/*        {feedback &&*/}
-            {/*            <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">{feedback}</div>}*/}
-            {/*        <button*/}
-            {/*            type="button"*/}
-            {/*            onClick={handleShowResult}*/}
-            {/*            className="mt-4 bg-blue-600 dark:bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition"*/}
-            {/*        >*/}
-            {/*            Show Result*/}
-            {/*        </button>*/}
-            {/*    </div>*/}
-            {/*)}*/}
         </div>
     );
 }

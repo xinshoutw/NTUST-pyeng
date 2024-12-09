@@ -18,7 +18,7 @@ export default function Footer() {
     return (
         <footer
             className="bg-gray-100 dark:bg-gray-800 shadow-inner p-4 text-center text-sm text-gray-500 dark:text-gray-300 transition-colors duration-300">
-            © {new Date().getFullYear()} NTUST 英單學習網. Tech Support.
+            © {new Date().getFullYear()} NTUST 英簡單. Tech Support.
         </footer>
     )
 }
