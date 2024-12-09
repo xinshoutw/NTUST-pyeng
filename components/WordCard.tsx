@@ -31,8 +31,7 @@ function WordCardComponent({wordData}: WordCardProps) {
 
     return (
         <div
-            className={`bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none relative 
-      ${hoverClass} ${showIndicator ? 'cursor-pointer' : 'cursor-default'}`}
+            className={`relative flex flex-col bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none ${hoverClass} ${showIndicator ? 'cursor-pointer' : 'cursor-default'}`}
             onClick={() => showIndicator && setExpanded(!expanded)}
         >
             <div className="flex items-center justify-between mb-2">
@@ -136,4 +135,3 @@ function WordCardComponent({wordData}: WordCardProps) {
 }
 
 export const WordCard = memo(WordCardComponent);
-export default WordCard;

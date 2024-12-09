@@ -1,6 +1,7 @@
 "use client";
-import {useEffect, useState} from 'react';
-import WordCard from './WordCard';
+import {useEffect, useState, useMemo} from 'react';
+import {motion} from 'framer-motion';
+import {WordCard} from './WordCard';
 import {fetchParts, fetchTopics, fetchWords} from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
@@ -20,7 +21,7 @@ function getCookie(name: string): string | null {
 
 function setCookie(name: string, value: string, days = 365) {
     const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = "expires=" + d.toUTCString();
     document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
 }
@@ -40,6 +41,24 @@ export default function WordsGrid({
     const [loading, setLoading] = useState(!initialWords);
     const [openDropdown, setOpenDropdown] = useState<null | 'part' | 'topic'>(null);
     const [useGrid, setUseGrid] = useState(true);
+    const [visibleCount, setVisibleCount] = useState<number>(0);
+
+    useEffect(() => {
+        const updateVisibleCount = () => {
+            const width = window.innerWidth;
+            if (width >= 1024) { // lg
+                setVisibleCount(30);
+            } else if (width >= 768) { // md
+                setVisibleCount(20);
+            } else { // sm
+                setVisibleCount(10);
+            }
+        };
+
+        updateVisibleCount();
+        window.addEventListener('resize', updateVisibleCount);
+        return () => window.removeEventListener('resize', updateVisibleCount);
+    }, []);
 
     useEffect(() => {
         const layout = getCookie('layout') || 'grid';
@@ -109,15 +128,49 @@ export default function WordsGrid({
 
     const currentPart = typeof selectedPart === 'string' && selectedPart === 'all' ? '' : selectedPart;
 
+    const animatedWords = useMemo(() => {
+        return words?.slice(0, Math.min(visibleCount, words.length)) || [];
+    }, [words, visibleCount]);
+
+    const immediateWords = useMemo(() => {
+        return words?.slice(Math.min(visibleCount, words.length)) || [];
+    }, [words, visibleCount]);
+
+    const cardDuration = 0.1;
+    const desiredStaggerDelay = 0.05;
+
+    const staggerChildren = useMemo(() => {
+        if (animatedWords.length <= 1) return 0;
+        return desiredStaggerDelay;
+    }, [animatedWords.length, desiredStaggerDelay]);
+
+    const containerVariants = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren,
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {opacity: 0, y: 10},
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {duration: cardDuration, ease: 'easeOut'}
+        }
+    };
+
     return (
         <div className="max-w-5xl mx-auto relative px-4 sm:px-8 pb-10 overflow-visible">
             <div className="mb-10 space-y-4 text-center relative">
-                {/*<button*/}
-                {/*    onClick={toggleLayout}*/}
-                {/*    className="absolute right-0 top-0 text-sm text-blue-600 hover:underline"*/}
-                {/*>*/}
-                {/*    {useGrid ? 'Switch to Columns' : 'Switch to Grid'}*/}
-                {/*</button>*/}
+                {/*<button
+                    onClick={toggleLayout}
+                    className="absolute right-0 top-0 text-sm text-blue-600 hover:underline"
+                >
+                    {useGrid ? 'Switch to Columns' : 'Switch to Grid'}
+                </button>*/}
                 <p className="max-w-xl mx-auto">
                     Do you see that involution guy?<br></br>
                     Yeah, it&#39;s you.
@@ -144,21 +197,72 @@ export default function WordsGrid({
             </div>
             {loading && <div className="text-center text-gray-500">Loading...</div>}
             {!loading && words && (
-                useGrid ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-                        {words.map((w, index) => (
-                            <WordCard key={w.word + index} wordData={w}/>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="columns-1 md:columns-2 lg:columns-3 space-y-4" style={{columnGap: '1rem'}}>
-                        {words.map((w, index) => (
-                            <div key={w.word + index} className="break-inside-avoid">
-                                <WordCard wordData={w}/>
+                <>
+                    {useGrid ? (
+                        <motion.div
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="show"
+                            style={{gridAutoRows: 'auto'}}
+                        >
+                            {animatedWords.map((w, index) => (
+                                <motion.div
+                                    variants={itemVariants}
+                                    key={w.word + index}
+                                    className="flex flex-col h-full" // 確保字卡填滿容器
+                                >
+                                    <WordCard wordData={w}/>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            className="columns-1 md:columns-2 lg:grid-cols-3 space-y-4"
+                            style={{columnGap: '1rem'}}
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="show"
+                        >
+                            {animatedWords.map((w, index) => (
+                                <motion.div
+                                    variants={itemVariants}
+                                    key={w.word + index}
+                                    className="break-inside-avoid flex flex-col h-full" // 確保字卡填滿容器
+                                >
+                                    <WordCard wordData={w}/>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    )}
+
+                    {immediateWords.length > 0 && (
+                        useGrid ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 items-stretch">
+                                {immediateWords.map((w, index) => (
+                                    <div
+                                        key={w.word + (visibleCount + index)}
+                                        className="flex flex-col h-full"
+                                    >
+                                        <WordCard wordData={w}/>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                )
+                        ) : (
+                            <div className="columns-1 md:columns-2 lg:grid-cols-3 space-y-4 mt-4"
+                                 style={{columnGap: '1rem'}}>
+                                {immediateWords.map((w, index) => (
+                                    <div
+                                        key={w.word + (visibleCount + index)}
+                                        className="break-inside-avoid flex flex-col h-full"
+                                    >
+                                        <WordCard wordData={w}/>
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    )}
+                </>
             )}
             {selectedTopic !== 'all' && selectedPart !== 'all' &&
                 <a
