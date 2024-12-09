@@ -19,6 +19,9 @@ function WordCardComponent({wordData}: WordCardProps) {
     const [expanded, setExpanded] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
+    /**
+     * 按下播音按紐
+     */
     const playPronunciation = (e: MouseEvent<HTMLButtonElement>, url: string) => {
         e.stopPropagation();
         if (audioRef.current) {
@@ -27,11 +30,9 @@ function WordCardComponent({wordData}: WordCardProps) {
         }
     };
 
-    const hoverClass = 'transition transform hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 active:scale-95';
-
     return (
         <div
-            className={`relative flex flex-col bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none ${hoverClass} ${showIndicator ? 'cursor-pointer' : 'cursor-default'}`}
+            className={`relative flex flex-col bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none transition transform hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 active:scale-95 ${showIndicator ? 'cursor-pointer' : 'cursor-default'}`}
             onClick={() => showIndicator && setExpanded(!expanded)}
         >
             <div className="flex items-center justify-between mb-2">
