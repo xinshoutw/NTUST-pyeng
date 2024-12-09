@@ -1,6 +1,7 @@
 import {PracticeEntry, Word} from './types';
 
 export const API_ENDPOINT = "https://py.xserver.tw/api"
+
 // export const API_ENDPOINT = "http://0.0.0.0:8000/api"
 
 export async function fetchWords(part?: number | null, topic?: string | null): Promise<{ words: Word[] }> {
@@ -8,7 +9,7 @@ export async function fetchWords(part?: number | null, topic?: string | null): P
     if (part) params.set('part', part.toString());
     if (topic) params.set('topic', topic);
 
-    const res = await fetch(`${API_ENDPOINT}/words?${params.toString()}`, {cache: 'no-store'});
+    const res = await fetch(`${API_ENDPOINT}/words?${params.toString()}`, {next: {revalidate: 300}});
     if (!res.ok) throw new Error('Failed');
     return res.json();
 }
@@ -18,7 +19,7 @@ export async function fetchParts(topic?: string | null): Promise<{ count: number
     if (topic) params.set('topic', topic);
 
     // console.log(`${API_ENDPOINT}/parts?${params.toString()}`)
-    const res = await fetch(`${API_ENDPOINT}/parts?${params.toString()}`, {cache: 'no-store'});
+    const res = await fetch(`${API_ENDPOINT}/parts?${params.toString()}`, {next: {revalidate: 300}});
     if (!res.ok) throw new Error('Failed');
     return res.json();
 }
@@ -28,13 +29,13 @@ export async function fetchTopics(part?: number | null): Promise<{ count: number
     if (part) params.set('part', part.toString());
 
     // console.log(`${API_ENDPOINT}/topics?${params.toString()}`)
-    const res = await fetch(`${API_ENDPOINT}/topics?${params.toString()}`, {cache: 'no-store'});
+    const res = await fetch(`${API_ENDPOINT}/topics?${params.toString()}`, {next: {revalidate: 300}});
     if (!res.ok) throw new Error('Failed');
     return res.json();
 }
 
 export async function fetchPractice(part: number, topic: string): Promise<{ entries: PracticeEntry[] }> {
-    const res = await fetch(`${API_ENDPOINT}/practice/${part}/${topic}`, {cache: 'no-store'});
+    const res = await fetch(`${API_ENDPOINT}/practice/${part}/${topic}`, {next: {revalidate: 300}});
     if (!res.ok) {
         throw new Error('Failed');
     }
