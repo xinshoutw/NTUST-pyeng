@@ -2,29 +2,22 @@
 import {useEffect, useState, useMemo} from 'react';
 import {motion} from 'framer-motion';
 import {WordCard} from './WordCard';
-import {fetchParts, fetchTopics, fetchWords} from '@/app/utils';
+import {
+    fetchParts, fetchTopics, fetchWords,
+    getCookie, setCookie,
+    parsePart, parseTopic,
+    parseParts, parseTopics
+} from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
 
 type Props = {
     initialPart: number | null;
     initialTopic: string | null;
-    initialWords: Word[] | null;
-    initialParts: number[] | null;
-    initialTopics: string[] | null;
+    initialWords: Word[];
+    initialParts: number[];
+    initialTopics: string[];
 };
-
-function getCookie(name: string): string | null {
-    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    return match ? decodeURIComponent(match[2]) : null;
-}
-
-function setCookie(name: string, value: string, days = 365) {
-    const d = new Date();
-    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
-}
 
 export default function WordsGrid({
                                       initialPart,
@@ -43,6 +36,9 @@ export default function WordsGrid({
     const [useGrid, setUseGrid] = useState(true);
     const [visibleCount, setVisibleCount] = useState<number>(0);
 
+    /**
+     * Resize windows to rearrange word-cards
+     */
     useEffect(() => {
         const updateVisibleCount = () => {
             const width = window.innerWidth;
@@ -60,39 +56,49 @@ export default function WordsGrid({
         return () => window.removeEventListener('resize', updateVisibleCount);
     }, []);
 
+    /**
+     * When select a dropdown, update cookie and word-cards.
+     */
+    useEffect(() => {
+        // skip first initial load
+        if (getCookie("lastPart") == selectedPart && getCookie("lastTopic") === selectedTopic) {
+            return;
+        }
+
+        setCookie('lastPart', String(selectedPart));
+        setCookie('lastTopic', String(selectedTopic));
+
+        loadData(selectedPart, selectedTopic);
+    }, [selectedPart, selectedTopic]);
+
+    /**
+     * Some trick for specific cookie: "layout: column"
+     */
     useEffect(() => {
         const layout = getCookie('layout') || 'grid';
         setUseGrid(layout === 'grid');
-
-        const savedPart = getCookie('lastPart');
-        const savedTopic = getCookie('lastTopic');
-
-        if (savedPart) {
-            setSelectedPart(isNaN(Number(savedPart)) ? 'all' : Number(savedPart));
-        }
-        if (savedTopic) {
-            setSelectedTopic(savedTopic);
-        }
     }, []);
+    // const toggleLayout = () => {
+    //     const newVal = !useGrid;
+    //     setUseGrid(newVal);
+    //     setCookie('layout', newVal ? 'grid' : 'columns', 365);
+    // };
 
-    const loadData = async (part: number | string, topic: string) => {
+    const loadData = async (_part: number | string, _topic: string) => {
         setLoading(true);
         try {
-            const partNum = (typeof part === 'string' && part === 'all') ? null : part;
-            const topicStr = (topic === 'all') ? null : topic;
-            const wordData = await fetchWords(partNum as number, topicStr || '');
+            const part = parsePart(_part);
+            const topic = parseTopic(_topic);
+            const wordData = await fetchWords(part, topic);
             setWords(wordData.words);
 
-            const tPart = partNum || 1;
-            const tTopic = topicStr || 'pvqc-ict';
-            const topicData = await fetchTopics(tPart as number);
-            const partData = await fetchParts(tTopic);
+            const partData = await fetchParts(topic);
+            const topicData = await fetchTopics(part);
+            const newPartOptions = parseParts(partData);
+            const newTopicOptions = parseTopics(topicData);
 
-            const newTopicOptions = ['all', ...topicData.topics.filter(t => t !== 'all')];
-            const newPartOptions = [...(partData.parts || [])].sort((a, b) => a - b);
-
-            setTopics(newTopicOptions);
             setParts(newPartOptions);
+            setTopics(newTopicOptions);
         } catch (error) {
             console.error("Failed to load data:", error);
         } finally {
@@ -100,34 +106,17 @@ export default function WordsGrid({
         }
     }
 
-    useEffect(() => {
-        if (initialWords && selectedPart === initialPart && selectedTopic === initialTopic) {
-            return;
-        }
-        loadData(selectedPart!, selectedTopic!);
-    }, [selectedPart, selectedTopic]);
-
-    useEffect(() => {
-        if (selectedPart) {
-            setCookie('lastPart', String(selectedPart));
-            setCookie('lastTopic', String(selectedTopic));
-        }
-    }, [selectedPart, selectedTopic]);
-
     const partOptions = [{value: 'all', label: 'All'}, ...parts.map(p => ({value: p, label: String(p)}))];
     const topicOptions = [{value: 'all', label: 'All'}, ...topics.filter(t => t !== 'all').map(t => ({
         value: t,
         label: t
     }))];
 
-    // const toggleLayout = () => {
-    //     const newVal = !useGrid;
-    //     setUseGrid(newVal);
-    //     setCookie('layout', newVal ? 'grid' : 'columns', 365);
-    // };
-
-    const currentPart = typeof selectedPart === 'string' && selectedPart === 'all' ? '' : selectedPart;
-
+    /**
+     * Animated render cards
+     */
+    const cardDuration = 0.1;
+    const desiredStaggerDelay = 0.05;
     const animatedWords = useMemo(() => {
         return words?.slice(0, Math.min(visibleCount, words.length)) || [];
     }, [words, visibleCount]);
@@ -136,9 +125,6 @@ export default function WordsGrid({
         return words?.slice(Math.min(visibleCount, words.length)) || [];
     }, [words, visibleCount]);
 
-    const cardDuration = 0.1;
-    const desiredStaggerDelay = 0.05;
-
     const staggerChildren = useMemo(() => {
         if (animatedWords.length <= 1) return 0;
         return desiredStaggerDelay;
@@ -146,11 +132,7 @@ export default function WordsGrid({
 
     const containerVariants = {
         hidden: {},
-        show: {
-            transition: {
-                staggerChildren,
-            }
-        }
+        show: {transition: {staggerChildren,}}
     };
 
     const itemVariants = {
@@ -266,7 +248,7 @@ export default function WordsGrid({
             )}
             {selectedTopic !== 'all' && selectedPart !== 'all' &&
                 <a
-                    href={`/practice?part=${currentPart || 1}&topic=${selectedTopic}`}
+                    href={`/practice?part=${selectedPart}&topic=${selectedTopic}`}
                     className="fixed bottom-4 right-4 py-3 px-4 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700 transition"
                 >
                     Practice

@@ -1,38 +1,39 @@
 import {cookies} from 'next/headers';
 import WordsGrid from '../components/WordsGrid';
-import {fetchParts, fetchTopics, fetchWords} from './utils';
-import {Word} from './types';
+import {
+    fetchParts, fetchTopics, fetchWords,
+    parsePart, parseTopic,
+    parseParts, parseTopics
+} from './utils';
 
 export default async function HomePage() {
     const cookieStore = await cookies();
-    const savedPart = cookieStore.get('lastPart')?.value || '1';
-    const savedTopic = cookieStore.get('lastTopic')?.value || 'pvqc-ict';
 
-    let initialPart: number | null = null;
-    let initialTopic: string | null = null;
-    let initialWords: Word[] | null = null;
-    let initialParts: number[] | null = null;
-    let initialTopics: string[] | null = null;
-
-    if (savedPart && savedTopic) {
-        initialPart = isNaN(Number(savedPart)) ? null : Number(savedPart);
-        initialTopic = savedTopic !== 'all' ? savedTopic : null;
-
-        const wordData = await fetchWords(initialPart!, initialTopic || '');
-        initialWords = wordData.words;
-
-        const topicData = await fetchTopics(initialPart || 1);
-        const partData = await fetchParts(initialTopic || 'pvqc-ict');
-
-        initialTopics = ['all', ...topicData.topics.filter(t => t !== 'all')];
-        initialParts = [...(partData.parts || [])].sort((a, b) => a - b);
+    let savedPart = cookieStore.get('lastPart')?.value;
+    if (savedPart === undefined) {
+        savedPart = '1'
+        cookieStore.set('lastPart', savedPart)
     }
+
+    let savedTopic = cookieStore.get('lastTopic')?.value;
+    if (savedTopic === undefined) {
+        savedTopic = 'pvqc-ict'
+        cookieStore.set('lastTopic', savedTopic)
+    }
+
+    const initialPart: number | null = parsePart(savedPart);
+    const initialTopic: string | null = parseTopic(savedTopic);
+    const wordData = await fetchWords(initialPart, initialTopic);
+    const partData = await fetchParts(initialTopic);
+    const topicData = await fetchTopics(initialPart);
+    const initialParts: number[] = parseParts(partData);
+    const initialTopics: string[] = parseTopics(topicData);
 
     return (
         <WordsGrid
             initialPart={initialPart}
             initialTopic={initialTopic}
-            initialWords={initialWords}
+            initialWords={wordData.words}
             initialParts={initialParts}
             initialTopics={initialTopics}
         />
