@@ -27,10 +27,6 @@ export default async function RootLayout({children}: { children: ReactNode }) {
                     NTUST 英簡單
                 </Link>
                 <nav className="space-x-4 flex items-center">
-                    <Link href="/"
-                          className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
-                        Home
-                    </Link>
                     <Link href="https://pygit.xserver.tw/"
                           className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
                         Repository
