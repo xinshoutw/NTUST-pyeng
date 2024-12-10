@@ -96,7 +96,7 @@ function WordCardComponent({wordData}: WordCardProps) {
                     {expanded && (
                         <motion.div
                             initial={{maxHeight: 0, opacity: 0, paddingTop: 0}}
-                            animate={{maxHeight: 500, opacity: 1, paddingTop: '.3rem'}}
+                            animate={{maxHeight: 1000, opacity: 1, paddingTop: '.3rem'}}
                             exit={{maxHeight: 0, opacity: 0, paddingTop: 0}}
                             transition={{duration: 0.25}}
                             className="overflow-hidden"
