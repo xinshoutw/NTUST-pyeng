@@ -39,7 +39,8 @@ export default function ThemeToggleButton() {
             onClick={toggleTheme}
             className="ml-4 p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
         >
-            {isDark ? 'Light Mode' : 'Dark Mode'}
+            {/*{isDark ? 'Light Mode' : 'Dark Mode'}*/}
+            Mode
         </button>
     );
 }
