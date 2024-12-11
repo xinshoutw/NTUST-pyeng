@@ -23,7 +23,7 @@ export default async function RootLayout({children}: { children: ReactNode }) {
             className="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col transition-colors duration-300">
         <header className="bg-white dark:bg-gray-800 shadow fixed top-0 w-full z-50">
             <div className="max-w-5xl mx-auto p-4 flex items-center justify-between">
-                <Link href="//" className="font-bold text-lg text-gray-800 dark:text-gray-100">
+                <Link href="https://pygit.xserver.tw/" className="font-bold text-lg text-gray-800 dark:text-gray-100">
                     NTUST 英簡單
                 </Link>
                 <nav className="space-x-4 flex items-center">
