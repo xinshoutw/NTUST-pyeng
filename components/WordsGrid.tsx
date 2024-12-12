@@ -5,16 +5,15 @@ import {WordCard} from './WordCard';
 import {
     fetchParts, fetchTopics, fetchWords,
     getCookie, setCookie,
-    parsePart, parseTopic,
     parseParts, parseTopics,
-    topicOrder, topicLabelMapping, DEFAULT_PART, DEFAULT_TOPIC
+    topicOrder, topicLabelMapping,
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
 
 type Props = {
-    initialPart: number | null;
-    initialTopic: string | null;
+    initialPart: string;
+    initialTopic: string;
     initialWords: Word[];
     initialParts: number[];
     initialTopics: string[];
@@ -27,8 +26,10 @@ export default function WordsGrid({
                                       initialParts,
                                       initialTopics
                                   }: Props) {
-    const [selectedPart, setSelectedPart] = useState<number | string>(initialPart ?? 'all');
-    const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic ?? 'all');
+    const [lastSelectedPart, setLastSelectedPart] = useState<string>(initialPart);
+    const [lastSelectedTopic, setLastSelectedTopic] = useState<string>(initialTopic);
+    const [selectedPart, setSelectedPart] = useState<string>(initialPart);
+    const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic);
     const [words, setWords] = useState<Word[] | null>(initialWords);
     const [parts, setParts] = useState<number[]>(initialParts ?? []);
     const [topics, setTopics] = useState<string[]>(initialTopics ?? []);
@@ -61,22 +62,20 @@ export default function WordsGrid({
      * When select a dropdown, update word-cards and cookie.
      */
     useEffect(() => {
-        const lastPart = getCookie("lastPart")
-        const lastTopic = getCookie("lastTopic")
-
         // no cookie exist
-        if (lastPart === null || lastTopic === null) {
-            setCookie('lastPart', DEFAULT_PART);
-            setCookie('lastTopic', DEFAULT_TOPIC);
-            return;
+        if (getCookie("lastPart") === null) {
+            setCookie('lastPart', selectedPart);
+        }
+        if (getCookie("lastTopic") === null) {
+            setCookie('lastTopic', selectedTopic);
         }
 
         // skip same page
-        if (lastPart == selectedPart && lastTopic === selectedTopic) {
+        if (lastSelectedPart == selectedPart && lastSelectedTopic === selectedTopic) {
             return;
         }
 
-        loadData(lastPart, lastTopic, selectedPart, selectedTopic);
+        loadData();
     }, [selectedPart, selectedTopic]);
 
     /**
@@ -92,27 +91,25 @@ export default function WordsGrid({
     //     setCookie('layout', newVal ? 'grid' : 'columns', 365);
     // };
 
-    const loadData = async (_last_part: number | string, _last_topic: string, _part: number | string, _topic: string) => {
+    const loadData = async () => {
         setLoading(true);
         try {
-            const part = parsePart(_part);
-            const topic = parseTopic(_topic);
-            const wordData = await fetchWords(part, topic);
+            const wordData = await fetchWords(selectedPart, selectedTopic);
             setWords(wordData.words);
 
-            if (_last_part != _part) {
-                const topicData = await fetchTopics(part);
+            if (lastSelectedPart != selectedPart) {
+                const topicData = await fetchTopics(selectedPart);
                 const newTopicOptions = parseTopics(topicData);
                 setTopics(newTopicOptions);
-
-                setCookie('lastPart', String(selectedPart));
+                setLastSelectedPart(selectedPart)
+                setCookie('lastPart', selectedPart);
             }
-            if (_last_topic !== _topic) {
-                const partData = await fetchParts(topic);
+            if (lastSelectedTopic !== selectedTopic) {
+                const partData = await fetchParts(selectedTopic);
                 const newPartOptions = parseParts(partData);
                 setParts(newPartOptions);
-
-                setCookie('lastTopic', String(selectedTopic));
+                setLastSelectedTopic(selectedTopic)
+                setCookie('lastTopic', selectedTopic);
             }
         } catch (error) {
             console.error("Failed to load data:", error);
@@ -121,7 +118,7 @@ export default function WordsGrid({
         }
     }
 
-    const partOptions = [{value: 'all', label: '全'}, ...parts.map(p => ({value: p, label: String(p)}))];
+    const partOptions = [{value: 'all', label: '全'}, ...parts.map(p => ({value: String(p), label: String(p)}))];
     const topicOptions = [{value: 'all', label: '全'}, ...topics.filter(t => t !== 'all').map(t => ({
         value: t,
         label: t

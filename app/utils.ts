@@ -1,23 +1,29 @@
 import {PracticeEntry, Word} from './types';
 
+// export const API_ENDPOINT = "http://0.0.0.0:8000/api"
 export const API_ENDPOINT = "https://py.xserver.tw/api"
 export const DEFAULT_PART = "1"
 export const DEFAULT_TOPIC = "pvqc-ict"
-// export const API_ENDPOINT = "http://0.0.0.0:8000/api"
 
-export async function fetchWords(part?: number | null, topic?: string | null): Promise<{ words: Word[] }> {
+
+export async function fetchWords(part: string, topic: string): Promise<{ words: Word[] }> {
+    const topic_f = parseTopic(topic)
+    const part_f = parsePart(part)
+
     const params = new URLSearchParams();
-    if (part) params.set('part', part.toString());
-    if (topic) params.set('topic', topic);
+    if (part_f) params.set('part', part_f);
+    if (topic_f) params.set('topic', topic_f);
 
     const res = await fetch(`${API_ENDPOINT}/words?${params.toString()}`, {next: {revalidate: 300}});
     if (!res.ok) throw new Error('Failed');
     return res.json();
 }
 
-export async function fetchParts(topic?: string | null): Promise<{ count: number; parts: number[] }> {
+export async function fetchParts(topic: string): Promise<{ count: number; parts: number[] }> {
+    const topic_f = parseTopic(topic)
+
     const params = new URLSearchParams();
-    if (topic) params.set('topic', topic);
+    if (topic_f) params.set('topic', topic_f);
 
     // console.log(`${API_ENDPOINT}/parts?${params.toString()}`)
     const res = await fetch(`${API_ENDPOINT}/parts?${params.toString()}`, {next: {revalidate: 300}});
@@ -25,9 +31,11 @@ export async function fetchParts(topic?: string | null): Promise<{ count: number
     return res.json();
 }
 
-export async function fetchTopics(part?: number | null): Promise<{ count: number; topics: string[] }> {
+export async function fetchTopics(part: string): Promise<{ count: number; topics: string[] }> {
+    const part_f = parsePart(part)
+
     const params = new URLSearchParams();
-    if (part) params.set('part', part.toString());
+    if (part_f) params.set('part', part_f);
 
     // console.log(`${API_ENDPOINT}/topics?${params.toString()}`)
     const res = await fetch(`${API_ENDPOINT}/topics?${params.toString()}`, {next: {revalidate: 300}});
@@ -35,7 +43,7 @@ export async function fetchTopics(part?: number | null): Promise<{ count: number
     return res.json();
 }
 
-export async function fetchPractice(part: number, topic: string): Promise<{ entries: PracticeEntry[] }> {
+export async function fetchPractice(part: string, topic: string): Promise<{ entries: PracticeEntry[] }> {
     const res = await fetch(`${API_ENDPOINT}/practice/${part}/${topic}`, {next: {revalidate: 300}});
     if (!res.ok) {
         throw new Error('Failed');
@@ -56,11 +64,11 @@ export function setCookie(name: string, value: string, days = 365) {
     document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
 }
 
-export function parsePart(str: string | number): number | null {
-    return isNaN(Number(str)) ? null : Number(str);
+function parsePart(str: string): string | null {
+    return isNaN(Number(str)) ? null : str;
 }
 
-export function parseTopic(str: string): string | null {
+function parseTopic(str: string): string | null {
     return str === 'all' ? null : str;
 }
 

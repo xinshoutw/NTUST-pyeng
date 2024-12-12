@@ -4,18 +4,18 @@ import {useEffect, useRef, useMemo} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 
 type DropdownOption = {
-    value: string | number;
+    value: string;
     label: string;
 };
 
 type DropdownProps = {
     label: string;
     options: DropdownOption[];
-    selected: string | number;
-    onSelect: (val: string | number) => void;
+    selected: string;
+    onSelect: (val: string) => void;
     isOpen: boolean;
     onToggle: () => void;
-    sortOrder?: Array<string | number>;
+    sortOrder?: Array<string>;
     labelMapping?: { [key: string]: string };
 };
 

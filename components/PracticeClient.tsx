@@ -7,11 +7,8 @@ import {useSearchParams} from 'next/navigation';
 
 export default function PracticeClient() {
     const searchParams = useSearchParams();
-    const urlPart = searchParams.get('part');
-    const urlTopic = searchParams.get('topic');
-
-    const part = urlPart ? Number(urlPart) : null;
-    const topic = urlTopic || null;
+    const part = searchParams.get('part');
+    const topic = searchParams.get('topic');
 
     const [entries, setEntries] = useState<PracticeEntry[] | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
