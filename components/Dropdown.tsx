@@ -32,13 +32,11 @@ export default function Dropdown(
     }: DropdownProps) {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const applyLabelMapping = (opt: DropdownOption): DropdownOption => ({
-        ...opt,
-        label: labelMapping && labelMapping[opt.value] ? labelMapping[opt.value] : opt.label,
-    });
-
     const sortedOptions: DropdownOption[] = useMemo(() => {
-        let processedOptions = options.map(applyLabelMapping);
+        const processedOptions = options.map(opt => ({
+            ...opt,
+            label: labelMapping && labelMapping[opt.value] ? labelMapping[opt.value] : opt.label,
+        }));
 
         if (sortOrder && sortOrder.length > 0) {
             const orderMap = new Map(sortOrder.map((v, i) => [v, i]));
