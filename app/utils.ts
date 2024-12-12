@@ -1,7 +1,8 @@
 import {PracticeEntry, Word} from './types';
 
 export const API_ENDPOINT = "https://py.xserver.tw/api"
-
+export const DEFAULT_PART = "1"
+export const DEFAULT_TOPIC = "pvqc-ict"
 // export const API_ENDPOINT = "http://0.0.0.0:8000/api"
 
 export async function fetchWords(part?: number | null, topic?: string | null): Promise<{ words: Word[] }> {
