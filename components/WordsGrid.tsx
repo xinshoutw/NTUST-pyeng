@@ -11,6 +11,7 @@ import {
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
+import {collectSegmentData} from "next/dist/server/app-render/collect-segment-data";
 
 interface Props {
     initialPart: string;
@@ -78,7 +79,7 @@ export default function WordsGrid(
                     const topicData = await fetchTopics(selectedPart);
                     const newTopics = parseTopics(topicData);
                     setAvailableTopics(newTopics);
-                    setLastSelectedPart(lastSelectedPart)
+                    setLastSelectedPart(selectedPart)
                     setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
                 }
 
@@ -105,7 +106,7 @@ export default function WordsGrid(
         }
 
         // skip same page
-        if (lastSelectedPart == selectedPart && lastSelectedTopic === selectedTopic) {
+        if (lastSelectedPart === selectedPart && lastSelectedTopic === selectedTopic) {
             setLoading(false);
             return;
         }
