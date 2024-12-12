@@ -32,7 +32,6 @@ export default function Dropdown({
     const dropdownRef = useRef<HTMLDivElement>(null);
     const current = useMemo(() => options.find(o => o.value === selected), [options, selected]);
 
-    // 使用 useMemo 來計算 sortedOptions，確保 SSR 和 CSR 一致
     const sortedOptions: DropdownOption[] = useMemo(() => {
         if (sortOrder && labelMapping) {
             return sortOrder

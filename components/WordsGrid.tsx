@@ -58,25 +58,26 @@ export default function WordsGrid({
     }, []);
 
     /**
-     * When select a dropdown, update cookie and word-cards.
+     * When select a dropdown, update word-cards and cookie.
      */
     useEffect(() => {
+        const lastPart = getCookie("lastPart")
+        const lastTopic = getCookie("lastTopic")
+
         // no cookie exist
-        if (getCookie("lastPart") === null || getCookie("lastTopic") === null) {
+        if (lastPart === null || lastTopic === null) {
             setCookie('lastPart', DEFAULT_PART);
             setCookie('lastTopic', DEFAULT_TOPIC);
             return;
         }
 
         // skip same page
-        if (getCookie("lastPart") == selectedPart && getCookie("lastTopic") === selectedTopic) {
+        if (lastPart == selectedPart && lastPart === selectedTopic) {
             return;
         }
 
-        setCookie('lastPart', String(selectedPart));
-        setCookie('lastTopic', String(selectedTopic));
 
-        loadData(selectedPart, selectedTopic);
+        loadData(lastPart, lastTopic, selectedPart, selectedTopic);
     }, [selectedPart, selectedTopic]);
 
     /**
@@ -92,7 +93,7 @@ export default function WordsGrid({
     //     setCookie('layout', newVal ? 'grid' : 'columns', 365);
     // };
 
-    const loadData = async (_part: number | string, _topic: string) => {
+    const loadData = async (_last_part: number | string, _last_topic: string, _part: number | string, _topic: string) => {
         setLoading(true);
         try {
             const part = parsePart(_part);
@@ -105,8 +106,14 @@ export default function WordsGrid({
             const newPartOptions = parseParts(partData);
             const newTopicOptions = parseTopics(topicData);
 
-            setParts(newPartOptions);
-            setTopics(newTopicOptions);
+            if (_last_part !== _part) {
+                setCookie('lastPart', String(selectedPart));
+                setParts(newPartOptions);
+            }
+            if (_last_topic !== _topic) {
+                setCookie('lastTopic', String(selectedTopic));
+                setTopics(newTopicOptions);
+            }
         } catch (error) {
             console.error("Failed to load data:", error);
         } finally {
