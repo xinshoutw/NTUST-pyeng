@@ -2,7 +2,7 @@
 
 import {useEffect, useState} from 'react';
 import {PracticeEntry} from '@/app/types';
-import {fetchPractice} from '@/app/utils';
+import {fetchPractice, topicLabelMapping} from '@/app/utils';
 import {useSearchParams} from 'next/navigation';
 
 export default function PracticeClient() {
@@ -110,7 +110,7 @@ export default function PracticeClient() {
         <div
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow relative select-none transition-colors duration-300">
             <div className="mb-6 flex flex-col items-center space-y-2">
-                <h3 className="font-bold text-2xl text-gray-800 dark:text-gray-100">Part: {part}, Topic: {topic}</h3>
+                <h3 className="font-bold text-2xl text-gray-800 dark:text-gray-100">Part: {part}, Topic: {topicLabelMapping[topic] || topic} </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Errors: {errors} / {total}</p>
             </div>
 

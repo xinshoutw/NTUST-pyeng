@@ -70,3 +70,28 @@ export function parseParts(partData: { count: number, parts: number[] }): number
 export function parseTopics(topicData: { count: number, topics: string[] }): string[] {
     return ['all', ...topicData.topics.filter(t => t !== 'all')];
 }
+
+export const topicOrder = [
+    'all',
+    'toefl',
+    'academic',
+    'calculus',
+    'ielts',
+    'pvqc-ee',
+    'pvqc-bm',
+    'pvqc-me',
+    'pvqc-dmd',
+    'pvqc-ict',
+];
+
+export const topicLabelMapping: { [key: string]: string } = {
+    'toefl': '托福',
+    'academic': '學術',
+    'calculus': '微積分',
+    'ielts': '雅思',
+    'pvqc-ee': '商業電子',
+    'pvqc-bm': '商業管理',
+    'pvqc-me': '機械工程',
+    'pvqc-dmd': '多媒體',
+    'pvqc-ict': '計算機',
+};

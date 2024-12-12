@@ -1,20 +1,54 @@
 "use client";
 
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useMemo} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
+
+type DropdownOption = {
+    value: string | number;
+    label: string;
+};
 
 type DropdownProps = {
     label: string;
-    options: { value: string | number; label: string }[];
+    options: DropdownOption[];
     selected: string | number;
     onSelect: (val: string | number) => void;
     isOpen: boolean;
     onToggle: () => void;
+    sortOrder?: Array<string | number>;
+    labelMapping?: { [key: string]: string };
 };
 
-export default function Dropdown({label, options, selected, onSelect, isOpen, onToggle}: DropdownProps) {
+export default function Dropdown({
+    label,
+    options,
+    selected,
+    onSelect,
+    isOpen,
+    onToggle,
+    sortOrder,
+    labelMapping,
+}: DropdownProps) {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const current = options.find(o => o.value === selected);
+    const current = useMemo(() => options.find(o => o.value === selected), [options, selected]);
+
+    // 使用 useMemo 來計算 sortedOptions，確保 SSR 和 CSR 一致
+    const sortedOptions: DropdownOption[] = useMemo(() => {
+        if (sortOrder && labelMapping) {
+            return sortOrder
+                .map(orderVal => options.find(o => o.value === orderVal))
+            .filter((o): o is DropdownOption => o !== undefined)
+            .map(o => ({
+                ...o,
+                    label: labelMapping[String(o.value)] || o.label,
+            }));
+        } else {
+            return options.map(o => ({
+                ...o,
+                label: labelMapping && labelMapping[String(o.value)] ? labelMapping[String(o.value)] : o.label,
+            }));
+        }
+    }, [sortOrder, labelMapping, options]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -42,7 +76,7 @@ export default function Dropdown({label, options, selected, onSelect, isOpen, on
                 onClick={onToggle}
                 className="py-2 px-4 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-100 dark:hover:bg-gray-600 transition select-none relative z-50 text-gray-700 dark:text-gray-200"
             >
-                {current ? current.label : 'All'}
+                {current ? (labelMapping ? (labelMapping[String(current.value)] || current.label) : current.label) : 'All'}
             </button>
             <AnimatePresence>
                 {isOpen && (
@@ -53,7 +87,7 @@ export default function Dropdown({label, options, selected, onSelect, isOpen, on
                         transition={{duration: 0.1}}
                         className="origin-top-left absolute mt-2 w-40 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-lg z-[9999]"
                     >
-                        {options.map((opt) => (
+                        {sortedOptions.map((opt) => (
                             <button
                                 key={String(opt.value)}
                                 type="button"

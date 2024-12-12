@@ -6,7 +6,8 @@ import {
     fetchParts, fetchTopics, fetchWords,
     getCookie, setCookie,
     parsePart, parseTopic,
-    parseParts, parseTopics
+    parseParts, parseTopics,
+    topicOrder, topicLabelMapping
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
@@ -106,8 +107,8 @@ export default function WordsGrid({
         }
     }
 
-    const partOptions = [{value: 'all', label: 'All'}, ...parts.map(p => ({value: p, label: String(p)}))];
-    const topicOptions = [{value: 'all', label: 'All'}, ...topics.filter(t => t !== 'all').map(t => ({
+    const partOptions = [{value: 'all', label: '全'}, ...parts.map(p => ({value: p, label: String(p)}))];
+    const topicOptions = [{value: 'all', label: '全'}, ...topics.filter(t => t !== 'all').map(t => ({
         value: t,
         label: t
     }))];
@@ -143,7 +144,6 @@ export default function WordsGrid({
             transition: {duration: cardDuration, ease: 'easeOut'}
         }
     };
-
     return (
         <div className="max-w-5xl mx-auto relative px-4 sm:px-8 pb-10 overflow-visible">
             <div className="mb-10 space-y-4 text-center relative">
@@ -174,6 +174,8 @@ export default function WordsGrid({
                         onSelect={(val) => setSelectedTopic(val as string)}
                         isOpen={openDropdown === 'topic'}
                         onToggle={() => setOpenDropdown(openDropdown === 'topic' ? null : 'topic')}
+                        sortOrder={topicOrder}
+                        labelMapping={topicLabelMapping}
                     />
                 </div>
             </div>
