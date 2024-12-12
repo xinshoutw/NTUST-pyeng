@@ -29,6 +29,8 @@ export default function WordsGrid(
         initialParts,
         initialTopics
     }: Props) {
+    const [lastSelectedPart, setLastSelectedPart] = useState<string>(initialPart);
+    const [lastSelectedTopic, setLastSelectedTopic] = useState<string>(initialTopic);
     const [selectedPart, setSelectedPart] = useState<string>(initialPart);
     const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic);
     const [words, setWords] = useState<Word[] | null>(initialWords);
@@ -72,17 +74,19 @@ export default function WordsGrid(
                 const wordData = await fetchWords(selectedPart, selectedTopic);
                 setWords(wordData.words);
 
-                if (selectedPart !== initialPart) {
+                if (selectedPart !== lastSelectedPart) {
                     const topicData = await fetchTopics(selectedPart);
                     const newTopics = parseTopics(topicData);
                     setAvailableTopics(newTopics);
+                    setLastSelectedPart(lastSelectedPart)
                     setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
                 }
 
-                if (selectedTopic !== initialTopic) {
+                if (selectedTopic !== lastSelectedTopic) {
                     const partData = await fetchParts(selectedTopic);
                     const newParts = parseParts(partData);
                     setAvailableParts(newParts);
+                    setLastSelectedTopic(selectedTopic)
                     setCookie('lastTopic', selectedTopic, COOKIE_EXPIRY);
                 }
             } catch (error) {
@@ -92,11 +96,21 @@ export default function WordsGrid(
             }
         };
 
-        if (selectedPart !== initialPart || selectedTopic !== initialTopic) {
-            loadData();
-        } else {
-            setLoading(false);
+        // no cookie exist
+        if (getCookie("lastPart") === null) {
+            setCookie('lastPart', selectedPart);
         }
+        if (getCookie("lastTopic") === null) {
+            setCookie('lastTopic', selectedTopic);
+        }
+
+        // skip same page
+        if (lastSelectedPart == selectedPart && lastSelectedTopic === selectedTopic) {
+            setLoading(false);
+            return;
+        }
+
+        loadData();
     }, [selectedPart, selectedTopic, initialPart, initialTopic]);
 
     const partOptions = useMemo(() => [
