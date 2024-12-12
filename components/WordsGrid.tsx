@@ -72,7 +72,7 @@ export default function WordsGrid({
         }
 
         // skip same page
-        if (lastPart == selectedPart && lastPart === selectedTopic) {
+        if (lastPart == selectedPart && lastTopic === selectedTopic) {
             return;
         }
 
