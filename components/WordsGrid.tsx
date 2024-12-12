@@ -101,16 +101,15 @@ export default function WordsGrid({
             const wordData = await fetchWords(part, topic);
             setWords(wordData.words);
 
-            const partData = await fetchParts(topic);
-            const topicData = await fetchTopics(part);
-            const newPartOptions = parseParts(partData);
-            const newTopicOptions = parseTopics(topicData);
-
-            if (_last_part !== _part) {
+            if (_last_part != _part) {
+                const partData = await fetchParts(topic);
+                const newPartOptions = parseParts(partData);
                 setCookie('lastPart', String(selectedPart));
                 setParts(newPartOptions);
             }
             if (_last_topic !== _topic) {
+                const topicData = await fetchTopics(part);
+                const newTopicOptions = parseTopics(topicData);
                 setCookie('lastTopic', String(selectedTopic));
                 setTopics(newTopicOptions);
             }
