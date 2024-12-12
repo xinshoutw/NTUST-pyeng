@@ -7,7 +7,7 @@ import {
     getCookie, setCookie,
     parsePart, parseTopic,
     parseParts, parseTopics,
-    topicOrder, topicLabelMapping
+    topicOrder, topicLabelMapping, DEFAULT_PART, DEFAULT_TOPIC
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
@@ -61,7 +61,14 @@ export default function WordsGrid({
      * When select a dropdown, update cookie and word-cards.
      */
     useEffect(() => {
-        // skip first initial load
+        // no cookie exist
+        if (getCookie("lastPart") === null || getCookie("lastTopic") === null) {
+            setCookie('lastPart', DEFAULT_PART);
+            setCookie('lastTopic', DEFAULT_TOPIC);
+            return;
+        }
+
+        // skip same page
         if (getCookie("lastPart") == selectedPart && getCookie("lastTopic") === selectedTopic) {
             return;
         }
