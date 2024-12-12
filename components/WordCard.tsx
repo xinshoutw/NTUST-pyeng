@@ -7,11 +7,13 @@ type WordCardProps = {
     wordData: Word;
 };
 
+const EXPAND_ANIMATION_DURATION = 0.25;
+
 function WordCardComponent({wordData}: WordCardProps) {
     const {word, pos, meaning, pronunciations, definitions, verbs} = wordData;
     const usPron = pronunciations?.find((p) => p.lang.toLowerCase() === 'us');
     const ukPron = pronunciations?.find((p) => p.lang.toLowerCase() === 'uk');
-    const mainPos = usPron?.pos || ukPron?.pos || '';
+    const primaryPos = usPron?.pos || ukPron?.pos || '';
     const hasPos = pos && pos !== '-';
     const posTags = hasPos ? pos.split('/') : [];
     const showIndicator = (definitions && definitions.length > 0) || (verbs && verbs.length > 0);
@@ -32,8 +34,10 @@ function WordCardComponent({wordData}: WordCardProps) {
 
     return (
         <div
-            className={`relative flex flex-col bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none transition transform hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 active:scale-95 ${showIndicator ? 'cursor-pointer' : 'cursor-default'}`}
-            onClick={() => showIndicator && setExpanded(!expanded)}
+            className={`relative flex flex-col bg-white dark:bg-gray-800 rounded-lg p-4 border-b border-gray-200 dark:border-gray-700 select-none transition transform hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 active:scale-95 ${
+                showIndicator ? 'cursor-pointer' : 'cursor-default'
+            }`}
+            onClick={() => showIndicator && setExpanded((prev) => !prev)}
         >
             <div className="flex items-center justify-between mb-2">
                 <h2 className="font-bold text-xl text-gray-900 dark:text-gray-100">{word}</h2>
@@ -51,14 +55,15 @@ function WordCardComponent({wordData}: WordCardProps) {
             <p className="text-gray-700 dark:text-gray-200 mb-4 flex-grow">{meaning}</p>
             {(usPron || ukPron) && (
                 <div className="flex flex-wrap items-center space-x-2 mb-4">
-                    {mainPos &&
-                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">{mainPos}:</span>}
+                    {primaryPos && (
+                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">{primaryPos}:</span>
+                    )}
                     {usPron && (
                         <button
                             type="button"
                             onClick={(e) => playPronunciation(e, usPron.url)}
-                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center space-x-1"
-                            style={{position: 'relative', top: '-3px'}}
+                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center space-x-1 relative"
+                            style={{top: '-3px'}}
                         >
                             <svg className="w-4 h-4 relative" style={{top: '1px'}} fill="currentColor">
                                 <path d="M3 9v6h4l5 5V4L7 9H3z"></path>
@@ -70,8 +75,8 @@ function WordCardComponent({wordData}: WordCardProps) {
                         <button
                             type="button"
                             onClick={(e) => playPronunciation(e, ukPron.url)}
-                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center space-x-1"
-                            style={{position: 'relative', top: '-3px'}}
+                            className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center space-x-1 relative"
+                            style={{top: '-3px'}}
                         >
                             <svg className="w-4 h-4 relative" style={{top: '1px'}} fill="currentColor">
                                 <path d="M3 9v6h4l5 5V4L7 9H3z"></path>
@@ -98,7 +103,7 @@ function WordCardComponent({wordData}: WordCardProps) {
                             initial={{maxHeight: 0, opacity: 0, paddingTop: 0}}
                             animate={{maxHeight: 1000, opacity: 1, paddingTop: '.3rem'}}
                             exit={{maxHeight: 0, opacity: 0, paddingTop: 0}}
-                            transition={{duration: 0.25}}
+                            transition={{duration: EXPAND_ANIMATION_DURATION}}
                             className="overflow-hidden"
                         >
                             <div className="space-y-2 text-sm text-gray-800 dark:text-gray-200">

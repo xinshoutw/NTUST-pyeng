@@ -7,40 +7,43 @@ import {
     getCookie, setCookie,
     parseParts, parseTopics,
     topicOrder, topicLabelMapping,
+    COOKIE_EXPIRY,
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
 
-type Props = {
+interface Props {
     initialPart: string;
     initialTopic: string;
     initialWords: Word[];
     initialParts: number[];
     initialTopics: string[];
-};
+}
 
-export default function WordsGrid({
-                                      initialPart,
-                                      initialTopic,
-                                      initialWords,
-                                      initialParts,
-                                      initialTopics
-                                  }: Props) {
-    const [lastSelectedPart, setLastSelectedPart] = useState<string>(initialPart);
-    const [lastSelectedTopic, setLastSelectedTopic] = useState<string>(initialTopic);
+
+export default function WordsGrid(
+    {
+        initialPart,
+        initialTopic,
+        initialWords,
+        initialParts,
+        initialTopics
+    }: Props) {
     const [selectedPart, setSelectedPart] = useState<string>(initialPart);
     const [selectedTopic, setSelectedTopic] = useState<string>(initialTopic);
     const [words, setWords] = useState<Word[] | null>(initialWords);
-    const [parts, setParts] = useState<number[]>(initialParts ?? []);
-    const [topics, setTopics] = useState<string[]>(initialTopics ?? []);
+    const [availableParts, setAvailableParts] = useState<number[]>(initialParts ?? []);
+    const [availableTopics, setAvailableTopics] = useState<string[]>(initialTopics ?? []);
     const [loading, setLoading] = useState(!initialWords);
     const [openDropdown, setOpenDropdown] = useState<null | 'part' | 'topic'>(null);
     const [useGrid, setUseGrid] = useState(true);
     const [visibleCount, setVisibleCount] = useState<number>(0);
 
-    /**
-     * Resize windows to rearrange word-cards
-     */
+    useEffect(() => {
+        const layout = getCookie('layout') || 'grid';
+        setUseGrid(layout === 'grid');
+    }, []);
+
     useEffect(() => {
         const updateVisibleCount = () => {
             const width = window.innerWidth;
@@ -58,71 +61,55 @@ export default function WordsGrid({
         return () => window.removeEventListener('resize', updateVisibleCount);
     }, []);
 
+
     /**
      * When select a dropdown, update word-cards and cookie.
      */
     useEffect(() => {
-        // no cookie exist
-        if (getCookie("lastPart") === null) {
-            setCookie('lastPart', selectedPart);
-        }
-        if (getCookie("lastTopic") === null) {
-            setCookie('lastTopic', selectedTopic);
-        }
+        const loadData = async () => {
+            setLoading(true);
+            try {
+                const wordData = await fetchWords(selectedPart, selectedTopic);
+                setWords(wordData.words);
 
-        // skip same page
-        if (lastSelectedPart == selectedPart && lastSelectedTopic === selectedTopic) {
-            return;
-        }
+                if (selectedPart !== initialPart) {
+                    const topicData = await fetchTopics(selectedPart);
+                    const newTopics = parseTopics(topicData);
+                    setAvailableTopics(newTopics);
+                    setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
+                }
 
-        loadData();
-    }, [selectedPart, selectedTopic]);
-
-    /**
-     * Some trick for specific cookie: "layout: column"
-     */
-    useEffect(() => {
-        const layout = getCookie('layout') || 'grid';
-        setUseGrid(layout === 'grid');
-    }, []);
-    // const toggleLayout = () => {
-    //     const newVal = !useGrid;
-    //     setUseGrid(newVal);
-    //     setCookie('layout', newVal ? 'grid' : 'columns', 365);
-    // };
-
-    const loadData = async () => {
-        setLoading(true);
-        try {
-            const wordData = await fetchWords(selectedPart, selectedTopic);
-            setWords(wordData.words);
-
-            if (lastSelectedPart != selectedPart) {
-                const topicData = await fetchTopics(selectedPart);
-                const newTopicOptions = parseTopics(topicData);
-                setTopics(newTopicOptions);
-                setLastSelectedPart(selectedPart)
-                setCookie('lastPart', selectedPart);
+                if (selectedTopic !== initialTopic) {
+                    const partData = await fetchParts(selectedTopic);
+                    const newParts = parseParts(partData);
+                    setAvailableParts(newParts);
+                    setCookie('lastTopic', selectedTopic, COOKIE_EXPIRY);
+                }
+            } catch (error) {
+                console.error("Failed to load data:", error);
+            } finally {
+                setLoading(false);
             }
-            if (lastSelectedTopic !== selectedTopic) {
-                const partData = await fetchParts(selectedTopic);
-                const newPartOptions = parseParts(partData);
-                setParts(newPartOptions);
-                setLastSelectedTopic(selectedTopic)
-                setCookie('lastTopic', selectedTopic);
-            }
-        } catch (error) {
-            console.error("Failed to load data:", error);
-        } finally {
+        };
+
+        if (selectedPart !== initialPart || selectedTopic !== initialTopic) {
+            loadData();
+        } else {
             setLoading(false);
         }
-    }
+    }, [selectedPart, selectedTopic, initialPart, initialTopic]);
 
-    const partOptions = [{value: 'all', label: '全'}, ...parts.map(p => ({value: String(p), label: String(p)}))];
-    const topicOptions = [{value: 'all', label: '全'}, ...topics.filter(t => t !== 'all').map(t => ({
-        value: t,
-        label: t
-    }))];
+    const partOptions = useMemo(() => [
+        {value: 'all', label: '全'}, ...availableParts
+            .map(p => ({value: String(p), label: String(p)}))
+    ], [availableParts]);
+
+    const topicOptions = useMemo(() => [
+        {value: 'all', label: '全'}, ...availableTopics
+            .filter(t => t !== 'all')
+            .map(t => ({value: t, label: t}))
+    ], [availableTopics]);
+
 
     /**
      * Animated render cards
@@ -137,14 +124,11 @@ export default function WordsGrid({
         return words?.slice(Math.min(visibleCount, words.length)) || [];
     }, [words, visibleCount]);
 
-    const staggerChildren = useMemo(() => {
-        if (animatedWords.length <= 1) return 0;
-        return desiredStaggerDelay;
-    }, [animatedWords.length, desiredStaggerDelay]);
+    const staggerChildren = animatedWords.length <= 1 ? 0 : desiredStaggerDelay;
 
     const containerVariants = {
         hidden: {},
-        show: {transition: {staggerChildren,}}
+        show: {transition: {staggerChildren}}
     };
 
     const itemVariants = {
@@ -174,7 +158,7 @@ export default function WordsGrid({
                         label="Part"
                         options={partOptions}
                         selected={selectedPart}
-                        onSelect={(val) => setSelectedPart(val)}
+                        onSelect={val => setSelectedPart(val)}
                         isOpen={openDropdown === 'part'}
                         onToggle={() => setOpenDropdown(openDropdown === 'part' ? null : 'part')}
                     />
@@ -182,7 +166,7 @@ export default function WordsGrid({
                         label="Topic"
                         options={topicOptions}
                         selected={selectedTopic}
-                        onSelect={(val) => setSelectedTopic(val as string)}
+                        onSelect={val => setSelectedTopic(val as string)}
                         isOpen={openDropdown === 'topic'}
                         onToggle={() => setOpenDropdown(openDropdown === 'topic' ? null : 'topic')}
                         sortOrder={topicOrder}
@@ -259,14 +243,14 @@ export default function WordsGrid({
                     )}
                 </>
             )}
-            {selectedTopic !== 'all' && selectedPart !== 'all' &&
+            {selectedTopic !== 'all' && selectedPart !== 'all' && (
                 <a
                     href={`/practice?part=${selectedPart}&topic=${selectedTopic}`}
                     className="fixed bottom-4 right-4 py-3 px-4 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700 transition"
                 >
                     Practice
                 </a>
-            }
+            )}
         </div>
     );
 }

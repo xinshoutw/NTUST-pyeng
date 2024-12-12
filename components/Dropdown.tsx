@@ -15,39 +15,51 @@ type DropdownProps = {
     onSelect: (val: string) => void;
     isOpen: boolean;
     onToggle: () => void;
-    sortOrder?: Array<string>;
+    sortOrder?: string[];
     labelMapping?: { [key: string]: string };
 };
 
-export default function Dropdown({
-    label,
-    options,
-    selected,
-    onSelect,
-    isOpen,
-    onToggle,
-    sortOrder,
-    labelMapping,
-}: DropdownProps) {
+export default function Dropdown(
+    {
+        label,
+        options,
+        selected,
+        onSelect,
+        isOpen,
+        onToggle,
+        sortOrder,
+        labelMapping,
+    }: DropdownProps) {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const current = useMemo(() => options.find(o => o.value === selected), [options, selected]);
+
+    const applyLabelMapping = (opt: DropdownOption): DropdownOption => ({
+        ...opt,
+        label: labelMapping && labelMapping[opt.value] ? labelMapping[opt.value] : opt.label,
+    });
 
     const sortedOptions: DropdownOption[] = useMemo(() => {
-        if (sortOrder && labelMapping) {
-            return sortOrder
-                .map(orderVal => options.find(o => o.value === orderVal))
-            .filter((o): o is DropdownOption => o !== undefined)
-            .map(o => ({
-                ...o,
-                    label: labelMapping[String(o.value)] || o.label,
-            }));
-        } else {
-            return options.map(o => ({
-                ...o,
-                label: labelMapping && labelMapping[String(o.value)] ? labelMapping[String(o.value)] : o.label,
-            }));
+        let processedOptions = options.map(applyLabelMapping);
+
+        if (sortOrder && sortOrder.length > 0) {
+            const orderMap = new Map(sortOrder.map((v, i) => [v, i]));
+            processedOptions.sort((a, b) => {
+                const aOrder = orderMap.get(a.value) ?? Infinity;
+                const bOrder = orderMap.get(b.value) ?? Infinity;
+                return aOrder - bOrder;
+            });
         }
+
+        return processedOptions;
     }, [sortOrder, labelMapping, options]);
+
+    const current = useMemo(
+        () => sortedOptions.find((o) => o.value === selected),
+        [sortedOptions, selected]
+    );
+
+    const getCurrentLabel = () => {
+        return current ? current.label : 'All';
+    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -75,7 +87,7 @@ export default function Dropdown({
                 onClick={onToggle}
                 className="py-2 px-4 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded shadow-sm hover:bg-gray-100 dark:hover:bg-gray-600 transition select-none relative z-50 text-gray-700 dark:text-gray-200"
             >
-                {current ? (labelMapping ? (labelMapping[String(current.value)] || current.label) : current.label) : 'All'}
+                {getCurrentLabel()}
             </button>
             <AnimatePresence>
                 {isOpen && (
