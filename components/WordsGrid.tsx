@@ -11,7 +11,6 @@ import {
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
-import {collectSegmentData} from "next/dist/server/app-render/collect-segment-data";
 
 interface Props {
     initialPart: string;
@@ -69,34 +68,6 @@ export default function WordsGrid(
      * When select a dropdown, update word-cards and cookie.
      */
     useEffect(() => {
-        const loadData = async () => {
-            setLoading(true);
-            try {
-                const wordData = await fetchWords(selectedPart, selectedTopic);
-                setWords(wordData.words);
-
-                if (selectedPart !== lastSelectedPart) {
-                    const topicData = await fetchTopics(selectedPart);
-                    const newTopics = parseTopics(topicData);
-                    setAvailableTopics(newTopics);
-                    setLastSelectedPart(selectedPart)
-                    setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
-                }
-
-                if (selectedTopic !== lastSelectedTopic) {
-                    const partData = await fetchParts(selectedTopic);
-                    const newParts = parseParts(partData);
-                    setAvailableParts(newParts);
-                    setLastSelectedTopic(selectedTopic)
-                    setCookie('lastTopic', selectedTopic, COOKIE_EXPIRY);
-                }
-            } catch (error) {
-                console.error("Failed to load data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
         // no cookie exist
         if (getCookie("lastPart") === null) {
             setCookie('lastPart', selectedPart);
@@ -111,8 +82,34 @@ export default function WordsGrid(
             return;
         }
 
-        loadData();
-    }, [selectedPart, selectedTopic, initialPart, initialTopic]);
+        (async () => {
+            setLoading(true);
+            try {
+                const wordData = await fetchWords(selectedPart, selectedTopic);
+                setWords(wordData.words);
+
+                if (selectedPart !== lastSelectedPart) {
+                    const topicData = await fetchTopics(selectedPart);
+                    const newTopics = parseTopics(topicData);
+                    setAvailableTopics(newTopics);
+                    setLastSelectedPart(selectedPart);
+                    setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
+                }
+
+                if (selectedTopic !== lastSelectedTopic) {
+                    const partData = await fetchParts(selectedTopic);
+                    const newParts = parseParts(partData);
+                    setAvailableParts(newParts);
+                    setLastSelectedTopic(selectedTopic);
+                    setCookie('lastTopic', selectedTopic, COOKIE_EXPIRY);
+                }
+            } catch (error) {
+                console.error("Failed to load data:", error);
+            } finally {
+                setLoading(false);
+            }
+        })();
+    }, [selectedPart, selectedTopic, lastSelectedPart, lastSelectedTopic, initialPart, initialTopic]);
 
     const partOptions = useMemo(() => [
         {value: 'all', label: '全'}, ...availableParts
@@ -173,17 +170,17 @@ export default function WordsGrid(
                         label="Part"
                         options={partOptions}
                         selected={selectedPart}
-                        onSelect={val => setSelectedPart(val)}
+                        onSelectAction={val => setSelectedPart(val)}
                         isOpen={openDropdown === 'part'}
-                        onToggle={() => setOpenDropdown(openDropdown === 'part' ? null : 'part')}
+                        onToggleAction={() => setOpenDropdown(openDropdown === 'part' ? null : 'part')}
                     />
                     <Dropdown
                         label="Topic"
                         options={topicOptions}
                         selected={selectedTopic}
-                        onSelect={val => setSelectedTopic(val as string)}
+                        onSelectAction={val => setSelectedTopic(val as string)}
                         isOpen={openDropdown === 'topic'}
-                        onToggle={() => setOpenDropdown(openDropdown === 'topic' ? null : 'topic')}
+                        onToggleAction={() => setOpenDropdown(openDropdown === 'topic' ? null : 'topic')}
                         sortOrder={topicOrder}
                         labelMapping={topicLabelMapping}
                     />

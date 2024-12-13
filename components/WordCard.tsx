@@ -19,16 +19,23 @@ function WordCardComponent({wordData}: WordCardProps) {
     const showIndicator = (definitions && definitions.length > 0) || (verbs && verbs.length > 0);
 
     const [expanded, setExpanded] = useState(false);
+    const [playbackError, setPlaybackError] = useState<string | null>(null); // 新增錯誤狀態
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     /**
      * 按下播音按紐
      */
-    const playPronunciation = (e: MouseEvent<HTMLButtonElement>, url: string) => {
+    const playPronunciation = async (e: MouseEvent<HTMLButtonElement>, url: string) => {
         e.stopPropagation();
+        setPlaybackError(null);
         if (audioRef.current) {
-            audioRef.current.src = url;
-            audioRef.current.play();
+            try {
+                audioRef.current.src = url;
+                await audioRef.current.play();
+            } catch (error) {
+                console.error("Failed to play pronunciation:", error);
+                setPlaybackError("播放發音時出錯，請稍後再試。");
+            }
         }
     };
 
@@ -135,6 +142,11 @@ function WordCardComponent({wordData}: WordCardProps) {
                         </motion.div>
                     )}
                 </AnimatePresence>
+            )}
+            {playbackError && (
+                <div className="mt-2 text-red-500 dark:text-red-400 text-sm">
+                    {playbackError}
+                </div>
             )}
         </div>
     );
