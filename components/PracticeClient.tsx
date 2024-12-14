@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import {PracticeEntry} from '@/app/types';
 import {fetchPractice, topicLabelMapping} from '@/app/utils';
 import {useSearchParams} from 'next/navigation';
+import clsx from 'clsx';
 
 const NO_PART_TOPIC = "No part/topic specified.";
 const LOADING_TEXT = "Loading...";
@@ -107,71 +108,86 @@ export default function PracticeClient() {
         );
     }
 
-    const highlightCorrect = (i: number) =>
-        (attempted && selectedChoice !== correctIndex && i === correctIndex) ?
-            'bg-green-300 dark:bg-green-700 hover:bg-green-400 hover:dark:bg-green-600' : '';
-
-    return (
-        <div
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow relative select-none transition-colors duration-300">
-            <div className="mb-6 flex flex-col items-center space-y-2">
-                <h3 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
-                    Part: {part}, Topic: {topicDisplayName}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{ERRORS_PREFIX} {errors} / {total}</p>
-            </div>
-
-            <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-100 mb-2">{currentEntry.question}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Question {currentIndex + 1} of {total}</p>
-            <div className="space-y-2">
-                {choices.map((c, i) => {
-                    const isSelected = selectedChoice === i;
-                    const isCorrect = c.choice_text === correctAnswer;
-
-                    return (
-                        <button
-                            key={c.choice_order}
-                            type="button"
-                            onClick={() => handleChoice(i)}
-                            disabled={attempted}
-                            className={`w-full text-left py-2 px-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition relative
-                        ${isSelected && !isCorrect ? 'border-red-500 bg-red-300 dark:bg-red-700 hover:bg-red-400 hover:dark:bg-red-600' : ''}
-                        ${attempted ? 'opacity-60 cursor-not-allowed' : ''}
-                        ${highlightCorrect(i)}`}
-                        >
-                            {c.choice_text}
-                            {isSelected && (
-                                <span className={`absolute right-4 top-1/2 transform -translate-y-1/2 text-sm font-bold
-                                      ${isCorrect ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400'} transition-all`}>
-                                      {isCorrect ? '✓' : '✗'}
-                                    </span>
-                            )}
-                        </button>
-                    );
-                })}
-            </div>
-            <div className="mt-6 text-center">
-                {currentIndex < total - 1 ? (
-                    <button
-                        type="button"
-                        onClick={handleNext}
-                        disabled={!attempted}
-                        className="bg-blue-600 dark:bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition disabled:bg-gray-300 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
-                    >
-                        Next Question
-                    </button>
-                ) : (
-                    attempted && (
-                        <button
-                            type="button"
-                            onClick={handleShowResult}
-                            className="bg-blue-600 dark:bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition"
-                        >
-                            Show Result
-                        </button>
-                    )
-                )}
-            </div>
+    return <div
+        className={
+            'bg-white dark:bg-gray-800 p-6 rounded-lg shadow relative select-none transition-colors duration-300'
+        }
+    >
+        <div className="mb-6 flex flex-col items-center space-y-2">
+            <h3 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
+                Part: {part}, Topic: {topicDisplayName}
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+                {ERRORS_PREFIX} {errors} / {total}
+            </p>
         </div>
-    );
+
+        <h3 className="font-semibold text-lg text-gray-800 dark:text-gray-100 mb-2">
+            {currentEntry.question}
+        </h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Question {currentIndex + 1} of {total}
+        </p>
+        <div className="space-y-2">
+            {choices.map((c, i) => {
+                const isSelected = selectedChoice === i;
+                const isCorrect = c.choice_text === correctAnswer;
+
+                const buttonClasses = clsx(
+                    'w-full text-left py-2 px-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition relative',
+                    {
+                        'border-green-500 bg-green-300 dark:bg-green-700 hover:bg-green-400 hover:dark:bg-green-600':
+                            attempted && isCorrect,
+                        'border-red-500 bg-red-300 dark:bg-red-700 hover:bg-red-400 hover:dark:bg-red-600':
+                            attempted && isSelected && !isCorrect,
+                        'opacity-70 cursor-not-allowed': attempted,
+                    }
+                );
+
+                const iconClasses = clsx(
+                    'absolute right-4 top-1/2 transform -translate-y-1/2 text-sm font-bold transition-all',
+                    {
+                        'text-green-500 dark:text-green-400': isCorrect,
+                        'text-red-500 dark:text-red-400': !isCorrect,
+                    }
+                );
+
+                return <button
+                    key={c.choice_order}
+                    type="button"
+                    onClick={() => handleChoice(i)}
+                    disabled={attempted}
+                    className={buttonClasses}
+                >
+                    {c.choice_text}
+                    {isSelected && (
+                        <span className={iconClasses}>{isCorrect ? '✓' : '✗'}</span>
+                    )}
+                </button>;
+            })}
+        </div>
+        <div className="mt-6 text-center">
+            {currentIndex < total - 1 ? <button
+                type="button"
+                onClick={handleNext}
+                disabled={!attempted}
+                className={clsx(
+                    'bg-blue-600 dark:bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition',
+                    'disabled:bg-gray-300 dark:disabled:bg-gray-600 disabled:cursor-not-allowed'
+                )}
+            >
+                Next Question
+            </button> : attempted && (
+                <button
+                    type="button"
+                    onClick={handleShowResult}
+                    className={
+                        'bg-blue-600 dark:bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition'
+                    }
+                >
+                    Show Result
+                </button>
+            )}
+        </div>
+    </div>;
 }
