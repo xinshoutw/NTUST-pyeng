@@ -58,7 +58,6 @@ export default function PracticeClient() {
     const correctCount = total - errors;
     const accuracy = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
     const choices = currentEntry.choices;
-    const correctIndex = choices.findIndex(c => c.choice_text === correctAnswer);
     const topicDisplayName = topicLabelMapping[topic] || topic;
 
     const handleChoice = (idx: number) => {
