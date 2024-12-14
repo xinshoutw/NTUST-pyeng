@@ -1,6 +1,6 @@
 import {PracticeEntry, Word} from './types';
 
-export const API_ENDPOINT = "https://py.xserver.tw/api";
+export const API_ENDPOINT = "https://pyeng-backend.xserver.tw/api";
 export const DEFAULT_PART = "1";
 export const DEFAULT_TOPIC = "pvqc-ict";
 export const COOKIE_EXPIRY = 365;
