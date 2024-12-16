@@ -8,6 +8,7 @@ import {
     parseParts, parseTopics,
     topicOrder, topicLabelMapping,
     COOKIE_EXPIRY,
+    DEFAULT_PART, DEFAULT_TOPIC,
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';
@@ -81,7 +82,6 @@ export default function WordsGrid(
             setLoading(false);
             return;
         }
-
         (async () => {
             setLoading(true);
             try {
@@ -105,6 +105,16 @@ export default function WordsGrid(
                 }
             } catch (error) {
                 console.error("Failed to load data:", error);
+
+                setSelectedPart(DEFAULT_PART);
+                setSelectedTopic(DEFAULT_TOPIC);
+
+                const wordData = await fetchWords(DEFAULT_PART, DEFAULT_TOPIC);
+                setWords(wordData.words);
+                setAvailableTopics(parseTopics(await fetchTopics(DEFAULT_PART)));
+                setCookie('lastPart', DEFAULT_PART, COOKIE_EXPIRY);
+                setAvailableParts(parseParts(await fetchParts(DEFAULT_TOPIC)));
+                setCookie('lastTopic', DEFAULT_TOPIC, COOKIE_EXPIRY);
             } finally {
                 setLoading(false);
             }

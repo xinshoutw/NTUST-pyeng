@@ -18,12 +18,25 @@ export const metadata = {
 
 export default async function HomePage() {
     const cookieStore = await cookies();
-    const initialPart = cookieStore.get('lastPart')?.value || DEFAULT_PART;
-    const initialTopic = cookieStore.get('lastTopic')?.value || DEFAULT_TOPIC;
+    let initialPart = cookieStore.get('lastPart')?.value || DEFAULT_PART;
+    let initialTopic = cookieStore.get('lastTopic')?.value || DEFAULT_TOPIC;
 
-    const wordData = await fetchWords(initialPart, initialTopic);
-    const partData = await fetchParts(initialTopic);
-    const topicData = await fetchTopics(initialPart);
+    let wordData, partData, topicData;
+
+    try {
+        // 第一次嘗試用 cookie 中的 part / topic 來抓資料
+        wordData = await fetchWords(initialPart, initialTopic);
+        partData = await fetchParts(initialTopic);
+        topicData = await fetchTopics(initialPart);
+    } catch (error) {
+        console.error('資料抓取失敗，使用預設值:', error);
+        initialPart = DEFAULT_PART;
+        initialTopic = DEFAULT_TOPIC;
+
+        wordData = await fetchWords(initialPart, initialTopic);
+        partData = await fetchParts(initialTopic);
+        topicData = await fetchTopics(initialPart);
+    }
 
     const initialParts = parseParts(partData);
     const initialTopics = parseTopics(topicData);
