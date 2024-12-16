@@ -90,7 +90,7 @@ export const topicLabelMapping: { [key: string]: string } = {
     'academic': '學術',
     'calculus': '微積分',
     'ielts': '雅思',
-    'pvqc-ee': '商業電子',
+    'pvqc-ee': '電機電子',
     'pvqc-bm': '商業管理',
     'pvqc-me': '機械工程',
     'pvqc-dmd': '多媒體',
