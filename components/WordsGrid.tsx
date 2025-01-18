@@ -64,11 +64,7 @@ export default function WordsGrid(
         return () => window.removeEventListener('resize', updateVisibleCount);
     }, []);
 
-
-    /**
-     * When select a dropdown, update word-cards and cookie.
-     */
-    useEffect(() => {
+    function onDropdownEvent(): void {
         // no cookie exist
         if (getCookie("lastPart") === null) {
             setCookie('lastPart', selectedPart);
@@ -79,19 +75,15 @@ export default function WordsGrid(
 
         // skip same page
         if (lastSelectedPart === selectedPart && lastSelectedTopic === selectedTopic) {
-            setLoading(false);
             return;
         }
         (async () => {
             setLoading(true);
             try {
-                const wordData = await fetchWords(selectedPart, selectedTopic);
-                setWords(wordData.words);
+                setWords((await fetchWords(selectedPart, selectedTopic)).words);
 
                 if (selectedPart !== lastSelectedPart) {
-                    const topicData = await fetchTopics(selectedPart);
-                    const newTopics = parseTopics(topicData);
-                    setAvailableTopics(newTopics);
+                    setAvailableTopics(parseTopics(await fetchTopics(selectedPart)));
                     setLastSelectedPart(selectedPart);
                     setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
                 }
@@ -106,6 +98,8 @@ export default function WordsGrid(
             } catch (error) {
                 console.error("Failed to load data:", error);
 
+                setLastSelectedPart(DEFAULT_PART);
+                setLastSelectedTopic(DEFAULT_TOPIC);
                 setSelectedPart(DEFAULT_PART);
                 setSelectedTopic(DEFAULT_TOPIC);
 
@@ -119,6 +113,13 @@ export default function WordsGrid(
                 setLoading(false);
             }
         })();
+    }
+
+    /**
+     * When select a dropdown, update word-cards and cookie.
+     */
+    useEffect(() => {
+        onDropdownEvent()
     }, [selectedPart, selectedTopic, lastSelectedPart, lastSelectedTopic, initialPart, initialTopic]);
 
     const partOptions = useMemo(() => [
