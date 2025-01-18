@@ -10,8 +10,8 @@ API。
 
 ```bash
 .
-├── README.md                 # 你現在所閱讀的檔案
-├── app/                      # Next.js 13 新的 App Router，主要頁面與佈局
+├── README.md                # 你現在所閱讀的檔案
+├── app/                     # Next.js 13 新的 App Router，主要頁面與佈局
 │   ├── practice/            # Practice 頁面路由
 │   ├── types.ts             # 前端 types 定義
 │   └── utils.ts             # 前端呼叫後端 API 的輔助函式
