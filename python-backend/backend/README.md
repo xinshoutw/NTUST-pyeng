@@ -12,7 +12,7 @@
 ## 檔案結構
 
 ```bash
-.
+backend/
 ├── README.md       # 你現在所閱讀的檔案
 ├── app.py          # 主要後端啟動檔案 (FastAPI 入口)
 ├── data.db         # SQLite 資料庫檔案 (若使用預設資料庫)
