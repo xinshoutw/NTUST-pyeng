@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Integrand",
+    "pos": "n",
+    "meaning": "A function you want to integrate."
+  },
+  {
+    "word": "Upper/Lower Limit of Integration",
+    "pos": "n",
+    "meaning": "The number 'a' that is at the bottom of the integral sign is called the lower limit of the integral, and the number 'b' at the top of the integral sign is called the upper limit of the integral."
+  },
+  {
+    "word": "Midpoint Rule",
+    "pos": "n",
+    "meaning": "Used to approximate the area under a simple curve."
+  },
+  {
+    "word": "Riemann Sum",
+    "pos": "n",
+    "meaning": "A certain kind of approximation of an integral by a finite sum."
+  },
+  {
+    "word": "Fundamental Theorem of Calculus",
+    "pos": "n",
+    "meaning": "A theorem that links the concept of differentiating a function (calculating the gradient) with the concept of integrating a function (calculating the area under the curve)."
+  },
+  {
+    "word": "Net Change Theorem",
+    "pos": "n",
+    "meaning": "Considers the integral of a rate of change."
+  },
+  {
+    "word": "Substitution Rule",
+    "pos": "n",
+    "meaning": "A method for evaluating integrals and antiderivatives."
+  },
+  {
+    "word": "Cylinder/Circular Cylinder",
+    "pos": "n",
+    "meaning": "A finite section of a right circular cylinder."
+  },
+  {
+    "word": "Solid of Revolution",
+    "pos": "n",
+    "meaning": "A solid figure obtained by rotating a plane curve around some straight line (the axis of revolution) that lies on the same plane."
+  },
+  {
+    "word": "Disc/Ring Method",
+    "pos": "n",
+    "meaning": "A means to finding the volume of a solid that has been created when the graph of a function is revolved about a line, usually the x or y axis."
+  },
+  {
+    "word": "Cylindrical Shell Method",
+    "pos": "n",
+    "meaning": "A method for calculating the volume of a solid of revolution."
+  },
+  {
+    "word": "Average Value",
+    "pos": "n",
+    "meaning": "The mean of a function."
+  },
+  {
+    "word": "Integration by Parts",
+    "pos": "n",
+    "meaning": "A special method of integration that is often useful when two functions are multiplied together, but is also helpful in other ways."
+  },
+  {
+    "word": "Trigonometric Integral",
+    "pos": "n",
+    "meaning": "A family of integrals involving trigonometric functions."
+  },
+  {
+    "word": "Trigonometric Substitution",
+    "pos": "n",
+    "meaning": "A technique for evaluating integrals."
+  },
+  {
+    "word": "Partial Fraction",
+    "pos": "n",
+    "meaning": "An algebraic fraction can be broken down into simpler parts."
+  },
+  {
+    "word": "Long Division",
+    "pos": "n",
+    "meaning": "A method used for dividing large numbers into groups or parts."
+  },
+  {
+    "word": "Denominator/Numerator",
+    "pos": "n",
+    "meaning": "The numerator represents how many parts of that whole are being considered, while the denominator represents the total number of parts created from the whole."
+  },
+  {
+    "word": "Rationalizing Substitution",
+    "pos": "n",
+    "meaning": "An integration method which is often useful when the integrand is a fraction including more than one kind of root."
+  },
+  {
+    "word": "Improper Integral",
+    "pos": "n",
+    "meaning": "A definite integral that has either or both limits infinite or an integrand that approaches infinity at one or more points in the range of integration."
+  }
+]

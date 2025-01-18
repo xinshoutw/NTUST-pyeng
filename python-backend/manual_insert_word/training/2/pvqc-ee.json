@@ -1,0 +1,302 @@
+[
+  {
+    "word": "active load",
+    "pos": "-",
+    "meaning": "主動電載"
+  },
+  {
+    "word": "active low",
+    "pos": "-",
+    "meaning": "低電動作"
+  },
+  {
+    "word": "actuators",
+    "pos": "-",
+    "meaning": "傳動器"
+  },
+  {
+    "word": "bias circuit",
+    "pos": "-",
+    "meaning": "偏壓電路"
+  },
+  {
+    "word": "bias current",
+    "pos": "-",
+    "meaning": "偏壓電流"
+  },
+  {
+    "word": "bias resistance",
+    "pos": "-",
+    "meaning": "偏壓電阻"
+  },
+  {
+    "word": "Bode plot",
+    "pos": "-",
+    "meaning": "波特圖"
+  },
+  {
+    "word": "charge circuit",
+    "pos": "-",
+    "meaning": "充電電路"
+  },
+  {
+    "word": "charge-discharge",
+    "pos": "-",
+    "meaning": "充放電"
+  },
+  {
+    "word": "circuit model",
+    "pos": "-",
+    "meaning": "電路模型"
+  },
+  {
+    "word": "clamping diode",
+    "pos": "-",
+    "meaning": "定位一極體"
+  },
+  {
+    "word": "DC blocking",
+    "pos": "-",
+    "meaning": "直流阻隔"
+  },
+  {
+    "word": "DC converter",
+    "pos": "-",
+    "meaning": "直流轉換器"
+  },
+  {
+    "word": "decade counter",
+    "pos": "-",
+    "meaning": "十進計數器"
+  },
+  {
+    "word": "decay time",
+    "pos": "-",
+    "meaning": "衰減時間"
+  },
+  {
+    "word": "electric bridge",
+    "pos": "-",
+    "meaning": "電橋"
+  },
+  {
+    "word": "electric network",
+    "pos": "-",
+    "meaning": "電網路"
+  },
+  {
+    "word": "electric source",
+    "pos": "-",
+    "meaning": "電源"
+  },
+  {
+    "word": "feedback depth",
+    "pos": "-",
+    "meaning": "回授深度"
+  },
+  {
+    "word": "ferrite",
+    "pos": "-",
+    "meaning": "陶瓷鐵系"
+  },
+  {
+    "word": "FF",
+    "pos": "-",
+    "meaning": "正反器"
+  },
+  {
+    "word": "field yoke",
+    "pos": "-",
+    "meaning": "場鞍"
+  },
+  {
+    "word": "generator rule",
+    "pos": "-",
+    "meaning": "發電機定則"
+  },
+  {
+    "word": "GM",
+    "pos": "-",
+    "meaning": "增益邊界"
+  },
+  {
+    "word": "giga",
+    "pos": "-",
+    "meaning": "十億"
+  },
+  {
+    "word": "harmonic",
+    "pos": "-",
+    "meaning": "諧和的"
+  },
+  {
+    "word": "HDL",
+    "pos": "-",
+    "meaning": "硬體描述語言"
+  },
+  {
+    "word": "heat effect",
+    "pos": "-",
+    "meaning": "熱效應"
+  },
+  {
+    "word": "identify law",
+    "pos": "-",
+    "meaning": "自識律"
+  },
+  {
+    "word": "ideal diode",
+    "pos": "-",
+    "meaning": "理想一極體"
+  },
+  {
+    "word": "imaginary axis",
+    "pos": "-",
+    "meaning": "虛軸"
+  },
+  {
+    "word": "impedance conversion",
+    "pos": "-",
+    "meaning": "阻抗變換"
+  },
+  {
+    "word": "lap winding",
+    "pos": "-",
+    "meaning": "疊繞"
+  },
+  {
+    "word": "large-scale IC",
+    "pos": "-",
+    "meaning": "大型積體電路"
+  },
+  {
+    "word": "law of switching",
+    "pos": "-",
+    "meaning": "交換定則"
+  },
+  {
+    "word": "LCD",
+    "pos": "-",
+    "meaning": "液晶顯示器"
+  },
+  {
+    "word": "magnetizing force",
+    "pos": "-",
+    "meaning": "磁化力"
+  },
+  {
+    "word": "mask ROM",
+    "pos": "-",
+    "meaning": "罩幕式唯讀記憶體"
+  },
+  {
+    "word": "majority carrier",
+    "pos": "-",
+    "meaning": "多數載子"
+  },
+  {
+    "word": "net input signal",
+    "pos": "-",
+    "meaning": "淨輸入信號"
+  },
+  {
+    "word": "neutral point",
+    "pos": "-",
+    "meaning": "中性點"
+  },
+  {
+    "word": "node voltage method",
+    "pos": "-",
+    "meaning": "節點電壓法"
+  },
+  {
+    "word": "noise immunity",
+    "pos": "-",
+    "meaning": "雜訊免疫度"
+  },
+  {
+    "word": "offset current",
+    "pos": "-",
+    "meaning": "偏移電流"
+  },
+  {
+    "word": "offset in parallel",
+    "pos": "-",
+    "meaning": "並聯互消"
+  },
+  {
+    "word": "Ohm's law",
+    "pos": "-",
+    "meaning": "歐姆定律"
+  },
+  {
+    "word": "overshoot",
+    "pos": "-",
+    "meaning": "超越值"
+  },
+  {
+    "word": "parameter",
+    "pos": "-",
+    "meaning": "參數"
+  },
+  {
+    "word": "parity bit",
+    "pos": "-",
+    "meaning": "同位位元"
+  },
+  {
+    "word": "parasitic oscillation",
+    "pos": "-",
+    "meaning": "寄生振盪"
+  },
+  {
+    "word": "phase angle",
+    "pos": "-",
+    "meaning": "相角"
+  },
+  {
+    "word": "quartz crystal",
+    "pos": "-",
+    "meaning": "石英晶體"
+  },
+  {
+    "word": "rated value",
+    "pos": "-",
+    "meaning": "額定值"
+  },
+  {
+    "word": "RC coupling",
+    "pos": "-",
+    "meaning": "電阻電容耦合"
+  },
+  {
+    "word": "reactive power",
+    "pos": "-",
+    "meaning": "無功功率"
+  },
+  {
+    "word": "saturation distortion",
+    "pos": "-",
+    "meaning": "飽和失真"
+  },
+  {
+    "word": "sawtooth wave",
+    "pos": "-",
+    "meaning": "鋸齒波"
+  },
+  {
+    "word": "temperature coefficient",
+    "pos": "-",
+    "meaning": "溫度係數"
+  },
+  {
+    "word": "virtual short",
+    "pos": "-",
+    "meaning": "虛短路"
+  },
+  {
+    "word": "waveform distortion",
+    "pos": "-",
+    "meaning": "波形失真"
+  }
+]

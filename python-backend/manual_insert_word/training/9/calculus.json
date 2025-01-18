@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Vector",
+    "pos": "-",
+    "meaning": "A quantity having direction as well as magnitude, especially as determining the position of one point in space relative to another."
+  },
+  {
+    "word": "Geometry of Space",
+    "pos": "-",
+    "meaning": "The geometry of space is defined by the three dimensions that all objects have in the real world."
+  },
+  {
+    "word": "Cross Product (Outer Product, Vector Product)",
+    "pos": "-",
+    "meaning": "The cross product is an operation between two vectors."
+  },
+  {
+    "word": "Dot Product (Inner Product, Scalar Product)",
+    "pos": "-",
+    "meaning": "An inner product is a generalization of the dot product. In a vector space, it is a way to multiply vectors together, with the result of this multiplication being a scalar."
+  },
+  {
+    "word": "Sphere",
+    "pos": "-",
+    "meaning": "A round solid figure, or its surface, with every point on its surface equidistant from its centre."
+  },
+  {
+    "word": "Perpendicular/Parallel Line",
+    "pos": "-",
+    "meaning": "Perpendicular lines are lines that intersect at right angles. Parallel lines are distinct lines lying in the same plane and they never intersect each other."
+  },
+  {
+    "word": "Quadratic Surface",
+    "pos": "-",
+    "meaning": "Quadratic surfaces are also called quadrics, and there are 17 standard-form types. A quadratic surface intersects every plane in a (proper or degenerate) conic section."
+  },
+  {
+    "word": "Trace, Cross-section",
+    "pos": "-",
+    "meaning": "A surface or shape exposed by making a straight cut through something, especially at right angles to an axis."
+  },
+  {
+    "word": "Vector-Valued Function (Vector Function)",
+    "pos": "-",
+    "meaning": "A vector-valued function, or vector function, is a function whose domain is a set of real numbers and whose range is a set of vectors."
+  },
+  {
+    "word": "Space Curve",
+    "pos": "-",
+    "meaning": "A curve which may pass through any region of three-dimensional space, as contrasted to a plane curve which must lie in a single plane."
+  },
+  {
+    "word": "Component Function",
+    "pos": "-",
+    "meaning": "A component provides a particular function or group of related functions."
+  },
+  {
+    "word": "(Unit) Tangent Vector",
+    "pos": "-",
+    "meaning": "In mathematics, a tangent vector is a vector that is tangent to a curve or surface at a given point."
+  },
+  {
+    "word": "Normal Line",
+    "pos": "-",
+    "meaning": "In calculus, a normal line is a line that goes through a point on a curve and is perpendicular with the tangent line at that point."
+  },
+  {
+    "word": "(Unit) Normal Vector",
+    "pos": "-",
+    "meaning": "A normal vector is a vector perpendicular to another object, such as a surface or plane. Often we refer to a unit normal vector n, which is a normal vector of length one."
+  },
+  {
+    "word": "Normal Plane",
+    "pos": "-",
+    "meaning": "A normal plane is any plane containing the normal vector of a surface at a particular point. The normal plane also refers to the plane that is perpendicular to the tangent vector of a space curve."
+  },
+  {
+    "word": "Partial Derivative",
+    "pos": "-",
+    "meaning": "In mathematics, a partial derivative of a function of several variables is the derivative with respect to one of those variables, with the others held constant (as opposed to the total derivative, in which all variables are allowed to vary). Partial derivatives are used in vector calculus and differential geometry."
+  },
+  {
+    "word": "First/Second Partial Derivative",
+    "pos": "-",
+    "meaning": "A derivative of a function of two or more variables with respect to one variable, the other(s) being treated as constant."
+  },
+  {
+    "word": "Function of Several Variables",
+    "pos": "-",
+    "meaning": "In mathematical analysis its applications, a function of several real variables or real multivariate function is a function with more than one argument, with all arguments being real variables."
+  },
+  {
+    "word": "Level Curve",
+    "pos": "-",
+    "meaning": "A level curve is the set of all real-valued solutions of an equation in two variables x1 and x2."
+  },
+  {
+    "word": "Contour Map",
+    "pos": "-",
+    "meaning": "A contour map is a map illustrated with contour lines."
+  }
+]

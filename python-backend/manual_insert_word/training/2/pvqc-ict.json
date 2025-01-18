@@ -1,0 +1,302 @@
+[
+  {
+    "word": "monitor",
+    "pos": "-",
+    "meaning": "監視器"
+  },
+  {
+    "word": "motion",
+    "pos": "-",
+    "meaning": "動作；運動"
+  },
+  {
+    "word": "table",
+    "pos": "-",
+    "meaning": "表"
+  },
+  {
+    "word": "word",
+    "pos": "-",
+    "meaning": "文書"
+  },
+  {
+    "word": "asynchronous",
+    "pos": "-",
+    "meaning": "非同步"
+  },
+  {
+    "word": "compression",
+    "pos": "-",
+    "meaning": "壓縮"
+  },
+  {
+    "word": "detection",
+    "pos": "-",
+    "meaning": "偵測"
+  },
+  {
+    "word": "game",
+    "pos": "-",
+    "meaning": "遊戲"
+  },
+  {
+    "word": "hub",
+    "pos": "-",
+    "meaning": "集線器"
+  },
+  {
+    "word": "modem",
+    "pos": "-",
+    "meaning": "數據機"
+  },
+  {
+    "word": "peer",
+    "pos": "-",
+    "meaning": "對等；同儕"
+  },
+  {
+    "word": "platform",
+    "pos": "-",
+    "meaning": "平台"
+  },
+  {
+    "word": "portable",
+    "pos": "-",
+    "meaning": "可攜式"
+  },
+  {
+    "word": "query",
+    "pos": "-",
+    "meaning": "查詢"
+  },
+  {
+    "word": "resolution",
+    "pos": "-",
+    "meaning": "解析度；分辨率"
+  },
+  {
+    "word": "advantages",
+    "pos": "-",
+    "meaning": "優點"
+  },
+  {
+    "word": "back up",
+    "pos": "-",
+    "meaning": "備份"
+  },
+  {
+    "word": "button",
+    "pos": "-",
+    "meaning": "鈕"
+  },
+  {
+    "word": "cache",
+    "pos": "-",
+    "meaning": "快取記憶體"
+  },
+  {
+    "word": "camera",
+    "pos": "-",
+    "meaning": "相機"
+  },
+  {
+    "word": "character",
+    "pos": "-",
+    "meaning": "字元"
+  },
+  {
+    "word": "command",
+    "pos": "-",
+    "meaning": "命令"
+  },
+  {
+    "word": "document",
+    "pos": "-",
+    "meaning": "文件"
+  },
+  {
+    "word": "firewall",
+    "pos": "-",
+    "meaning": "防火牆"
+  },
+  {
+    "word": "maintain",
+    "pos": "-",
+    "meaning": "維護"
+  },
+  {
+    "word": "microphone",
+    "pos": "-",
+    "meaning": "麥克風"
+  },
+  {
+    "word": "minute",
+    "pos": "-",
+    "meaning": "每分鐘"
+  },
+  {
+    "word": "navigation",
+    "pos": "-",
+    "meaning": "航行"
+  },
+  {
+    "word": "optimization",
+    "pos": "-",
+    "meaning": "最佳化"
+  },
+  {
+    "word": "packet",
+    "pos": "-",
+    "meaning": "封包；台"
+  },
+  {
+    "word": "pad",
+    "pos": "-",
+    "meaning": "平板"
+  },
+  {
+    "word": "panel",
+    "pos": "-",
+    "meaning": "面板；台"
+  },
+  {
+    "word": "phase",
+    "pos": "-",
+    "meaning": "相位"
+  },
+  {
+    "word": "save",
+    "pos": "-",
+    "meaning": "儲存"
+  },
+  {
+    "word": "speed",
+    "pos": "-",
+    "meaning": "速度"
+  },
+  {
+    "word": "troubleshoot",
+    "pos": "-",
+    "meaning": "故障排除"
+  },
+  {
+    "word": "vector",
+    "pos": "-",
+    "meaning": "向量式圖形"
+  },
+  {
+    "word": "workstation",
+    "pos": "-",
+    "meaning": "工作站"
+  },
+  {
+    "word": "ActiveX",
+    "pos": "-",
+    "meaning": "互動式元件"
+  },
+  {
+    "word": "battery",
+    "pos": "-",
+    "meaning": "電池"
+  },
+  {
+    "word": "bitmap",
+    "pos": "-",
+    "meaning": "位元式圖形"
+  },
+  {
+    "word": "icon",
+    "pos": "-",
+    "meaning": "圖標；圖式符號"
+  },
+  {
+    "word": "intranet",
+    "pos": "-",
+    "meaning": "企業內網路"
+  },
+  {
+    "word": "merge",
+    "pos": "-",
+    "meaning": "合併"
+  },
+  {
+    "word": "notebook",
+    "pos": "-",
+    "meaning": "筆記型"
+  },
+  {
+    "word": "password",
+    "pos": "-",
+    "meaning": "密碼"
+  },
+  {
+    "word": "patch",
+    "pos": "-",
+    "meaning": "軟體修補"
+  },
+  {
+    "word": "performance",
+    "pos": "-",
+    "meaning": "效能"
+  },
+  {
+    "word": "protection",
+    "pos": "-",
+    "meaning": "保護"
+  },
+  {
+    "word": "shape",
+    "pos": "-",
+    "meaning": "造型；外型"
+  },
+  {
+    "word": "shortcut",
+    "pos": "-",
+    "meaning": "捷徑"
+  },
+  {
+    "word": "start",
+    "pos": "-",
+    "meaning": "開始"
+  },
+  {
+    "word": "transformation",
+    "pos": "-",
+    "meaning": "轉換"
+  },
+  {
+    "word": "translation",
+    "pos": "-",
+    "meaning": "平移；翻譯"
+  },
+  {
+    "word": "upload",
+    "pos": "-",
+    "meaning": "上傳"
+  },
+  {
+    "word": "voice",
+    "pos": "-",
+    "meaning": "語音"
+  },
+  {
+    "word": "width",
+    "pos": "-",
+    "meaning": "寬度"
+  },
+  {
+    "word": "software",
+    "pos": "-",
+    "meaning": "軟體"
+  },
+  {
+    "word": "access point",
+    "pos": "-",
+    "meaning": "無線網路存取器；無線基地台"
+  },
+  {
+    "word": "administrator",
+    "pos": "-",
+    "meaning": "管理員"
+  }
+]

@@ -1,14 +1,6 @@
 import {cookies} from 'next/headers';
 import WordsGrid from '../components/WordsGrid';
-import {
-    DEFAULT_PART,
-    DEFAULT_TOPIC,
-    fetchParts,
-    fetchTopics,
-    fetchWords,
-    parseParts,
-    parseTopics,
-} from './utils';
+import {DEFAULT_PART, DEFAULT_TOPIC, fetchParts, fetchTopics, fetchWords, parseParts, parseTopics,} from './utils';
 
 export const runtime = "edge";
 export const metadata = {

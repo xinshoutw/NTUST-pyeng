@@ -1,5 +1,5 @@
 "use client";
-import {motion, AnimatePresence} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import {memo, MouseEvent, useRef, useState} from 'react';
 import {Word} from '@/app/types';
 

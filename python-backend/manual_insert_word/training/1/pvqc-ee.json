@@ -1,0 +1,302 @@
+[
+  {
+    "word": "active filter",
+    "pos": "-",
+    "meaning": "主動濾波器"
+  },
+  {
+    "word": "AC load line",
+    "pos": "-",
+    "meaning": "交流負載線"
+  },
+  {
+    "word": "acceptor",
+    "pos": "-",
+    "meaning": "受體"
+  },
+  {
+    "word": "back pitch",
+    "pos": "-",
+    "meaning": "後節距"
+  },
+  {
+    "word": "ball bearing",
+    "pos": "-",
+    "meaning": "鋼珠軸承"
+  },
+  {
+    "word": "base current",
+    "pos": "-",
+    "meaning": "基極電流"
+  },
+  {
+    "word": "C",
+    "pos": "-",
+    "meaning": "庫容"
+  },
+  {
+    "word": "capacitive circuit",
+    "pos": "-",
+    "meaning": "電容性電路"
+  },
+  {
+    "word": "center tap",
+    "pos": "-",
+    "meaning": "中心抽頭"
+  },
+  {
+    "word": "change acid",
+    "pos": "-",
+    "meaning": "換酸"
+  },
+  {
+    "word": "DAC",
+    "pos": "-",
+    "meaning": "數位-類比轉換器"
+  },
+  {
+    "word": "daily monitor",
+    "pos": "-",
+    "meaning": "每日監測"
+  },
+  {
+    "word": "damper winding",
+    "pos": "-",
+    "meaning": "阻尼繞組"
+  },
+  {
+    "word": "data distributor",
+    "pos": "-",
+    "meaning": "資料分配器"
+  },
+  {
+    "word": "ECL",
+    "pos": "-",
+    "meaning": "射極耦合邏輯"
+  },
+  {
+    "word": "effective",
+    "pos": "-",
+    "meaning": "有效的"
+  },
+  {
+    "word": "Early voltage",
+    "pos": "-",
+    "meaning": "爾利電壓"
+  },
+  {
+    "word": "eddy current loss",
+    "pos": "-",
+    "meaning": "渦流損失"
+  },
+  {
+    "word": "FA",
+    "pos": "-",
+    "meaning": "全加器"
+  },
+  {
+    "word": "fan-in",
+    "pos": "-",
+    "meaning": "扇入"
+  },
+  {
+    "word": "feedback coefficient",
+    "pos": "-",
+    "meaning": "可授係數"
+  },
+  {
+    "word": "GAL",
+    "pos": "-",
+    "meaning": "泛型陣列邏輯"
+  },
+  {
+    "word": "general solution",
+    "pos": "-",
+    "meaning": "通解"
+  },
+  {
+    "word": "gain crossover frequency",
+    "pos": "-",
+    "meaning": "增益交叉頻率"
+  },
+  {
+    "word": "galvanometer",
+    "pos": "-",
+    "meaning": "檢流器"
+  },
+  {
+    "word": "HA",
+    "pos": "-",
+    "meaning": "半加器"
+  },
+  {
+    "word": "half bridge",
+    "pos": "-",
+    "meaning": "半橋"
+  },
+  {
+    "word": "Hall sensor",
+    "pos": "-",
+    "meaning": "霍爾感測器"
+  },
+  {
+    "word": "hybrid system",
+    "pos": "-",
+    "meaning": "混合系統"
+  },
+  {
+    "word": "IC amplifier",
+    "pos": "-",
+    "meaning": "積體電路放大器"
+  },
+  {
+    "word": "IC regulator",
+    "pos": "-",
+    "meaning": "積體電路穩壓器"
+  },
+  {
+    "word": "ideal current source",
+    "pos": "-",
+    "meaning": "理想電流源"
+  },
+  {
+    "word": "iron core coil",
+    "pos": "-",
+    "meaning": "鐵心線圈"
+  },
+  {
+    "word": "junction field effect transistor",
+    "pos": "-",
+    "meaning": "接面場效電晶體"
+  },
+  {
+    "word": "keyboard",
+    "pos": "-",
+    "meaning": "鍵盤"
+  },
+  {
+    "word": "lamp test",
+    "pos": "-",
+    "meaning": "燈泡測試"
+  },
+  {
+    "word": "lag compensation",
+    "pos": "-",
+    "meaning": "滯後補償"
+  },
+  {
+    "word": "linear circuit",
+    "pos": "-",
+    "meaning": "線性電路"
+  },
+  {
+    "word": "magnet",
+    "pos": "-",
+    "meaning": "磁鐵"
+  },
+  {
+    "word": "magnetizing curve",
+    "pos": "-",
+    "meaning": "磁化曲線"
+  },
+  {
+    "word": "main pole",
+    "pos": "-",
+    "meaning": "主磁極"
+  },
+  {
+    "word": "negative ion",
+    "pos": "-",
+    "meaning": "負離子"
+  },
+  {
+    "word": "n stage amplifier",
+    "pos": "-",
+    "meaning": "n極放大電路"
+  },
+  {
+    "word": "negative pole",
+    "pos": "-",
+    "meaning": "負極"
+  },
+  {
+    "word": "octave increase",
+    "pos": "-",
+    "meaning": "八倍增加"
+  },
+  {
+    "word": "odd function",
+    "pos": "-",
+    "meaning": "奇函數"
+  },
+  {
+    "word": "odd parity",
+    "pos": "-",
+    "meaning": "奇同位"
+  },
+  {
+    "word": "parallel circuit",
+    "pos": "-",
+    "meaning": "並聯電路"
+  },
+  {
+    "word": "parallel connection",
+    "pos": "-",
+    "meaning": "並聯連接"
+  },
+  {
+    "word": "parallel slot",
+    "pos": "-",
+    "meaning": "平行槽"
+  },
+  {
+    "word": "radial slot",
+    "pos": "-",
+    "meaning": "輻射槽"
+  },
+  {
+    "word": "radio engineering",
+    "pos": "-",
+    "meaning": "無線電工程"
+  },
+  {
+    "word": "rated power dissipation",
+    "pos": "-",
+    "meaning": "額定功率消耗"
+  },
+  {
+    "word": "regulating diode",
+    "pos": "-",
+    "meaning": "穩壓二極體"
+  },
+  {
+    "word": "salient-pole rotor",
+    "pos": "-",
+    "meaning": "凸極形轉子"
+  },
+  {
+    "word": "sample-hold circuit",
+    "pos": "-",
+    "meaning": "取樣-保持電路"
+  },
+  {
+    "word": "tachometer",
+    "pos": "-",
+    "meaning": "轉速表"
+  },
+  {
+    "word": "tangent intercept",
+    "pos": "-",
+    "meaning": "切線截距"
+  },
+  {
+    "word": "vector diagram",
+    "pos": "-",
+    "meaning": "向量圖"
+  },
+  {
+    "word": "virtual ground",
+    "pos": "-",
+    "meaning": "虛接地"
+  }
+]

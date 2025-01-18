@@ -1,14 +1,20 @@
 "use client";
-import {useEffect, useState, useMemo} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {motion} from 'framer-motion';
 import {WordCard} from './WordCard';
 import {
-    fetchParts, fetchTopics, fetchWords,
-    getCookie, setCookie,
-    parseParts, parseTopics,
-    topicOrder, topicLabelMapping,
     COOKIE_EXPIRY,
-    DEFAULT_PART, DEFAULT_TOPIC,
+    DEFAULT_PART,
+    DEFAULT_TOPIC,
+    fetchParts,
+    fetchTopics,
+    fetchWords,
+    getCookie,
+    parseParts,
+    parseTopics,
+    setCookie,
+    topicLabelMapping,
+    topicOrder,
 } from '@/app/utils';
 import {Word} from '@/app/types';
 import Dropdown from './Dropdown';

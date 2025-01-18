@@ -1,0 +1,302 @@
+[
+  {
+    "word": "system",
+    "pos": "-",
+    "meaning": "系統"
+  },
+  {
+    "word": "data",
+    "pos": "-",
+    "meaning": "資料"
+  },
+  {
+    "word": "computer",
+    "pos": "-",
+    "meaning": "電腦"
+  },
+  {
+    "word": "management",
+    "pos": "-",
+    "meaning": "管理"
+  },
+  {
+    "word": "network",
+    "pos": "-",
+    "meaning": "網路"
+  },
+  {
+    "word": "software",
+    "pos": "-",
+    "meaning": "軟體"
+  },
+  {
+    "word": "digital",
+    "pos": "-",
+    "meaning": "數位"
+  },
+  {
+    "word": "program",
+    "pos": "-",
+    "meaning": "程式"
+  },
+  {
+    "word": "model",
+    "pos": "-",
+    "meaning": "模式"
+  },
+  {
+    "word": "service",
+    "pos": "-",
+    "meaning": "服務"
+  },
+  {
+    "word": "port",
+    "pos": "-",
+    "meaning": "端口；埠"
+  },
+  {
+    "word": "business",
+    "pos": "-",
+    "meaning": "商務；業務"
+  },
+  {
+    "word": "drive",
+    "pos": "-",
+    "meaning": "磁碟機"
+  },
+  {
+    "word": "control",
+    "pos": "-",
+    "meaning": "控制"
+  },
+  {
+    "word": "electronic",
+    "pos": "-",
+    "meaning": "電子"
+  },
+  {
+    "word": "application",
+    "pos": "-",
+    "meaning": "應用軟體"
+  },
+  {
+    "word": "memory",
+    "pos": "-",
+    "meaning": "記憶體"
+  },
+  {
+    "word": "bus",
+    "pos": "-",
+    "meaning": "巴士；匯流排"
+  },
+  {
+    "word": "file",
+    "pos": "-",
+    "meaning": "檔案"
+  },
+  {
+    "word": "key",
+    "pos": "-",
+    "meaning": "鍵"
+  },
+  {
+    "word": "video",
+    "pos": "-",
+    "meaning": "影像；視頻"
+  },
+  {
+    "word": "device",
+    "pos": "-",
+    "meaning": "裝置"
+  },
+  {
+    "word": "format",
+    "pos": "-",
+    "meaning": "格式"
+  },
+  {
+    "word": "protocol",
+    "pos": "-",
+    "meaning": "協定；協議"
+  },
+  {
+    "word": "server",
+    "pos": "-",
+    "meaning": "伺服器"
+  },
+  {
+    "word": "user",
+    "pos": "-",
+    "meaning": "使用者"
+  },
+  {
+    "word": "card",
+    "pos": "-",
+    "meaning": "卡片"
+  },
+  {
+    "word": "interface",
+    "pos": "-",
+    "meaning": "介面"
+  },
+  {
+    "word": "recycle",
+    "pos": "-",
+    "meaning": "回收"
+  },
+  {
+    "word": "disk",
+    "pos": "-",
+    "meaning": "磁碟"
+  },
+  {
+    "word": "image",
+    "pos": "-",
+    "meaning": "圖像"
+  },
+  {
+    "word": "mail",
+    "pos": "-",
+    "meaning": "郵件"
+  },
+  {
+    "word": "security",
+    "pos": "-",
+    "meaning": "安全性"
+  },
+  {
+    "word": "disc",
+    "pos": "-",
+    "meaning": "磁碟片"
+  },
+  {
+    "word": "font",
+    "pos": "-",
+    "meaning": "字型；字體"
+  },
+  {
+    "word": "function",
+    "pos": "-",
+    "meaning": "功能"
+  },
+  {
+    "word": "Internet",
+    "pos": "-",
+    "meaning": "網際網路"
+  },
+  {
+    "word": "text",
+    "pos": "-",
+    "meaning": "文字"
+  },
+  {
+    "word": "transfer",
+    "pos": "-",
+    "meaning": "轉換"
+  },
+  {
+    "word": "area",
+    "pos": "-",
+    "meaning": "區"
+  },
+  {
+    "word": "domain",
+    "pos": "-",
+    "meaning": "網域"
+  },
+  {
+    "word": "frame",
+    "pos": "-",
+    "meaning": "畫框；框架"
+  },
+  {
+    "word": "graphic",
+    "pos": "-",
+    "meaning": "繪圖；圖學"
+  },
+  {
+    "word": "name",
+    "pos": "-",
+    "meaning": "名稱"
+  },
+  {
+    "word": "printer",
+    "pos": "-",
+    "meaning": "印表機"
+  },
+  {
+    "word": "sound",
+    "pos": "-",
+    "meaning": "聲音"
+  },
+  {
+    "word": "client",
+    "pos": "-",
+    "meaning": "客戶端"
+  },
+  {
+    "word": "online",
+    "pos": "-",
+    "meaning": "線上"
+  },
+  {
+    "word": "quality",
+    "pos": "-",
+    "meaning": "品質"
+  },
+  {
+    "word": "cable",
+    "pos": "-",
+    "meaning": "電纜"
+  },
+  {
+    "word": "capacity",
+    "pos": "-",
+    "meaning": "容量"
+  },
+  {
+    "word": "filter",
+    "pos": "-",
+    "meaning": "過濾器；濾網器；濾波器"
+  },
+  {
+    "word": "power",
+    "pos": "-",
+    "meaning": "電源"
+  },
+  {
+    "word": "transmission",
+    "pos": "-",
+    "meaning": "傳輸協定"
+  },
+  {
+    "word": "hardware",
+    "pos": "-",
+    "meaning": "硬體"
+  },
+  {
+    "word": "provider",
+    "pos": "-",
+    "meaning": "提供商"
+  },
+  {
+    "word": "virus",
+    "pos": "-",
+    "meaning": "病毒"
+  },
+  {
+    "word": "wireless",
+    "pos": "-",
+    "meaning": "無線"
+  },
+  {
+    "word": "chip",
+    "pos": "-",
+    "meaning": "晶片"
+  },
+  {
+    "word": "interactive",
+    "pos": "-",
+    "meaning": "互動式"
+  }
+]

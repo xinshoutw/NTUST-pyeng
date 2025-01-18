@@ -1,0 +1,202 @@
+[
+  {
+    "word": "alcoholic",
+    "pos": "a/n",
+    "meaning": "含酒精的/酗酒者"
+  },
+  {
+    "word": "allocate",
+    "pos": "v",
+    "meaning": "分配，撥出"
+  },
+  {
+    "word": "locate",
+    "pos": "v",
+    "meaning": "找到...的位置"
+  },
+  {
+    "word": "local",
+    "pos": "a/n",
+    "meaning": "地方的/居民"
+  },
+  {
+    "word": "balcony",
+    "pos": "n",
+    "meaning": "陽台"
+  },
+  {
+    "word": "locomotive",
+    "pos": "n/a",
+    "meaning": "機車/與運動有關"
+  },
+  {
+    "word": "alien",
+    "pos": "a/n",
+    "meaning": "外國的/外星人"
+  },
+  {
+    "word": "alienate",
+    "pos": "v",
+    "meaning": "使疏遠，離間"
+  },
+  {
+    "word": "allow",
+    "pos": "v",
+    "meaning": "同意，承認"
+  },
+  {
+    "word": "allowance",
+    "pos": "n",
+    "meaning": "津貼，考慮"
+  },
+  {
+    "word": "swallow",
+    "pos": "n/v",
+    "meaning": "燕子/吞嚥"
+  },
+  {
+    "word": "alter",
+    "pos": "v",
+    "meaning": "改變，變更"
+  },
+  {
+    "word": "ambassador",
+    "pos": "n",
+    "meaning": "大使，使節"
+  },
+  {
+    "word": "embassy",
+    "pos": "n",
+    "meaning": "大使館"
+  },
+  {
+    "word": "ambiguous",
+    "pos": "a",
+    "meaning": "模稜兩可的，語意模糊的"
+  },
+  {
+    "word": "ambition",
+    "pos": "n",
+    "meaning": "野心，雄心"
+  },
+  {
+    "word": "ambitious",
+    "pos": "a",
+    "meaning": "有抱負的"
+  },
+  {
+    "word": "ambulance",
+    "pos": "n",
+    "meaning": "救護車"
+  },
+  {
+    "word": "among",
+    "pos": "prep",
+    "meaning": "在...之中"
+  },
+  {
+    "word": "unanimous",
+    "pos": "a",
+    "meaning": "全體一致的"
+  },
+  {
+    "word": "mingle",
+    "pos": "v",
+    "meaning": "混合"
+  },
+  {
+    "word": "mix",
+    "pos": "v/n",
+    "meaning": "混合，摻和"
+  },
+  {
+    "word": "mixture",
+    "pos": "n",
+    "meaning": "混合物"
+  },
+  {
+    "word": "anger",
+    "pos": "n/v",
+    "meaning": "憤怒，生氣"
+  },
+  {
+    "word": "angry",
+    "pos": "a",
+    "meaning": "生氣的，憤怒的"
+  },
+  {
+    "word": "anguish",
+    "pos": "n",
+    "meaning": "痛苦 (指身體或精神上的疼痛)"
+  },
+  {
+    "word": "anxiety",
+    "pos": "n",
+    "meaning": "焦慮"
+  },
+  {
+    "word": "anxious",
+    "pos": "a",
+    "meaning": "焦急的"
+  },
+  {
+    "word": "angel",
+    "pos": "n",
+    "meaning": "天使"
+  },
+  {
+    "word": "angle",
+    "pos": "n",
+    "meaning": "角度"
+  },
+  {
+    "word": "rectangle",
+    "pos": "n",
+    "meaning": "長方形"
+  },
+  {
+    "word": "triangle",
+    "pos": "n",
+    "meaning": "三角形"
+  },
+  {
+    "word": "tangle",
+    "pos": "v",
+    "meaning": "處於混亂狀態，使糾纏不清"
+  },
+  {
+    "word": "ankle",
+    "pos": "n",
+    "meaning": "踝關節"
+  },
+  {
+    "word": "animal",
+    "pos": "n/a",
+    "meaning": "動物/肉體的"
+  },
+  {
+    "word": "animate",
+    "pos": "v/a",
+    "meaning": "激勵/生氣勃勃的"
+  },
+  {
+    "word": "animated",
+    "pos": "a",
+    "meaning": "活生生的"
+  },
+  {
+    "word": "answer",
+    "pos": "v/n",
+    "meaning": "回答，答覆"
+  },
+  {
+    "word": "swear",
+    "pos": "v",
+    "meaning": "宣誓，咒罵"
+  },
+  {
+    "word": "swearword",
+    "pos": "n",
+    "meaning": "罵人的話"
+  }
+]

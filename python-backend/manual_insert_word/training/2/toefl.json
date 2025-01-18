@@ -1,0 +1,202 @@
+[
+  {
+    "word": "justice",
+    "pos": "n",
+    "meaning": "司法，審判；公平，正義"
+  },
+  {
+    "word": "juvenile",
+    "pos": "a",
+    "meaning": "青少年的"
+  },
+  {
+    "word": "delinquent",
+    "pos": "a/n",
+    "meaning": "犯罪的；怠忽職守的；青少年罪犯"
+  },
+  {
+    "word": "abide by",
+    "pos": "v",
+    "meaning": "遵守"
+  },
+  {
+    "word": "confiscate",
+    "pos": "v",
+    "meaning": "沒收，將...充公"
+  },
+  {
+    "word": "penalize",
+    "pos": "v",
+    "meaning": "處罰，宣告有罪"
+  },
+  {
+    "word": "testimony",
+    "pos": "n",
+    "meaning": "證詞"
+  },
+  {
+    "word": "identification",
+    "pos": "n",
+    "meaning": "確認，識別；身份證明"
+  },
+  {
+    "word": "prohibit",
+    "pos": "v",
+    "meaning": "(依法令規定等)禁止"
+  },
+  {
+    "word": "tolerate",
+    "pos": "v",
+    "meaning": "忍受，容忍"
+  },
+  {
+    "word": "verify",
+    "pos": "v",
+    "meaning": "證明，證實"
+  },
+  {
+    "word": "suspend",
+    "pos": "v",
+    "meaning": "暫時取消；暫緩執行(刑罰等)"
+  },
+  {
+    "word": "prosecution",
+    "pos": "n",
+    "meaning": "起訴，告發"
+  },
+  {
+    "word": "death penalty",
+    "pos": "n",
+    "meaning": "死刑"
+  },
+  {
+    "word": "life imprisonment",
+    "pos": "n",
+    "meaning": "無期徒刑"
+  },
+  {
+    "word": "lawsuit",
+    "pos": "n",
+    "meaning": "訴訟"
+  },
+  {
+    "word": "defense attorney",
+    "pos": "n",
+    "meaning": "被告律師，辯護律師"
+  },
+  {
+    "word": "convict",
+    "pos": "v/n",
+    "meaning": "判決有罪；(已判決有罪的)犯人"
+  },
+  {
+    "word": "crime",
+    "pos": "n",
+    "meaning": "(法律上的)犯罪"
+  },
+  {
+    "word": "jury",
+    "pos": "n",
+    "meaning": "陪審團"
+  },
+  {
+    "word": "sentence",
+    "pos": "n",
+    "meaning": "判決"
+  },
+  {
+    "word": "witness",
+    "pos": "n/v",
+    "meaning": "證人；目擊者；為...作證，目擊"
+  },
+  {
+    "word": "fine",
+    "pos": "v/n",
+    "meaning": "處以罰金；罰金，罰款"
+  },
+  {
+    "word": "probation",
+    "pos": "n",
+    "meaning": "緩刑"
+  },
+  {
+    "word": "enforce",
+    "pos": "v",
+    "meaning": "實施(法律等)，執行"
+  },
+  {
+    "word": "violation",
+    "pos": "n",
+    "meaning": "違反，侵犯"
+  },
+  {
+    "word": "sanction",
+    "pos": "n",
+    "meaning": "(常用複數)國際制裁；認可"
+  },
+  {
+    "word": "detective",
+    "pos": "n/a",
+    "meaning": "偵探；偵探的"
+  },
+  {
+    "word": "murder",
+    "pos": "n/v",
+    "meaning": "謀殺"
+  },
+  {
+    "word": "robbery",
+    "pos": "n",
+    "meaning": "搶劫，搶案"
+  },
+  {
+    "word": "armed",
+    "pos": "a",
+    "meaning": "武裝的，持有武器的"
+  },
+  {
+    "word": "theft",
+    "pos": "n",
+    "meaning": "偷竊"
+  },
+  {
+    "word": "arson",
+    "pos": "n",
+    "meaning": "縱火(罪)"
+  },
+  {
+    "word": "abduct",
+    "pos": "v",
+    "meaning": "誘拐，綁架"
+  },
+  {
+    "word": "kidnap",
+    "pos": "v",
+    "meaning": "誘拐，綁架(小孩)"
+  },
+  {
+    "word": "fraud",
+    "pos": "n",
+    "meaning": "詐騙，騙子"
+  },
+  {
+    "word": "bribery",
+    "pos": "n",
+    "meaning": "行賄，受賄"
+  },
+  {
+    "word": "smuggle",
+    "pos": "v",
+    "meaning": "走私，偷運"
+  },
+  {
+    "word": "inmate",
+    "pos": "n",
+    "meaning": "囚犯"
+  },
+  {
+    "word": "perjury",
+    "pos": "n",
+    "meaning": "偽證(罪)"
+  }
+]

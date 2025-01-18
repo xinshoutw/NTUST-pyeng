@@ -1,0 +1,302 @@
+[
+  {
+    "word": "authentication",
+    "pos": "-",
+    "meaning": "身份鑑定"
+  },
+  {
+    "word": "benchmark",
+    "pos": "-",
+    "meaning": "基準評價"
+  },
+  {
+    "word": "contiguous",
+    "pos": "-",
+    "meaning": "相鄰的範圍"
+  },
+  {
+    "word": "cursor",
+    "pos": "-",
+    "meaning": "游標"
+  },
+  {
+    "word": "decentralize",
+    "pos": "-",
+    "meaning": "非集中式"
+  },
+  {
+    "word": "disposable",
+    "pos": "-",
+    "meaning": "拋棄式"
+  },
+  {
+    "word": "downsizing",
+    "pos": "-",
+    "meaning": "小型化"
+  },
+  {
+    "word": "encapsulation",
+    "pos": "-",
+    "meaning": "封裝"
+  },
+  {
+    "word": "entity",
+    "pos": "-",
+    "meaning": "實體"
+  },
+  {
+    "word": "equivalent",
+    "pos": "-",
+    "meaning": "等效的"
+  },
+  {
+    "word": "ethics",
+    "pos": "-",
+    "meaning": "倫理"
+  },
+  {
+    "word": "fault tolerant",
+    "pos": "-",
+    "meaning": "容錯的"
+  },
+  {
+    "word": "format",
+    "pos": "-",
+    "meaning": "格式化"
+  },
+  {
+    "word": "fuzzy",
+    "pos": "-",
+    "meaning": "模糊的"
+  },
+  {
+    "word": "implementation",
+    "pos": "-",
+    "meaning": "實作"
+  },
+  {
+    "word": "inference",
+    "pos": "-",
+    "meaning": "推理"
+  },
+  {
+    "word": "information security",
+    "pos": "-",
+    "meaning": "資訊安全"
+  },
+  {
+    "word": "integer",
+    "pos": "-",
+    "meaning": "整數"
+  },
+  {
+    "word": "interactive",
+    "pos": "-",
+    "meaning": "互動式的"
+  },
+  {
+    "word": "interface",
+    "pos": "-",
+    "meaning": "介面"
+  },
+  {
+    "word": "intermediate",
+    "pos": "-",
+    "meaning": "中間的"
+  },
+  {
+    "word": "intrusion",
+    "pos": "-",
+    "meaning": "入侵"
+  },
+  {
+    "word": "interpreter",
+    "pos": "-",
+    "meaning": "直譯器"
+  },
+  {
+    "word": "localization",
+    "pos": "-",
+    "meaning": "在地化"
+  },
+  {
+    "word": "logical model",
+    "pos": "-",
+    "meaning": "邏輯模型"
+  },
+  {
+    "word": "mainframe",
+    "pos": "-",
+    "meaning": "大型電腦"
+  },
+  {
+    "word": "malware",
+    "pos": "-",
+    "meaning": "惡意軟體程式"
+  },
+  {
+    "word": "middleware",
+    "pos": "-",
+    "meaning": "中介軟體"
+  },
+  {
+    "word": "nanotechnology",
+    "pos": "-",
+    "meaning": "奈米科技"
+  },
+  {
+    "word": "neural network",
+    "pos": "-",
+    "meaning": "類神經網路"
+  },
+  {
+    "word": "operand",
+    "pos": "-",
+    "meaning": "運算元"
+  },
+  {
+    "word": "oscillation",
+    "pos": "-",
+    "meaning": "震盪"
+  },
+  {
+    "word": "personalization",
+    "pos": "-",
+    "meaning": "個人化"
+  },
+  {
+    "word": "policy",
+    "pos": "-",
+    "meaning": "政策"
+  },
+  {
+    "word": "procedural",
+    "pos": "-",
+    "meaning": "程序性的"
+  },
+  {
+    "word": "prototype",
+    "pos": "-",
+    "meaning": "原型"
+  },
+  {
+    "word": "query",
+    "pos": "-",
+    "meaning": "查詢，疑問"
+  },
+  {
+    "word": "reloadable",
+    "pos": "-",
+    "meaning": "可再載入式"
+  },
+  {
+    "word": "spoofing",
+    "pos": "-",
+    "meaning": "欺騙"
+  },
+  {
+    "word": "spyware",
+    "pos": "-",
+    "meaning": "間諜軟體"
+  },
+  {
+    "word": "stack",
+    "pos": "-",
+    "meaning": "堆疊"
+  },
+  {
+    "word": "string",
+    "pos": "-",
+    "meaning": "字串"
+  },
+  {
+    "word": "tacit",
+    "pos": "-",
+    "meaning": "內隱的"
+  },
+  {
+    "word": "tolerant",
+    "pos": "-",
+    "meaning": "允許的"
+  },
+  {
+    "word": "unit testing",
+    "pos": "-",
+    "meaning": "單元測試"
+  },
+  {
+    "word": "upstream data",
+    "pos": "-",
+    "meaning": "上游的資料"
+  },
+  {
+    "word": "utilitarian",
+    "pos": "-",
+    "meaning": "功利主義者"
+  },
+  {
+    "word": "virtual reality",
+    "pos": "-",
+    "meaning": "虛擬實境"
+  },
+  {
+    "word": "wildcard",
+    "pos": "-",
+    "meaning": "通用字元"
+  },
+  {
+    "word": "web server",
+    "pos": "-",
+    "meaning": "網頁伺服器"
+  },
+  {
+    "word": "virtualization",
+    "pos": "-",
+    "meaning": "虛擬化"
+  },
+  {
+    "word": "volatility",
+    "pos": "-",
+    "meaning": "揮發性"
+  },
+  {
+    "word": "value",
+    "pos": "-",
+    "meaning": "數值"
+  },
+  {
+    "word": "tuple",
+    "pos": "-",
+    "meaning": "元組，數組"
+  },
+  {
+    "word": "uninterruptible",
+    "pos": "-",
+    "meaning": "不中斷的"
+  },
+  {
+    "word": "tunneling",
+    "pos": "-",
+    "meaning": "通道"
+  },
+  {
+    "word": "toolbar",
+    "pos": "-",
+    "meaning": "工具列"
+  },
+  {
+    "word": "tangible",
+    "pos": "-",
+    "meaning": "有形的"
+  },
+  {
+    "word": "tab stop",
+    "pos": "-",
+    "meaning": "定位點"
+  },
+  {
+    "word": "stateful",
+    "pos": "-",
+    "meaning": "狀態的"
+  }
+]

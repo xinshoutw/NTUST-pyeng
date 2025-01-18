@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Infinite Limit",
+    "pos": "-",
+    "meaning": "A limit in which f(x) increases or decreases without bound as the value of x approaches an arbitrary number c."
+  },
+  {
+    "word": "Vertical/Horizontal/Slant Asymptote",
+    "pos": "-",
+    "meaning": "Horizontal asymptotes are horizontal lines that the graph of the function approaches as x tends to +∞ or −∞. Vertical asymptotes are vertical lines near which the function grows without bound. A slant asymptote has a slope that is non-zero but finite, such that the graph of the function approaches it as x tends to +∞ or −∞."
+  },
+  {
+    "word": "Continuous Function",
+    "pos": "-",
+    "meaning": "A real-valued function whose graph does not have any breaks or holes."
+  },
+  {
+    "word": "Greatest Integer Function (Gauss Function, Floor Function)",
+    "pos": "-",
+    "meaning": "The function that takes as input a real number x, and gives as output the greatest integer less than or equal to x, denoted floor(x) or [x]."
+  },
+  {
+    "word": "Squeeze (Sandwich) Theorem",
+    "pos": "-",
+    "meaning": "A theorem regarding the limit of a function."
+  },
+  {
+    "word": "Approach",
+    "pos": "-",
+    "meaning": "“Approach” or “Tend” are used to express “come near” in calculus. In mathematics, it is symbolically represented by a right arrow symbol."
+  },
+  {
+    "word": "Continuity/Discontinuity",
+    "pos": "-",
+    "meaning": "A function is said to be continuous if it can be drawn without picking up the pencil. Otherwise, a function is said to be discontinuous."
+  },
+  {
+    "word": "Monotonic Function",
+    "pos": "-",
+    "meaning": "A function which is either entirely nonincreasing or nondecreasing."
+  },
+  {
+    "word": "Intermediate Value Theorem",
+    "pos": "-",
+    "meaning": "A theorem that will be dealing with all of the y-values between two known y-values."
+  },
+  {
+    "word": "Infinity",
+    "pos": "-",
+    "meaning": "There is no limit to its values."
+  },
+  {
+    "word": "Rate of Change",
+    "pos": "-",
+    "meaning": "How that quantity changes over time."
+  },
+  {
+    "word": "Differentiation",
+    "pos": "-",
+    "meaning": "Process of finding the derivative, or rate of change, of a function."
+  },
+  {
+    "word": "Differentiable",
+    "pos": "-",
+    "meaning": "A function is said to be differentiable if the derivative of the function exists at all points in its domain."
+  },
+  {
+    "word": "Constant Function",
+    "pos": "-",
+    "meaning": "A linear function for which the range does not change no matter which member of the domain is used."
+  },
+  {
+    "word": "Product/Quotient Rule",
+    "pos": "-",
+    "meaning": "The product rule is a formula used to find the derivatives of products of two or more functions. The quotient rule is a method of finding the derivative of a function that is the ratio of two differentiable functions."
+  },
+  {
+    "word": "Chain Rule",
+    "pos": "-",
+    "meaning": "A formula for computing the derivative of the composition of two or more functions."
+  },
+  {
+    "word": "Implicit/Explicit Function",
+    "pos": "-",
+    "meaning": "An explicit function is one which is given in terms of the independent variable. Implicit functions, on the other hand, are usually given in terms of both dependent and independent variables."
+  },
+  {
+    "word": "Implicit Differentiation",
+    "pos": "-",
+    "meaning": "The process of finding the derivative of a dependent variable in an implicit function by differentiating each term separately."
+  },
+  {
+    "word": "Implicit Function Theorem",
+    "pos": "-",
+    "meaning": "A tool that allows relations to be converted to functions of several real variables."
+  },
+  {
+    "word": "Related Rate",
+    "pos": "-",
+    "meaning": "Involve two (or more) variables that change at the same time, possibly at different rates."
+  }
+]

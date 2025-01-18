@@ -1,0 +1,17 @@
+[
+  {
+    "word": "Level Surface",
+    "pos": "n",
+    "meaning": "A surface which is perpendicular to the plumb line at every point."
+  },
+  {
+    "word": "Clairaut's Theorem",
+    "pos": "n",
+    "meaning": "A famous theorem is that the mixed partial derivatives of certain nice functions are the same."
+  },
+  {
+    "word": "Tangent Plane",
+    "pos": "n",
+    "meaning": "The plane through a point of a surface that contains the tangent lines to all the curves on the surface through the same point."
+  }
+]

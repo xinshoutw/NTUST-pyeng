@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Linear Approximation/Linearization",
+    "pos": "-",
+    "meaning": "An approximation of a general function using a linear function."
+  },
+  {
+    "word": "Differential",
+    "pos": "-",
+    "meaning": "The principal part of the change in a function y = f(x) with respect to changes in the independent variable."
+  },
+  {
+    "word": "Maximum/Minimum Value",
+    "pos": "-",
+    "meaning": "The largest and smallest value of the function, either within a given range (local or relative extrema), or on the entire domain (global or absolute extrema)."
+  },
+  {
+    "word": "Endpoint",
+    "pos": "-",
+    "meaning": "Any of the two furthest points on a line segment."
+  },
+  {
+    "word": "Absolute/Local/Relative Extremum (Extrema)",
+    "pos": "-",
+    "meaning": "Absolute extrema refer to the absolute minimums and maximums. Local/relative extrema refer to the relative minimums and maximums."
+  },
+  {
+    "word": "Extreme Value/Extreme Value Theorem",
+    "pos": "-",
+    "meaning": "If a function is continuous on a closed interval [a,b], then the function must have a maximum and a minimum on the interval."
+  },
+  {
+    "word": "Critical Number/Point",
+    "pos": "-",
+    "meaning": "A point in the domain of the function where the function is either not differentiable or the derivative is equal to zero."
+  },
+  {
+    "word": "Mean Value Theorem",
+    "pos": "-",
+    "meaning": "Connects the average rate of change of a function to its derivative."
+  },
+  {
+    "word": "First/Second Derivative Test",
+    "pos": "-",
+    "meaning": "The first derivative test analyzes functions using their first derivatives to find extremum points. The second derivative test determines local extrema of a function under certain conditions."
+  },
+  {
+    "word": "Concave Upward/Downward",
+    "pos": "-",
+    "meaning": "When the slope continually increases, the function is concave upward. When the slope continually decreases, the function is concave downward."
+  },
+  {
+    "word": "Concavity",
+    "pos": "-",
+    "meaning": "Relates to the rate of change of a function's derivative."
+  },
+  {
+    "word": "Inflection Point",
+    "pos": "-",
+    "meaning": "A point on the graph of a function at which the concavity changes."
+  },
+  {
+    "word": "Indeterminate Form",
+    "pos": "-",
+    "meaning": "An expression involving two functions whose limit cannot be determined solely from the limits of the individual functions."
+  },
+  {
+    "word": "L'Hopital Rule",
+    "pos": "-",
+    "meaning": "Provides a technique to evaluate limits of indeterminate forms."
+  },
+  {
+    "word": "Periodic Function",
+    "pos": "-",
+    "meaning": "A function that repeats its values at regular intervals."
+  },
+  {
+    "word": "Optimization Problem",
+    "pos": "-",
+    "meaning": "Maximizing or minimizing some function relative to some set."
+  },
+  {
+    "word": "Antiderivative/Antidifferentiation",
+    "pos": "-",
+    "meaning": "An antiderivative is a function that reverses what the derivative does."
+  },
+  {
+    "word": "Integral, Integration",
+    "pos": "-",
+    "meaning": "A mathematical object that can be interpreted as an area or a generalization of area."
+  },
+  {
+    "word": "Definite/Indefinite Integral",
+    "pos": "-",
+    "meaning": "The definite integral is the limit and summation to find the net area between a function and the x-axis. An indefinite integral takes the antiderivative of another function."
+  },
+  {
+    "word": "Integrable",
+    "pos": "-",
+    "meaning": "The integral is well defined."
+  }
+]

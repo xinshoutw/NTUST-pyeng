@@ -1,0 +1,202 @@
+[
+  {
+    "word": "incidental",
+    "pos": "a",
+    "meaning": "附帶的"
+  },
+  {
+    "word": "accept",
+    "pos": "v",
+    "meaning": "接受, 承認"
+  },
+  {
+    "word": "acceptable",
+    "pos": "a",
+    "meaning": "可接受的"
+  },
+  {
+    "word": "acceptance",
+    "pos": "n",
+    "meaning": "接受, 承認, 認同"
+  },
+  {
+    "word": "catch",
+    "pos": "v",
+    "meaning": "抓住"
+  },
+  {
+    "word": "except",
+    "pos": "conj",
+    "meaning": "除...外"
+  },
+  {
+    "word": "exception",
+    "pos": "n",
+    "meaning": "例外"
+  },
+  {
+    "word": "exceptional",
+    "pos": "a",
+    "meaning": "例外"
+  },
+  {
+    "word": "intercept",
+    "pos": "v",
+    "meaning": "攔截, 擷取"
+  },
+  {
+    "word": "perception",
+    "pos": "n",
+    "meaning": "察覺, 看法"
+  },
+  {
+    "word": "perceive",
+    "pos": "v",
+    "meaning": "感覺, 理解"
+  },
+  {
+    "word": "skeptical",
+    "pos": "a",
+    "meaning": "懷疑的"
+  },
+  {
+    "word": "susceptible",
+    "pos": "a",
+    "meaning": "易受影響的"
+  },
+  {
+    "word": "cave",
+    "pos": "n",
+    "meaning": "洞穴"
+  },
+  {
+    "word": "cavern",
+    "pos": "a",
+    "meaning": "大山洞"
+  },
+  {
+    "word": "cavity",
+    "pos": "n",
+    "meaning": "蛀牙洞; 空隙; 洞; 腔"
+  },
+  {
+    "word": "concave",
+    "pos": "a",
+    "meaning": "凹的"
+  },
+  {
+    "word": "excavate",
+    "pos": "v",
+    "meaning": "挖掘, 挖空"
+  },
+  {
+    "word": "pave",
+    "pos": "v",
+    "meaning": "鋪路"
+  },
+  {
+    "word": "underpass",
+    "pos": "n",
+    "meaning": "人行道, 地下通道 (美)"
+  },
+  {
+    "word": "cent",
+    "pos": "n",
+    "meaning": "分, 分幣"
+  },
+  {
+    "word": "centigrade",
+    "pos": "n",
+    "meaning": "攝氏度"
+  },
+  {
+    "word": "centimeter",
+    "pos": "n",
+    "meaning": "釐米, 公分"
+  },
+  {
+    "word": "per",
+    "pos": "prep",
+    "meaning": "每"
+  },
+  {
+    "word": "percent",
+    "pos": "n",
+    "meaning": "百分比 (有明確數字)"
+  },
+  {
+    "word": "percentage",
+    "pos": "a",
+    "meaning": "百分比 (一個大概)"
+  },
+  {
+    "word": "center",
+    "pos": "n",
+    "meaning": "中心"
+  },
+  {
+    "word": "central",
+    "pos": "a",
+    "meaning": "中心的, 重要的"
+  },
+  {
+    "word": "collection",
+    "pos": "n",
+    "meaning": "收集, 聚集"
+  },
+  {
+    "word": "concentrate",
+    "pos": "v",
+    "meaning": "集中"
+  },
+  {
+    "word": "concentration",
+    "pos": "n",
+    "meaning": "集中"
+  },
+  {
+    "word": "eccentric",
+    "pos": "a",
+    "meaning": "古怪的"
+  },
+  {
+    "word": "chair",
+    "pos": "n",
+    "meaning": "椅子, 主席座位"
+  },
+  {
+    "word": "chairman",
+    "pos": "n",
+    "meaning": "主席, 議長"
+  },
+  {
+    "word": "armchair",
+    "pos": "n",
+    "meaning": "主席, 議長"
+  },
+  {
+    "word": "cathedral",
+    "pos": "n",
+    "meaning": "大教堂"
+  },
+  {
+    "word": "catholic",
+    "pos": "a",
+    "meaning": "天主教的"
+  },
+  {
+    "word": "church",
+    "pos": "n",
+    "meaning": "教堂"
+  },
+  {
+    "word": "calcium",
+    "pos": "n",
+    "meaning": "鈣"
+  },
+  {
+    "word": "calculate",
+    "pos": "v",
+    "meaning": "估算, 計算"
+  }
+]

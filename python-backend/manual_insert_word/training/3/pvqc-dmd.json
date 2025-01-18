@@ -1,0 +1,302 @@
+[
+  {
+    "word": "ATSC",
+    "pos": "-",
+    "meaning": "先進電視系統委員會"
+  },
+  {
+    "word": "advertising agency",
+    "pos": "-",
+    "meaning": "廣告公司"
+  },
+  {
+    "word": "aesthetic measure",
+    "pos": "-",
+    "meaning": "美度"
+  },
+  {
+    "word": "alias effects",
+    "pos": "-",
+    "meaning": "偽移效應"
+  },
+  {
+    "word": "biorthogonal",
+    "pos": "-",
+    "meaning": "雙正交的"
+  },
+  {
+    "word": "bit-allocation block",
+    "pos": "-",
+    "meaning": "位元配置區塊"
+  },
+  {
+    "word": "bisection method",
+    "pos": "-",
+    "meaning": "二分法"
+  },
+  {
+    "word": "block codes",
+    "pos": "-",
+    "meaning": "區塊碼"
+  },
+  {
+    "word": "CRT",
+    "pos": "-",
+    "meaning": "陰極射線管"
+  },
+  {
+    "word": "causal context",
+    "pos": "-",
+    "meaning": "因果關係"
+  },
+  {
+    "word": "cell error ratio",
+    "pos": "-",
+    "meaning": "單元錯誤率"
+  },
+  {
+    "word": "cell loss ratio",
+    "pos": "-",
+    "meaning": "單元遺失率"
+  },
+  {
+    "word": "demodulator",
+    "pos": "-",
+    "meaning": "解調器"
+  },
+  {
+    "word": "descendant",
+    "pos": "-",
+    "meaning": "子系"
+  },
+  {
+    "word": "descriptor",
+    "pos": "-",
+    "meaning": "描述器"
+  },
+  {
+    "word": "diffraction",
+    "pos": "-",
+    "meaning": "衍射"
+  },
+  {
+    "word": "elongation",
+    "pos": "-",
+    "meaning": "延展性"
+  },
+  {
+    "word": "embedded code",
+    "pos": "-",
+    "meaning": "嵌入碼"
+  },
+  {
+    "word": "end-of-line",
+    "pos": "-",
+    "meaning": "行結束符號"
+  },
+  {
+    "word": "end-to-end networks",
+    "pos": "-",
+    "meaning": "端對端網路"
+  },
+  {
+    "word": "film grammar",
+    "pos": "-",
+    "meaning": "影片語法"
+  },
+  {
+    "word": "filter bank",
+    "pos": "-",
+    "meaning": "濾鏡組組"
+  },
+  {
+    "word": "flow control",
+    "pos": "-",
+    "meaning": "流量控制"
+  },
+  {
+    "word": "graphic designer",
+    "pos": "-",
+    "meaning": "平面設計師"
+  },
+  {
+    "word": "graphics program",
+    "pos": "-",
+    "meaning": "圖形程式"
+  },
+  {
+    "word": "group number",
+    "pos": "-",
+    "meaning": "區塊號碼"
+  },
+  {
+    "word": "horizontal retrace",
+    "pos": "-",
+    "meaning": "水平回掃"
+  },
+  {
+    "word": "idea visualization",
+    "pos": "-",
+    "meaning": "概念視覺化"
+  },
+  {
+    "word": "illuminant",
+    "pos": "-",
+    "meaning": "標準光"
+  },
+  {
+    "word": "image tiles",
+    "pos": "-",
+    "meaning": "影像磚瓦"
+  },
+  {
+    "word": "interactive",
+    "pos": "-",
+    "meaning": "互動性的"
+  },
+  {
+    "word": "linear format",
+    "pos": "-",
+    "meaning": "線性形式"
+  },
+  {
+    "word": "linear polarizer",
+    "pos": "-",
+    "meaning": "線性偏光鏡"
+  },
+  {
+    "word": "lip sync",
+    "pos": "-",
+    "meaning": "對嘴"
+  },
+  {
+    "word": "model tab",
+    "pos": "-",
+    "meaning": "模式頁"
+  },
+  {
+    "word": "motion coding",
+    "pos": "-",
+    "meaning": "移動編碼"
+  },
+  {
+    "word": "motion vector",
+    "pos": "-",
+    "meaning": "移動向量"
+  },
+  {
+    "word": "non-low-delay",
+    "pos": "-",
+    "meaning": "無低延遲"
+  },
+  {
+    "word": "non-uniform",
+    "pos": "-",
+    "meaning": "非均勻的"
+  },
+  {
+    "word": "number of taps",
+    "pos": "-",
+    "meaning": "桿數"
+  },
+  {
+    "word": "ordered dither",
+    "pos": "-",
+    "meaning": "順序混色法"
+  },
+  {
+    "word": "orientation",
+    "pos": "-",
+    "meaning": "方向"
+  },
+  {
+    "word": "orthogonal",
+    "pos": "-",
+    "meaning": "正交的"
+  },
+  {
+    "word": "orthonormal",
+    "pos": "-",
+    "meaning": "正規化的；標準正交的"
+  },
+  {
+    "word": "parity bit",
+    "pos": "-",
+    "meaning": "同位位元"
+  },
+  {
+    "word": "participation",
+    "pos": "-",
+    "meaning": "參與"
+  },
+  {
+    "word": "pass mode",
+    "pos": "-",
+    "meaning": "行傳模式"
+  },
+  {
+    "word": "payload type",
+    "pos": "-",
+    "meaning": "負載型態"
+  },
+  {
+    "word": "quantization error",
+    "pos": "-",
+    "meaning": "量化誤差"
+  },
+  {
+    "word": "quantization noise",
+    "pos": "-",
+    "meaning": "量化雜訊"
+  },
+  {
+    "word": "redirect server",
+    "pos": "-",
+    "meaning": "轉址伺服器"
+  },
+  {
+    "word": "reference frame",
+    "pos": "-",
+    "meaning": "參考畫面"
+  },
+  {
+    "word": "remote sensing",
+    "pos": "-",
+    "meaning": "遙控感測"
+  },
+  {
+    "word": "scene change",
+    "pos": "-",
+    "meaning": "場景變換"
+  },
+  {
+    "word": "script language",
+    "pos": "-",
+    "meaning": "腳本語言"
+  },
+  {
+    "word": "segmentation",
+    "pos": "-",
+    "meaning": "切割"
+  },
+  {
+    "word": "thermal noise",
+    "pos": "-",
+    "meaning": "熱雜訊"
+  },
+  {
+    "word": "throughput",
+    "pos": "-",
+    "meaning": "傳輸量"
+  },
+  {
+    "word": "upper bound",
+    "pos": "-",
+    "meaning": "上限"
+  },
+  {
+    "word": "user-initiated",
+    "pos": "-",
+    "meaning": "使用者觸發的"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Calculus",
+    "pos": "-",
+    "meaning": "An advanced branch of mathematics that deals mostly with rates of change and with finding lengths, areas, and volumes."
+  },
+  {
+    "word": "Function",
+    "pos": "-",
+    "meaning": "A rule or correspondence which associates to each number x in a set A a unique number f(x) in a set B."
+  },
+  {
+    "word": "Graph",
+    "pos": "-",
+    "meaning": "A drawing that uses a series of dots, lines, etc., to show how much or how quickly something changes."
+  },
+  {
+    "word": "Domain",
+    "pos": "-",
+    "meaning": "The set of all possible inputs for the function."
+  },
+  {
+    "word": "Range",
+    "pos": "-",
+    "meaning": "The complete set of all possible resulting values of the dependent variable."
+  },
+  {
+    "word": "Variable",
+    "pos": "-",
+    "meaning": "A quantity that can have any one of a set of values or a symbol that represents such a quantity."
+  },
+  {
+    "word": "Slope",
+    "pos": "-",
+    "meaning": "An upward or downward slant."
+  },
+  {
+    "word": "Intercept",
+    "pos": "-",
+    "meaning": "The point where the line or curve crosses the axis of the graph."
+  },
+  {
+    "word": "Piecewise Defined Function",
+    "pos": "-",
+    "meaning": "One which is defined not by a single equation, but by two or more."
+  },
+  {
+    "word": "Absolute Value",
+    "pos": "-",
+    "meaning": "The non-negative value of x without regard to its sign."
+  },
+  {
+    "word": "Step Function",
+    "pos": "-",
+    "meaning": "A piecewise constant function having only finitely many pieces."
+  },
+  {
+    "word": "Even/Odd Function",
+    "pos": "-",
+    "meaning": "Functions which satisfy particular symmetry relations, with respect to taking additive inverses."
+  },
+  {
+    "word": "Symmetry",
+    "pos": "-",
+    "meaning": "The quality of something that has two sides or halves that are the same or very close in size, shape, and position."
+  },
+  {
+    "word": "(Strictly) Increasing/Decreasing Function",
+    "pos": "-",
+    "meaning": "If f'(x) > 0 at each point in an interval I, then the function is said to be increasing on I. If f'(x) < 0 at each point in an interval I, then the function is said to be decreasing on I."
+  },
+  {
+    "word": "Linear Function",
+    "pos": "-",
+    "meaning": "A function whose graph is a straight line, that is, a polynomial function of degree zero or one."
+  },
+  {
+    "word": "Polynomials/Polynomial Function",
+    "pos": "-",
+    "meaning": "A function that involves only non-negative integer powers or only positive integer exponents of a variable in an equation like the quadratic equation, cubic equation, etc."
+  },
+  {
+    "word": "Quadratic Function",
+    "pos": "-",
+    "meaning": "Polynomial functions with one or more variables in which the highest power of the variable is two."
+  },
+  {
+    "word": "Cubic Function",
+    "pos": "-",
+    "meaning": "A function of the form where a is nonzero; or in other words, a function defined by a polynomial of degree three."
+  },
+  {
+    "word": "Power Function",
+    "pos": "-",
+    "meaning": "A function where y = x^n where n is any real constant number."
+  },
+  {
+    "word": "Integer",
+    "pos": "-",
+    "meaning": "Any number that is not a fraction or decimal: any whole number or its negative."
+  }
+]

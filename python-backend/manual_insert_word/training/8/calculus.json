@@ -1,0 +1,82 @@
+[
+  {
+    "word": "Telescoping Series",
+    "meaning": "Telescoping series is a series where all terms cancel out except for the first and last one."
+  },
+  {
+    "word": "Test for Divergence",
+    "meaning": "The simplest divergence test, called the Divergence Test, is used to determine whether the sum of a series diverges based on the series's end-behavior. It cannot be used alone to determine whether the sum of a series converges."
+  },
+  {
+    "word": "Harmonic Series",
+    "meaning": "In mathematics, the harmonic series is the divergent infinite series."
+  },
+  {
+    "word": "Integral Test",
+    "meaning": "In mathematics, the integral test for convergence is a method used to test infinite series of monotonous terms for convergence."
+  },
+  {
+    "word": "Series with Positive Terms",
+    "meaning": "By a positive term series, we mean a series in which every term is greater than zero."
+  },
+  {
+    "word": "p-series",
+    "meaning": "A p-series is a specific type of infinite series."
+  },
+  {
+    "word": "Remainder",
+    "meaning": "An amount left over after division (happens when the first number does not divide exactly by the other)."
+  },
+  {
+    "word": "Alternating Series",
+    "meaning": "In mathematical analysis, the alternating series test is the method used to prove that an alternating series with terms that decrease in absolute value is a convergent series."
+  },
+  {
+    "word": "Absolutely/Conditionally Convergent",
+    "meaning": "\"Absolute convergence\" means a series will converge even when you take the absolute value of each term, while \"Conditional convergence\" means the series converges but not absolutely. \"Conditional convergence\" is the property of an infinite series that converges while the series formed by replacing each term in the given series with its absolute value diverges; the property of an infinite series that converges when the order of the terms is altered."
+  },
+  {
+    "word": "Ratio Test",
+    "meaning": "The theorem that a given infinite series converges if the absolute value of the ratio of the term succeeding the nth term to the nth term approaches a limit less than 1 as n increases without bound."
+  },
+  {
+    "word": "Root Test",
+    "meaning": "The root test tells us whether or not a series converges absolutely. As its name suggests, it involves taking a root, and so it is most useful for exponential series and in situations where taking a root is quick and simple."
+  },
+  {
+    "word": "Factorial",
+    "meaning": "Factorial, in mathematics, the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point."
+  },
+  {
+    "word": "Power Series",
+    "meaning": "Power series, in mathematics, an infinite series that can be thought of as a polynomial with an infinite number of terms, such as 1 + x + x² + x³ + ...."
+  },
+  {
+    "word": "Interval of Convergence",
+    "meaning": "An interval associated with a given power series such that the series converges for all values of the variable inside the interval and diverges for all values outside it."
+  },
+  {
+    "word": "Radius of Convergence",
+    "meaning": "In mathematics, the radius of convergence of a power series is the radius of the largest disk in which the series converges."
+  },
+  {
+    "word": "Term-by-Term Differentiation and Integration",
+    "meaning": "The ability to find the integral or derivative of a sum of functions by integrating each summand, works for a finite sum."
+  },
+  {
+    "word": "Taylor Series",
+    "meaning": "An infinite sum giving the value of a function f(z) in the neighborhood of a point a in terms of the derivatives of the function evaluated at a."
+  },
+  {
+    "word": "Maclaurin Series",
+    "meaning": "Maclaurin series are a type of series expansion in which all terms are non-negative integer powers of the variable."
+  },
+  {
+    "word": "Taylor Polynomial Order n",
+    "meaning": "In mathematics, the Taylor series of a function is an infinite sum of terms that are expressed in terms of the function's derivatives at a single point."
+  },
+  {
+    "word": "Binomial Series / Binomial Coefficient",
+    "meaning": "Binomial series is an infinite series obtained by expanding a binomial raised to a power that is not a positive integer. In mathematics, the binomial coefficients are the positive integers that occur as coefficients in the binomial theorem."
+  }
+]

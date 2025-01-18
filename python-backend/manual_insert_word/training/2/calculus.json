@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Real Number",
+    "pos": "-",
+    "meaning": "A value of a continuous quantity that can represent a distance along a line."
+  },
+  {
+    "word": "Root Function",
+    "pos": "-",
+    "meaning": "Used to find a single solution to a single function with a single unknown."
+  },
+  {
+    "word": "Rational Function",
+    "pos": "-",
+    "meaning": "One that can be written as a polynomial divided by a polynomial."
+  },
+  {
+    "word": "Trigonometric Function",
+    "pos": "-",
+    "meaning": "Real functions which relate an angle of a right-angled triangle to ratios of two side lengths."
+  },
+  {
+    "word": "Radian",
+    "pos": "-",
+    "meaning": "The angle made by taking the radius and wrapping it round the circle."
+  },
+  {
+    "word": "Exponent/Exponential Function",
+    "pos": "-",
+    "meaning": "A mathematical function in form f(x) = ax, where 'x' is a variable and 'a' is a constant which is called the base of the function and it should be greater than 0."
+  },
+  {
+    "word": "Logarithm/Logarithmic Function",
+    "pos": "-",
+    "meaning": "The inverse function to exponentiation."
+  },
+  {
+    "word": "Elementary Function",
+    "pos": "-",
+    "meaning": "A function built up of a finite combination of constant functions, field operations (addition, multiplication, division, and root extractions--the elementary operations)--and algebraic, exponential, and logarithmic functions and their inverses under repeated compositions."
+  },
+  {
+    "word": "Composite (Composition Function)",
+    "pos": "-",
+    "meaning": "Generally a function that is written inside another function."
+  },
+  {
+    "word": "Natural Exponential Function",
+    "pos": "-",
+    "meaning": "The unique function which is equal to its own derivative, with the initial value f(0) = 1 (and hence one may define e as f(1))."
+  },
+  {
+    "word": "Natural Logarithm",
+    "pos": "-",
+    "meaning": "Its logarithm to the base of the mathematical constant e, which is an irrational and transcendental number approximately equal to 2.718281828459."
+  },
+  {
+    "word": "Inverse Function",
+    "pos": "-",
+    "meaning": "A function that undoes the action of another function."
+  },
+  {
+    "word": "Inverse Trigonometric Function",
+    "pos": "-",
+    "meaning": "The inverse functions of the trigonometric functions (with suitably restricted domains)."
+  },
+  {
+    "word": "Limit",
+    "pos": "-",
+    "meaning": "The value that a function (or sequence) approaches as the input (or index) approaches some value."
+  },
+  {
+    "word": "Derivative",
+    "pos": "-",
+    "meaning": "The rate of change of a function with respect to a variable."
+  },
+  {
+    "word": "Tangent, Tangent Line",
+    "pos": "-",
+    "meaning": "A line that just touches the graph of the function at the point in question and is 'parallel' (in some way) to the graph at that point."
+  },
+  {
+    "word": "Secant Line",
+    "pos": "-",
+    "meaning": "A straight line joining two points on a function."
+  },
+  {
+    "word": "Open/Closed Interval",
+    "pos": "-",
+    "meaning": "An open interval does not include its endpoints and is indicated with parentheses. A closed interval includes its endpoints and is denoted with square brackets rather than parentheses."
+  },
+  {
+    "word": "One-Sided Limit",
+    "pos": "-",
+    "meaning": "The value the function approaches as the x-values approach the limit from one side only."
+  },
+  {
+    "word": "Left-Hand/Right-Hand Limit",
+    "pos": "-",
+    "meaning": "A left-hand limit means the limit of a function as it approaches from the left-hand side. On the other hand, a right-hand limit means the limit of a function as it approaches from the right-hand side."
+  }
+]

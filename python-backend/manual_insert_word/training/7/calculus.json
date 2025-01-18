@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Cartesian Coordinate (Rectangular Coordinate)",
+    "pos": "n",
+    "meaning": "The Cartesian coordinates (also called rectangular coordinates) of a point are a pair of numbers (in two-dimensions) or a triplet of numbers (in three-dimensions) that specified signed distances from the coordinate axis."
+  },
+  {
+    "word": "Quadrant",
+    "pos": "n",
+    "meaning": "Take a sheet of paper and draw the horizontal axis (x-axis) and the vertical axis (y-axis). These two axes divide the paper into 4 parts. Each part is called a quadrant."
+  },
+  {
+    "word": "Octant",
+    "pos": "n",
+    "meaning": "An octant in solid geometry is one of the eight divisions of a Euclidean three-dimensional coordinate system defined by the signs of the coordinates. It is similar to the two-dimensional quadrant and the one-dimensional ray."
+  },
+  {
+    "word": "Conic Section, Conic",
+    "pos": "n",
+    "meaning": "In mathematics, a conic section (or simply conic) is a curve obtained as the intersection of the surface of a cone with a plane."
+  },
+  {
+    "word": "Circle / Semicircle",
+    "pos": "n",
+    "meaning": "In mathematics (and more specifically geometry), a semicircle is a one-dimensional locus of points that forms half of a circle."
+  },
+  {
+    "word": "Ellipse",
+    "pos": "n",
+    "meaning": "In mathematics, an ellipse is a plane curve surrounding two focal points, such that for all points on the curve, the sum of the two distances to the focal points is a constant."
+  },
+  {
+    "word": "Parabola",
+    "pos": "n",
+    "meaning": "A type of curve such as that made by an object that is thrown up in the air and falls to the ground in a different place."
+  },
+  {
+    "word": "Hyperbola",
+    "pos": "n",
+    "meaning": "A curve whose ends continue to move apart from each other."
+  },
+  {
+    "word": "Focus, Foci",
+    "pos": "n",
+    "meaning": "In physics, the point where waves of light or sound that are moving towards each other meet."
+  },
+  {
+    "word": "Directrix",
+    "pos": "n",
+    "meaning": "In mathematics, a directrix is a curve associated with a process generating a geometric object."
+  },
+  {
+    "word": "Vertex, Vertices",
+    "pos": "n",
+    "meaning": "A point where two or more line segments meet."
+  },
+  {
+    "word": "Major/Minor Axis",
+    "pos": "n",
+    "meaning": "The major and minor axes of an ellipse are diameters (lines through the center) of the ellipse. The major axis is the longest diameter and the minor axis the shortest."
+  },
+  {
+    "word": "Sequence",
+    "pos": "n",
+    "meaning": "A series of related things or events, or the order in which they follow each other."
+  },
+  {
+    "word": "Bounded Sequence",
+    "pos": "n",
+    "meaning": "A sequence {xn} is said to be bounded if ∃M>0 such that |xn|≤M for all n∈N+."
+  },
+  {
+    "word": "Bounded Above/Below",
+    "pos": "n",
+    "meaning": "A real function is bounded from below if there is a number k such that for all x from the domain D(f), one has f(x) ≥ k. It is bounded from above if there is a number K such that for all x, f(x) ≤ K."
+  },
+  {
+    "word": "Upper/Lower Bound",
+    "pos": "n",
+    "meaning": "The upper bound is the smallest value that would round up to the next estimated value. The lower bound is the smallest value that would round up to the estimated value."
+  },
+  {
+    "word": "Monotonic Sequence Theorem",
+    "pos": "n",
+    "meaning": "The monotone convergence theorem is any of a number of related theorems proving the convergence of monotonic sequences (sequences that are non-decreasing or non-increasing) that are also bounded."
+  },
+  {
+    "word": "Series / Infinite Series",
+    "pos": "n",
+    "meaning": "In mathematics, a series is, roughly speaking, a description of the operation of adding infinitely many quantities, one after the other, to a given starting quantity. An infinite series is the sum of infinitely many numbers related in a given way and listed in a given order."
+  },
+  {
+    "word": "Partial Sum",
+    "pos": "n",
+    "meaning": "A Partial Sum is a Sum of Part of a Sequence."
+  },
+  {
+    "word": "Geometric Series",
+    "pos": "n",
+    "meaning": "A geometric series sum_(k)a_k is a series for which the ratio of each two consecutive terms a_(k+1)/a_k is a constant function of the summation index k."
+  }
+]

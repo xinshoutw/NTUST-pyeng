@@ -1,0 +1,302 @@
+[
+  {
+    "word": "aliasing effect",
+    "pos": "-",
+    "meaning": "混疊效應"
+  },
+  {
+    "word": "AC",
+    "pos": "-",
+    "meaning": "交流電"
+  },
+  {
+    "word": "AM",
+    "pos": "-",
+    "meaning": "調幅"
+  },
+  {
+    "word": "AD",
+    "pos": "-",
+    "meaning": "類比至數位"
+  },
+  {
+    "word": "block-based",
+    "pos": "-",
+    "meaning": "基於區塊"
+  },
+  {
+    "word": "blockwise",
+    "pos": "-",
+    "meaning": "區段式"
+  },
+  {
+    "word": "B-picture",
+    "pos": "-",
+    "meaning": "雙向影像"
+  },
+  {
+    "word": "cell relay",
+    "pos": "-",
+    "meaning": "細胞傳送"
+  },
+  {
+    "word": "central management",
+    "pos": "-",
+    "meaning": "中央管理"
+  },
+  {
+    "word": "channel messages",
+    "pos": "-",
+    "meaning": "頻道訊息"
+  },
+  {
+    "word": "CPU",
+    "pos": "-",
+    "meaning": "中央處理單元"
+  },
+  {
+    "word": "digital video",
+    "pos": "-",
+    "meaning": "數位視訊"
+  },
+  {
+    "word": "direct sequence",
+    "pos": "-",
+    "meaning": "直序"
+  },
+  {
+    "word": "discretize",
+    "pos": "-",
+    "meaning": "離散化"
+  },
+  {
+    "word": "draw program",
+    "pos": "-",
+    "meaning": "繪圖程式"
+  },
+  {
+    "word": "enhancement layer",
+    "pos": "-",
+    "meaning": "加強階層"
+  },
+  {
+    "word": "epoxy resin",
+    "pos": "-",
+    "meaning": "環氧樹脂"
+  },
+  {
+    "word": "equal-width",
+    "pos": "-",
+    "meaning": "等寬"
+  },
+  {
+    "word": "error detection",
+    "pos": "-",
+    "meaning": "錯誤偵測"
+  },
+  {
+    "word": "flugelhorn",
+    "pos": "-",
+    "meaning": "粗管短號"
+  },
+  {
+    "word": "foots pedal",
+    "pos": "-",
+    "meaning": "腳踏開關"
+  },
+  {
+    "word": "format signifier",
+    "pos": "-",
+    "meaning": "格式符號"
+  },
+  {
+    "word": "frame grabbing",
+    "pos": "-",
+    "meaning": "畫面擷取"
+  },
+  {
+    "word": "gross data rate",
+    "pos": "-",
+    "meaning": "總資料率"
+  },
+  {
+    "word": "group of blocks",
+    "pos": "-",
+    "meaning": "區塊群"
+  },
+  {
+    "word": "interior macroblock",
+    "pos": "-",
+    "meaning": "內部集合區塊"
+  },
+  {
+    "word": "inter-frames",
+    "pos": "-",
+    "meaning": "間隔畫面"
+  },
+  {
+    "word": "interlace bit",
+    "pos": "-",
+    "meaning": "交錯位元"
+  },
+  {
+    "word": "interleaving",
+    "pos": "-",
+    "meaning": "交錯式"
+  },
+  {
+    "word": "literature review",
+    "pos": "-",
+    "meaning": "文獻分析"
+  },
+  {
+    "word": "local address",
+    "pos": "-",
+    "meaning": "局部位址"
+  },
+  {
+    "word": "local area network",
+    "pos": "-",
+    "meaning": "區域網路"
+  },
+  {
+    "word": "local media",
+    "pos": "-",
+    "meaning": "本地媒體"
+  },
+  {
+    "word": "locale-based",
+    "pos": "-",
+    "meaning": "基礎"
+  },
+  {
+    "word": "multi-carrier",
+    "pos": "-",
+    "meaning": "多波載"
+  },
+  {
+    "word": "multiplexer",
+    "pos": "-",
+    "meaning": "多工器"
+  },
+  {
+    "word": "multiplier values",
+    "pos": "-",
+    "meaning": "乘數值"
+  },
+  {
+    "word": "multi-sampling",
+    "pos": "-",
+    "meaning": "多重採樣"
+  },
+  {
+    "word": "object modeling",
+    "pos": "-",
+    "meaning": "物件模型"
+  },
+  {
+    "word": "octave",
+    "pos": "-",
+    "meaning": "高八度"
+  },
+  {
+    "word": "oblong photography",
+    "pos": "-",
+    "meaning": "橫式照片"
+  },
+  {
+    "word": "octet",
+    "pos": "-",
+    "meaning": "八位元組"
+  },
+  {
+    "word": "peak signal",
+    "pos": "-",
+    "meaning": "峰值訊號"
+  },
+  {
+    "word": "perception",
+    "pos": "-",
+    "meaning": "感知"
+  },
+  {
+    "word": "P-frames",
+    "pos": "-",
+    "meaning": "中介畫面"
+  },
+  {
+    "word": "phoneme",
+    "pos": "-",
+    "meaning": "音位"
+  },
+  {
+    "word": "physical link",
+    "pos": "-",
+    "meaning": "實體連結"
+  },
+  {
+    "word": "repetitiveness",
+    "pos": "-",
+    "meaning": "重複性"
+  },
+  {
+    "word": "request for comments",
+    "pos": "-",
+    "meaning": "廢徵求意見"
+  },
+  {
+    "word": "residue error",
+    "pos": "-",
+    "meaning": "殘值誤差"
+  },
+  {
+    "word": "reuse factor",
+    "pos": "-",
+    "meaning": "重複使用係數"
+  },
+  {
+    "word": "reverberation",
+    "pos": "-",
+    "meaning": "回響"
+  },
+  {
+    "word": "reverse path",
+    "pos": "-",
+    "meaning": "回溯路徑"
+  },
+  {
+    "word": "semantic gap",
+    "pos": "-",
+    "meaning": "語意隔閡"
+  },
+  {
+    "word": "semitransparent",
+    "pos": "-",
+    "meaning": "半透明的"
+  },
+  {
+    "word": "separated video",
+    "pos": "-",
+    "meaning": "分離視訊"
+  },
+  {
+    "word": "time division duplex",
+    "pos": "-",
+    "meaning": "分時多工"
+  },
+  {
+    "word": "time of exposure",
+    "pos": "-",
+    "meaning": "曝光時間"
+  },
+  {
+    "word": "velocity",
+    "pos": "-",
+    "meaning": "速度"
+  },
+  {
+    "word": "vertical mode",
+    "pos": "-",
+    "meaning": "垂直模式"
+  }
+]

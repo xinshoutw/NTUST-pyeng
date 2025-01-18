@@ -1,0 +1,302 @@
+[
+  {
+    "word": "active balance",
+    "pos": "-",
+    "meaning": "活動餘額"
+  },
+  {
+    "word": "advance receipt",
+    "pos": "-",
+    "meaning": "預收貨款"
+  },
+  {
+    "word": "adverse selection",
+    "pos": "-",
+    "meaning": "逆選擇"
+  },
+  {
+    "word": "advertising campaign",
+    "pos": "-",
+    "meaning": "廣告攻勢"
+  },
+  {
+    "word": "be in the black",
+    "pos": "-",
+    "meaning": "獲利"
+  },
+  {
+    "word": "be in the red",
+    "pos": "-",
+    "meaning": "虧損"
+  },
+  {
+    "word": "bear interest",
+    "pos": "-",
+    "meaning": "生利息"
+  },
+  {
+    "word": "bellwether bond",
+    "pos": "-",
+    "meaning": "指標債券"
+  },
+  {
+    "word": "cash rebate",
+    "pos": "-",
+    "meaning": "現金回饋"
+  },
+  {
+    "word": "cash withdrawal",
+    "pos": "-",
+    "meaning": "現金提取"
+  },
+  {
+    "word": "cash with order",
+    "pos": "-",
+    "meaning": "下訂單時付現"
+  },
+  {
+    "word": "catchword",
+    "pos": "-",
+    "meaning": "標語"
+  },
+  {
+    "word": "depreciation",
+    "pos": "-",
+    "meaning": "貶值"
+  },
+  {
+    "word": "depression",
+    "pos": "-",
+    "meaning": "景氣蕭條"
+  },
+  {
+    "word": "developed country",
+    "pos": "-",
+    "meaning": "已開發國家"
+  },
+  {
+    "word": "DI",
+    "pos": "-",
+    "meaning": "可支配所得"
+  },
+  {
+    "word": "economic goods",
+    "pos": "-",
+    "meaning": "經濟財"
+  },
+  {
+    "word": "economic jitters",
+    "pos": "-",
+    "meaning": "經濟恐慌"
+  },
+  {
+    "word": "economic takeoff",
+    "pos": "-",
+    "meaning": "經濟起飛"
+  },
+  {
+    "word": "ECR",
+    "pos": "-",
+    "meaning": "有效客戶回應"
+  },
+  {
+    "word": "financial statement",
+    "pos": "-",
+    "meaning": "財務報表"
+  },
+  {
+    "word": "fixed cost",
+    "pos": "-",
+    "meaning": "固定成本"
+  },
+  {
+    "word": "fixed exchange rate",
+    "pos": "-",
+    "meaning": "固定匯率"
+  },
+  {
+    "word": "GIS",
+    "pos": "-",
+    "meaning": "地理資訊系統"
+  },
+  {
+    "word": "GNE",
+    "pos": "-",
+    "meaning": "國民支出毛額"
+  },
+  {
+    "word": "GNI",
+    "pos": "-",
+    "meaning": "國民所得毛額"
+  },
+  {
+    "word": "GNP",
+    "pos": "-",
+    "meaning": "國民生產毛額"
+  },
+  {
+    "word": "GDP",
+    "pos": "-",
+    "meaning": "國內生產毛額"
+  },
+  {
+    "word": "high-traffic hour",
+    "pos": "-",
+    "meaning": "人潮尖峰時段"
+  },
+  {
+    "word": "horizontal competition",
+    "pos": "-",
+    "meaning": "同業競爭"
+  },
+  {
+    "word": "illegible",
+    "pos": "-",
+    "meaning": "難辨認的"
+  },
+  {
+    "word": "implicit cost",
+    "pos": "-",
+    "meaning": "內涵成本"
+  },
+  {
+    "word": "joint supply",
+    "pos": "-",
+    "meaning": "聯合供給"
+  },
+  {
+    "word": "letter of guarantee",
+    "pos": "-",
+    "meaning": "保證函"
+  },
+  {
+    "word": "live demonstration",
+    "pos": "-",
+    "meaning": "現場示範"
+  },
+  {
+    "word": "loan amount",
+    "pos": "-",
+    "meaning": "貸款金額"
+  },
+  {
+    "word": "market exposure",
+    "pos": "-",
+    "meaning": "市場曝光率"
+  },
+  {
+    "word": "market mechanism",
+    "pos": "-",
+    "meaning": "市場機制"
+  },
+  {
+    "word": "market value",
+    "pos": "-",
+    "meaning": "市值"
+  },
+  {
+    "word": "nest egg",
+    "pos": "-",
+    "meaning": "準備金"
+  },
+  {
+    "word": "net asset value",
+    "pos": "-",
+    "meaning": "資產淨值"
+  },
+  {
+    "word": "NNP",
+    "pos": "-",
+    "meaning": "國民生產淨額"
+  },
+  {
+    "word": "oligopoly market",
+    "pos": "-",
+    "meaning": "寡占市場"
+  },
+  {
+    "word": "on a budget",
+    "pos": "-",
+    "meaning": "拮据"
+  },
+  {
+    "word": "on consignment",
+    "pos": "-",
+    "meaning": "寄售"
+  },
+  {
+    "word": "payment arrears",
+    "pos": "-",
+    "meaning": "欠款"
+  },
+  {
+    "word": "payment stub",
+    "pos": "-",
+    "meaning": "繳款存根"
+  },
+  {
+    "word": "performance appraisal",
+    "pos": "-",
+    "meaning": "績效考核"
+  },
+  {
+    "word": "pessimistic",
+    "pos": "-",
+    "meaning": "悲觀的"
+  },
+  {
+    "word": "questionnaire",
+    "pos": "-",
+    "meaning": "問卷"
+  },
+  {
+    "word": "Quick Response Code",
+    "pos": "-",
+    "meaning": "行動條碼"
+  },
+  {
+    "word": "recruitment",
+    "pos": "-",
+    "meaning": "招募"
+  },
+  {
+    "word": "regional fund",
+    "pos": "-",
+    "meaning": "區域性基金"
+  },
+  {
+    "word": "registered mail",
+    "pos": "-",
+    "meaning": "掛號信件"
+  },
+  {
+    "word": "satisfaction survey",
+    "pos": "-",
+    "meaning": "滿意度調查"
+  },
+  {
+    "word": "secured loan",
+    "pos": "-",
+    "meaning": "擔保貸款"
+  },
+  {
+    "word": "tax arrears",
+    "pos": "-",
+    "meaning": "欠稅"
+  },
+  {
+    "word": "timeliness",
+    "pos": "-",
+    "meaning": "時效性"
+  },
+  {
+    "word": "trade deficit",
+    "pos": "-",
+    "meaning": "貿易逆差"
+  },
+  {
+    "word": "website traffic",
+    "pos": "-",
+    "meaning": "網站流量"
+  }
+]

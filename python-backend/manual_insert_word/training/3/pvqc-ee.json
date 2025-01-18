@@ -1,0 +1,302 @@
+[
+  {
+    "word": "air gap",
+    "pos": "-",
+    "meaning": "氣隙"
+  },
+  {
+    "word": "alnico",
+    "pos": "-",
+    "meaning": "鋁鎳鈷系"
+  },
+  {
+    "word": "ampere",
+    "pos": "-",
+    "meaning": "安培"
+  },
+  {
+    "word": "body effect diode",
+    "pos": "-",
+    "meaning": "體效應一極體"
+  },
+  {
+    "word": "bound electron",
+    "pos": "-",
+    "meaning": "束縛電子"
+  },
+  {
+    "word": "breather",
+    "pos": "-",
+    "meaning": "呼吸器"
+  },
+  {
+    "word": "clipped",
+    "pos": "-",
+    "meaning": "被裁掉"
+  },
+  {
+    "word": "closed surface",
+    "pos": "-",
+    "meaning": "閉合面"
+  },
+  {
+    "word": "coil pitch",
+    "pos": "-",
+    "meaning": "線圈節距"
+  },
+  {
+    "word": "coding",
+    "pos": "-",
+    "meaning": "編碼"
+  },
+  {
+    "word": "deep saturation",
+    "pos": "-",
+    "meaning": "深度飽和"
+  },
+  {
+    "word": "delta connection",
+    "pos": "-",
+    "meaning": "三角形接法"
+  },
+  {
+    "word": "demultiplexer",
+    "pos": "-",
+    "meaning": "解多工器"
+  },
+  {
+    "word": "electrolytic",
+    "pos": "-",
+    "meaning": "電解的"
+  },
+  {
+    "word": "electron hole pair",
+    "pos": "-",
+    "meaning": "電子-電洞對"
+  },
+  {
+    "word": "emitter resistance",
+    "pos": "-",
+    "meaning": "射極電阻"
+  },
+  {
+    "word": "field winding",
+    "pos": "-",
+    "meaning": "磁場繞組"
+  },
+  {
+    "word": "filtration",
+    "pos": "-",
+    "meaning": "濾波"
+  },
+  {
+    "word": "fire wire",
+    "pos": "-",
+    "meaning": "火線"
+  },
+  {
+    "word": "flash memory",
+    "pos": "-",
+    "meaning": "快閃記憶體"
+  },
+  {
+    "word": "flash ROM",
+    "pos": "-",
+    "meaning": "快閃唯讀記憶體"
+  },
+  {
+    "word": "grammering winding",
+    "pos": "-",
+    "meaning": "環形繞組"
+  },
+  {
+    "word": "Gray code",
+    "pos": "-",
+    "meaning": "葛雷碼"
+  },
+  {
+    "word": "ground line",
+    "pos": "-",
+    "meaning": "地線"
+  },
+  {
+    "word": "harmonic wave",
+    "pos": "-",
+    "meaning": "諧波"
+  },
+  {
+    "word": "heat sinking",
+    "pos": "-",
+    "meaning": "散熱"
+  },
+  {
+    "word": "high resolution",
+    "pos": "-",
+    "meaning": "高解析度"
+  },
+  {
+    "word": "higher harmonics",
+    "pos": "-",
+    "meaning": "高次諧波"
+  },
+  {
+    "word": "imaginary form",
+    "pos": "-",
+    "meaning": "虛數"
+  },
+  {
+    "word": "impedance triangle",
+    "pos": "-",
+    "meaning": "阻抗三角形"
+  },
+  {
+    "word": "incremental current",
+    "pos": "-",
+    "meaning": "增量電流"
+  },
+  {
+    "word": "initial voltage",
+    "pos": "-",
+    "meaning": "初始電壓"
+  },
+  {
+    "word": "lead-lag network",
+    "pos": "-",
+    "meaning": "超前-滯後網路"
+  },
+  {
+    "word": "leakage current",
+    "pos": "-",
+    "meaning": "漏電流"
+  },
+  {
+    "word": "leakage flux",
+    "pos": "-",
+    "meaning": "漏磁通"
+  },
+  {
+    "word": "maximum value",
+    "pos": "-",
+    "meaning": "極大值"
+  },
+  {
+    "word": "mechanical",
+    "pos": "-",
+    "meaning": "機械的"
+  },
+  {
+    "word": "mho",
+    "pos": "-",
+    "meaning": "姆歐"
+  },
+  {
+    "word": "neutralization",
+    "pos": "-",
+    "meaning": "中和"
+  },
+  {
+    "word": "no-load condition",
+    "pos": "-",
+    "meaning": "無負載狀況"
+  },
+  {
+    "word": "noise margin",
+    "pos": "-",
+    "meaning": "雜訊邊界"
+  },
+  {
+    "word": "open slot",
+    "pos": "-",
+    "meaning": "開口槽"
+  },
+  {
+    "word": "open-circuit test",
+    "pos": "-",
+    "meaning": "開路試驗"
+  },
+  {
+    "word": "optical coupler",
+    "pos": "-",
+    "meaning": "光耦合器"
+  },
+  {
+    "word": "overvoltage protection circuit",
+    "pos": "-",
+    "meaning": "過壓保護電路"
+  },
+  {
+    "word": "parity check method",
+    "pos": "-",
+    "meaning": "同位法"
+  },
+  {
+    "word": "partial derivative",
+    "pos": "-",
+    "meaning": "偏微分"
+  },
+  {
+    "word": "particle",
+    "pos": "-",
+    "meaning": "粒子"
+  },
+  {
+    "word": "periodic waveform",
+    "pos": "-",
+    "meaning": "週期波形"
+  },
+  {
+    "word": "phase current",
+    "pos": "-",
+    "meaning": "相電流"
+  },
+  {
+    "word": "quasi-stable state",
+    "pos": "-",
+    "meaning": "準穩定狀態"
+  },
+  {
+    "word": "real form",
+    "pos": "-",
+    "meaning": "實數"
+  },
+  {
+    "word": "real part",
+    "pos": "-",
+    "meaning": "實部"
+  },
+  {
+    "word": "rectangular coordinates",
+    "pos": "-",
+    "meaning": "直角坐標"
+  },
+  {
+    "word": "saturation region",
+    "pos": "-",
+    "meaning": "飽和區"
+  },
+  {
+    "word": "scaling amplifier",
+    "pos": "-",
+    "meaning": "比例放大器"
+  },
+  {
+    "word": "schematic",
+    "pos": "-",
+    "meaning": "電路圖"
+  },
+  {
+    "word": "temperature drift",
+    "pos": "-",
+    "meaning": "溫度漂移"
+  },
+  {
+    "word": "voltage division",
+    "pos": "-",
+    "meaning": "分壓"
+  },
+  {
+    "word": "XNOR",
+    "pos": "-",
+    "meaning": "互斥反或閘"
+  }
+]

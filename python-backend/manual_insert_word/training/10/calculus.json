@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Level Surface",
+    "pos": "n",
+    "meaning": "A surface which is perpendicular to the plumb line at every point."
+  },
+  {
+    "word": "Clairaut's Theorem",
+    "pos": "n",
+    "meaning": "A famous theorem is that the mixed partial derivatives of certain nice functions are the same."
+  },
+  {
+    "word": "Tangent Plane",
+    "pos": "n",
+    "meaning": "The plane through a point of a surface that contains the tangent lines to all the curves on the surface through the same point."
+  },
+  {
+    "word": "Total Differential",
+    "pos": "n",
+    "meaning": "The differential of a function of two or more variables, when each of the variables receives an increment."
+  },
+  {
+    "word": "Differentiability",
+    "pos": "n",
+    "meaning": "In calculus (a branch of mathematics), a differentiable function of one real variable is a function whose derivative exists at each point in its domain."
+  },
+  {
+    "word": "Directional Derivative",
+    "pos": "n",
+    "meaning": "In mathematics, the directional derivative of a multivariate differentiable function along a given vector v at a given point x intuitively represents the instantaneous rate of change of the function, moving through x with a velocity specified by v."
+  },
+  {
+    "word": "Gradient / Gradient Vector",
+    "pos": "n",
+    "meaning": "The gradient vector can be interpreted as the 'direction and rate of fastest increase'. If the gradient of a function is non-zero at a point p, the direction of the gradient is the direction in which the function increases most quickly from p, and the magnitude of the gradient is the rate of increase in that direction, the greatest absolute directional derivative."
+  },
+  {
+    "word": "Saddle Point",
+    "pos": "n",
+    "meaning": "A point at which a function of two variables has partial derivatives equal to zero but at which the function has neither a maximum nor a minimum value."
+  },
+  {
+    "word": "Boundary",
+    "pos": "n",
+    "meaning": "A line which marks the limits of an area; a dividing line."
+  },
+  {
+    "word": "Lagrange Multiplier",
+    "pos": "n",
+    "meaning": "In mathematical optimization, the method of Lagrange multipliers is a strategy for finding the local maxima and minima of a function subject to equality constraints (i.e., subject to the condition that one or more equations have to be satisfied exactly by the chosen values of the variables)."
+  },
+  {
+    "word": "Constraint",
+    "pos": "n",
+    "meaning": "A limitation or restriction."
+  },
+  {
+    "word": "Multiple Integral",
+    "pos": "n",
+    "meaning": "A multiple integral is a definite integral of a function of several real variables."
+  },
+  {
+    "word": "Double/Triple Integral",
+    "pos": "n",
+    "meaning": "Double integrals are a way to integrate over a two-dimensional area. Among other things, they let us compute the volume under a surface. Triple integrals are the analog of double integrals for three dimensions. They are a tool for adding up infinitely many infinitesimal quantities associated with points in a three-dimensional region."
+  },
+  {
+    "word": "Iterated Integral",
+    "pos": "n",
+    "meaning": "An iterated integral is the result of applying integrals to a function of more than one variable for example ∫∫f(x,y)dydx in a way that each of the integrals considers some of the variables as given constants."
+  },
+  {
+    "word": "Fubini’s Theorem",
+    "pos": "n",
+    "meaning": "In mathematical analysis, Fubini's theorem, introduced by Guido Fubini in 1907, is a result that gives conditions under which it is possible to compute a double integral by using an iterated integral. One may switch the order of integration if the double integral yields a finite answer when the integral is replaced by its absolute value."
+  },
+  {
+    "word": "Cylindrical Coordinate",
+    "pos": "n",
+    "meaning": "A cylindrical coordinate system is a three-dimensional coordinate system that specifies point positions by the distance from a chosen reference axis, the direction from the axis relative to a chosen reference direction, and the distance from a chosen reference plane perpendicular to the axis. The latter distance is given as a positive or negative number depending on which side of the reference plane faces the point."
+  },
+  {
+    "word": "Spherical Coordinate",
+    "pos": "n",
+    "meaning": "In mathematics, a spherical coordinate system is a coordinate system for three-dimensional space where the position of a point is specified by three numbers: the radial distance of that point from a fixed origin, its polar angle measured from a fixed zenith direction, and the azimuthal angle of its orthogonal projection on a reference plane that passes through the origin and is orthogonal to the zenith, measured from a fixed reference direction on that plane. It can be seen as the three-dimensional version of the polar coordinate system."
+  },
+  {
+    "word": "Change of Variable",
+    "pos": "-",
+    "meaning": "In mathematics, a change of variables is a basic technique used to simplify problems in which the original variables are replaced with functions of other variables. The intent is that when expressed in new variables, the problem may become simpler, or equivalent to a better understood problem."
+  },
+  {
+    "word": "Transformation / Inverse Transformation",
+    "pos": "-",
+    "meaning": "The inverse transformation process is a basic method for sampling of the pseudo-random number. In other words, it is used for the generation of the sample numbers at random from any probability distribution given its function of cumulative distribution. The inverse transformation process is also known as Inverse transform sampling, inversion sampling, inverse transformation method, Smirnov transform, inverse probability integral transform or golden rule."
+  },
+  {
+    "word": "Jacobian Determinant",
+    "pos": "-",
+    "meaning": "A determinant which is defined for a finite number of functions of the same number of variables and in which each row consists of the first partial derivatives of the same function with respect to each of the variables."
+  }
+]

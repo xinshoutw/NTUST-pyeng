@@ -1,0 +1,302 @@
+[
+  {
+    "word": "adjustable wrench",
+    "pos": "-",
+    "meaning": "活動扳手"
+  },
+  {
+    "word": "age hardening",
+    "pos": "-",
+    "meaning": "時效硬化"
+  },
+  {
+    "word": "air compressor",
+    "pos": "-",
+    "meaning": "空氣壓縮機"
+  },
+  {
+    "word": "batch production",
+    "pos": "-",
+    "meaning": "批量生產"
+  },
+  {
+    "word": "beam engine",
+    "pos": "-",
+    "meaning": "天平機"
+  },
+  {
+    "word": "bearing metal",
+    "pos": "-",
+    "meaning": "軸承合金"
+  },
+  {
+    "word": "bending stress",
+    "pos": "-",
+    "meaning": "彎曲應力"
+  },
+  {
+    "word": "cell production",
+    "pos": "-",
+    "meaning": "平元生產"
+  },
+  {
+    "word": "center drill",
+    "pos": "-",
+    "meaning": "中心鑽頭"
+  },
+  {
+    "word": "center of gravity",
+    "pos": "-",
+    "meaning": "重心"
+  },
+  {
+    "word": "central processor unit",
+    "pos": "-",
+    "meaning": "中央處理機"
+  },
+  {
+    "word": "d-fuse",
+    "pos": "-",
+    "meaning": "控型熔線"
+  },
+  {
+    "word": "dial control",
+    "pos": "-",
+    "meaning": "標度盤"
+  },
+  {
+    "word": "die casting",
+    "pos": "-",
+    "meaning": "壓鑄法"
+  },
+  {
+    "word": "diffusion wear",
+    "pos": "-",
+    "meaning": "擴散磨損"
+  },
+  {
+    "word": "end support",
+    "pos": "-",
+    "meaning": "端支柱"
+  },
+  {
+    "word": "end clearance",
+    "pos": "-",
+    "meaning": "端隙"
+  },
+  {
+    "word": "engrave",
+    "pos": "-",
+    "meaning": "雕刻"
+  },
+  {
+    "word": "felting process",
+    "pos": "-",
+    "meaning": "製氈法"
+  },
+  {
+    "word": "feeler gage",
+    "pos": "-",
+    "meaning": "觸探規"
+  },
+  {
+    "word": "fiber glass",
+    "pos": "-",
+    "meaning": "玻璃纖維"
+  },
+  {
+    "word": "garbage disposal",
+    "pos": "-",
+    "meaning": "垃圾處理"
+  },
+  {
+    "word": "gold",
+    "pos": "-",
+    "meaning": "金"
+  },
+  {
+    "word": "grade of bond",
+    "pos": "-",
+    "meaning": "膠合等級"
+  },
+  {
+    "word": "height gage",
+    "pos": "-",
+    "meaning": "高度規"
+  },
+  {
+    "word": "hexagon nut",
+    "pos": "-",
+    "meaning": "六角螺帽"
+  },
+  {
+    "word": "high density",
+    "pos": "-",
+    "meaning": "高密度"
+  },
+  {
+    "word": "inner race",
+    "pos": "-",
+    "meaning": "內擋圈"
+  },
+  {
+    "word": "input node",
+    "pos": "-",
+    "meaning": "輸入碼號"
+  },
+  {
+    "word": "internal force",
+    "pos": "-",
+    "meaning": "內力"
+  },
+  {
+    "word": "knuckle joint",
+    "pos": "-",
+    "meaning": "肘連結"
+  },
+  {
+    "word": "lever start",
+    "pos": "-",
+    "meaning": "手把起動"
+  },
+  {
+    "word": "lifting device",
+    "pos": "-",
+    "meaning": "提升裝置"
+  },
+  {
+    "word": "light alloy",
+    "pos": "-",
+    "meaning": "輕合金"
+  },
+  {
+    "word": "limit switch",
+    "pos": "-",
+    "meaning": "極限開關"
+  },
+  {
+    "word": "melting point",
+    "pos": "-",
+    "meaning": "熔點"
+  },
+  {
+    "word": "metal mold",
+    "pos": "-",
+    "meaning": "金屬模"
+  },
+  {
+    "word": "metallic material",
+    "pos": "-",
+    "meaning": "金屬材料"
+  },
+  {
+    "word": "metric standard",
+    "pos": "-",
+    "meaning": "公制標準"
+  },
+  {
+    "word": "micro switch",
+    "pos": "-",
+    "meaning": "微動開關"
+  },
+  {
+    "word": "nominal size",
+    "pos": "-",
+    "meaning": "公稱尺寸"
+  },
+  {
+    "word": "non-servo robot",
+    "pos": "-",
+    "meaning": "非伺服機器人"
+  },
+  {
+    "word": "normal close",
+    "pos": "-",
+    "meaning": "常閉"
+  },
+  {
+    "word": "normal open",
+    "pos": "-",
+    "meaning": "常開"
+  },
+  {
+    "word": "optical lithography",
+    "pos": "-",
+    "meaning": "光學微影術"
+  },
+  {
+    "word": "OR gate",
+    "pos": "-",
+    "meaning": "或門"
+  },
+  {
+    "word": "ordinary tool",
+    "pos": "-",
+    "meaning": "普通工具"
+  },
+  {
+    "word": "oxidizing flame",
+    "pos": "-",
+    "meaning": "氧化焰"
+  },
+  {
+    "word": "percussion press",
+    "pos": "-",
+    "meaning": "衝擊沖床"
+  },
+  {
+    "word": "photo mask",
+    "pos": "-",
+    "meaning": "光罩"
+  },
+  {
+    "word": "piano wire",
+    "pos": "-",
+    "meaning": "鋼琴線"
+  },
+  {
+    "word": "raw rubber",
+    "pos": "-",
+    "meaning": "生塑膠"
+  },
+  {
+    "word": "rectangular",
+    "pos": "-",
+    "meaning": "直角的"
+  },
+  {
+    "word": "reduction cells",
+    "pos": "-",
+    "meaning": "還原電池"
+  },
+  {
+    "word": "screw pair",
+    "pos": "-",
+    "meaning": "螺旋對"
+  },
+  {
+    "word": "scriber",
+    "pos": "-",
+    "meaning": "劃線針"
+  },
+  {
+    "word": "simple die",
+    "pos": "-",
+    "meaning": "簡單模"
+  },
+  {
+    "word": "thermal conductivity",
+    "pos": "-",
+    "meaning": "導熱度"
+  },
+  {
+    "word": "wafer probe",
+    "pos": "-",
+    "meaning": "晶圓測試"
+  },
+  {
+    "word": "welding",
+    "pos": "-",
+    "meaning": "銲接"
+  }
+]

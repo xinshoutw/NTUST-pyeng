@@ -1,0 +1,302 @@
+[
+  {
+    "word": "analog operation",
+    "pos": "-",
+    "meaning": "類比運算"
+  },
+  {
+    "word": "anisotropic",
+    "pos": "-",
+    "meaning": "非等向性的"
+  },
+  {
+    "word": "apparent power",
+    "pos": "-",
+    "meaning": "視在功率"
+  },
+  {
+    "word": "breakdown voltage",
+    "pos": "-",
+    "meaning": "崩潰電壓"
+  },
+  {
+    "word": "buffer isolation",
+    "pos": "-",
+    "meaning": "緩衝隔離"
+  },
+  {
+    "word": "bushing",
+    "pos": "-",
+    "meaning": "絕緣套管"
+  },
+  {
+    "word": "bypass diode",
+    "pos": "-",
+    "meaning": "旁路二極體"
+  },
+  {
+    "word": "coil side",
+    "pos": "-",
+    "meaning": "線圈邊"
+  },
+  {
+    "word": "color monitor",
+    "pos": "-",
+    "meaning": "彩色監視器"
+  },
+  {
+    "word": "common mode",
+    "pos": "-",
+    "meaning": "共模"
+  },
+  {
+    "word": "depletion layer",
+    "pos": "-",
+    "meaning": "空乏層"
+  },
+  {
+    "word": "dielectric breakdown",
+    "pos": "-",
+    "meaning": "介電質崩潰"
+  },
+  {
+    "word": "diffusion current",
+    "pos": "-",
+    "meaning": "擴散電流"
+  },
+  {
+    "word": "differential slope",
+    "pos": "-",
+    "meaning": "差動斜率"
+  },
+  {
+    "word": "encoder",
+    "pos": "-",
+    "meaning": "編碼器"
+  },
+  {
+    "word": "end bracket",
+    "pos": "-",
+    "meaning": "末端架"
+  },
+  {
+    "word": "equivalent transformation",
+    "pos": "-",
+    "meaning": "等效變換"
+  },
+  {
+    "word": "fixed resistor",
+    "pos": "-",
+    "meaning": "固定電阻器"
+  },
+  {
+    "word": "four quadrant multiplier",
+    "pos": "-",
+    "meaning": "四象限乘法器"
+  },
+  {
+    "word": "frequency compensation",
+    "pos": "-",
+    "meaning": "頻率補償"
+  },
+  {
+    "word": "front pitch",
+    "pos": "-",
+    "meaning": "前節距"
+  },
+  {
+    "word": "ground capacitance",
+    "pos": "-",
+    "meaning": "對地電容"
+  },
+  {
+    "word": "ground potential",
+    "pos": "-",
+    "meaning": "地參電位"
+  },
+  {
+    "word": "heat sink",
+    "pos": "-",
+    "meaning": "散熱器"
+  },
+  {
+    "word": "hexadecimal",
+    "pos": "-",
+    "meaning": "十六進制"
+  },
+  {
+    "word": "HPF",
+    "pos": "-",
+    "meaning": "高通濾波器"
+  },
+  {
+    "word": "high-voltage test",
+    "pos": "-",
+    "meaning": "高壓測試"
+  },
+  {
+    "word": "independent node",
+    "pos": "-",
+    "meaning": "獨立節點"
+  },
+  {
+    "word": "inductive circuit",
+    "pos": "-",
+    "meaning": "電感性電路"
+  },
+  {
+    "word": "induced voltage",
+    "pos": "-",
+    "meaning": "感應電壓"
+  },
+  {
+    "word": "inductor type",
+    "pos": "-",
+    "meaning": "感應器型式"
+  },
+  {
+    "word": "LED",
+    "pos": "-",
+    "meaning": "發光二極體"
+  },
+  {
+    "word": "level shifter",
+    "pos": "-",
+    "meaning": "準位移動器"
+  },
+  {
+    "word": "L-filter",
+    "pos": "-",
+    "meaning": "電感濾波器"
+  },
+  {
+    "word": "limiting parameter",
+    "pos": "-",
+    "meaning": "極限參數"
+  },
+  {
+    "word": "milli voltmeter",
+    "pos": "-",
+    "meaning": "毫伏表"
+  },
+  {
+    "word": "MRMIF",
+    "pos": "-",
+    "meaning": "磁動勢"
+  },
+  {
+    "word": "minority carrier",
+    "pos": "-",
+    "meaning": "少數載子"
+  },
+  {
+    "word": "MOS capacitance",
+    "pos": "-",
+    "meaning": "金氧半導容"
+  },
+  {
+    "word": "nominal value",
+    "pos": "-",
+    "meaning": "標稱值"
+  },
+  {
+    "word": "nonlinear device",
+    "pos": "-",
+    "meaning": "非線性元件"
+  },
+  {
+    "word": "nonsinusoidal",
+    "pos": "-",
+    "meaning": "非正弦"
+  },
+  {
+    "word": "output conductance",
+    "pos": "-",
+    "meaning": "輸出電導"
+  },
+  {
+    "word": "output loop",
+    "pos": "-",
+    "meaning": "輸出迴路"
+  },
+  {
+    "word": "output stage",
+    "pos": "-",
+    "meaning": "輸出級"
+  },
+  {
+    "word": "passband",
+    "pos": "-",
+    "meaning": "通帶"
+  },
+  {
+    "word": "passive device",
+    "pos": "-",
+    "meaning": "被動元件"
+  },
+  {
+    "word": "passive filter",
+    "pos": "-",
+    "meaning": "被動濾波器"
+  },
+  {
+    "word": "performance index",
+    "pos": "-",
+    "meaning": "性能指標"
+  },
+  {
+    "word": "rectifier bridge",
+    "pos": "-",
+    "meaning": "整流橋"
+  },
+  {
+    "word": "reentrancy",
+    "pos": "-",
+    "meaning": "重入"
+  },
+  {
+    "word": "reference current",
+    "pos": "-",
+    "meaning": "參考電流"
+  },
+  {
+    "word": "regenerative feedback",
+    "pos": "-",
+    "meaning": "再生回授"
+  },
+  {
+    "word": "second order",
+    "pos": "-",
+    "meaning": "第二階"
+  },
+  {
+    "word": "second harmonic",
+    "pos": "-",
+    "meaning": "二次諧波"
+  },
+  {
+    "word": "self-compensation",
+    "pos": "-",
+    "meaning": "自行補償"
+  },
+  {
+    "word": "THD",
+    "pos": "-",
+    "meaning": "全諧失真"
+  },
+  {
+    "word": "thickness",
+    "pos": "-",
+    "meaning": "厚度"
+  },
+  {
+    "word": "voltage doubler",
+    "pos": "-",
+    "meaning": "倍壓電路"
+  },
+  {
+    "word": "XNOR",
+    "pos": "-",
+    "meaning": "互反互或閘"
+  }
+]

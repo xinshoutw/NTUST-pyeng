@@ -1,0 +1,202 @@
+[
+  {
+    "word": "audit",
+    "pos": "v/n",
+    "meaning": "審計，旁聽"
+  },
+  {
+    "word": "auditor",
+    "pos": "n",
+    "meaning": "審計員"
+  },
+  {
+    "word": "audition",
+    "pos": "n",
+    "meaning": "歌手、演員等的試鏡"
+  },
+  {
+    "word": "auditory",
+    "pos": "a",
+    "meaning": "聽覺的"
+  },
+  {
+    "word": "auditorium",
+    "pos": "n",
+    "meaning": "觀眾席，禮堂"
+  },
+  {
+    "word": "aural",
+    "pos": "a",
+    "meaning": "聽覺的"
+  },
+  {
+    "word": "obey",
+    "pos": "v",
+    "meaning": "服從，遵從"
+  },
+  {
+    "word": "autobiography",
+    "pos": "n",
+    "meaning": "自傳"
+  },
+  {
+    "word": "automatic",
+    "pos": "a",
+    "meaning": "自動(化)的，不加思索的"
+  },
+  {
+    "word": "automation",
+    "pos": "n",
+    "meaning": "自動化"
+  },
+  {
+    "word": "automobile",
+    "pos": "n",
+    "meaning": "汽車"
+  },
+  {
+    "word": "autonomy",
+    "pos": "n",
+    "meaning": "自治，自治權"
+  },
+  {
+    "word": "autonomous",
+    "pos": "a",
+    "meaning": "自治的"
+  },
+  {
+    "word": "auction",
+    "pos": "n/v",
+    "meaning": "拍賣"
+  },
+  {
+    "word": "augment",
+    "pos": "n/v",
+    "meaning": "增加，擴大"
+  },
+  {
+    "word": "authentic",
+    "pos": "a",
+    "meaning": "可靠的，真實的"
+  },
+  {
+    "word": "author",
+    "pos": "n",
+    "meaning": "作者"
+  },
+  {
+    "word": "authoritative",
+    "pos": "a",
+    "meaning": "權威性的"
+  },
+  {
+    "word": "authority",
+    "pos": "n",
+    "meaning": "權力，權威"
+  },
+  {
+    "word": "authorize",
+    "pos": "v",
+    "meaning": "授權，批准"
+  },
+  {
+    "word": "auxiliary",
+    "pos": "a/n",
+    "meaning": "輔助的，助手"
+  },
+  {
+    "word": "inaugurate",
+    "pos": "v",
+    "meaning": "舉行就職典禮"
+  },
+  {
+    "word": "back",
+    "pos": "n/a/v",
+    "meaning": "後面，後面的，後退，支持"
+  },
+  {
+    "word": "background",
+    "pos": "n",
+    "meaning": "背景"
+  },
+  {
+    "word": "backward",
+    "pos": "a",
+    "meaning": "向後的，落後的"
+  },
+  {
+    "word": "bake",
+    "pos": "v",
+    "meaning": "烘焙，烤"
+  },
+  {
+    "word": "baker",
+    "pos": "n",
+    "meaning": "麵包師"
+  },
+  {
+    "word": "bakery",
+    "pos": "n",
+    "meaning": "麵包店"
+  },
+  {
+    "word": "bag",
+    "pos": "n",
+    "meaning": "袋子"
+  },
+  {
+    "word": "baggage",
+    "pos": "n",
+    "meaning": "行李(美)"
+  },
+  {
+    "word": "batch",
+    "pos": "n",
+    "meaning": "一批，一次生產量"
+  },
+  {
+    "word": "drawback",
+    "pos": "n",
+    "meaning": "不利的條件，缺點，障礙"
+  },
+  {
+    "word": "feedback",
+    "pos": "n",
+    "meaning": "回饋，回應"
+  },
+  {
+    "word": "handbag",
+    "pos": "n",
+    "meaning": "女用手提包"
+  },
+  {
+    "word": "suitcase",
+    "pos": "n",
+    "meaning": "小型行李箱"
+  },
+  {
+    "word": "bald",
+    "pos": "a",
+    "meaning": "光禿的"
+  },
+  {
+    "word": "ball",
+    "pos": "n",
+    "meaning": "球，舞會"
+  },
+  {
+    "word": "balloon",
+    "pos": "n",
+    "meaning": "氣球"
+  },
+  {
+    "word": "ballot",
+    "pos": "n/v",
+    "meaning": "選票，無記名投票"
+  },
+  {
+    "word": "bullet",
+    "pos": "n",
+    "meaning": "子彈"
+  }
+]

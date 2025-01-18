@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef, useMemo} from 'react';
+import {useEffect, useMemo, useRef} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 
 type DropdownOption = {

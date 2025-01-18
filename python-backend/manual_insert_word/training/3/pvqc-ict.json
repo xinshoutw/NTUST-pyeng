@@ -1,0 +1,302 @@
+[
+  {
+    "word": "artificial intelligence",
+    "pos": "-",
+    "meaning": "人工智慧"
+  },
+  {
+    "word": "algorithm",
+    "pos": "-",
+    "meaning": "演算法"
+  },
+  {
+    "word": "analysis",
+    "pos": "-",
+    "meaning": "分析"
+  },
+  {
+    "word": "bandwidth",
+    "pos": "-",
+    "meaning": "頻寬"
+  },
+  {
+    "word": "biometrics",
+    "pos": "-",
+    "meaning": "生物測定學"
+  },
+  {
+    "word": "broadcast",
+    "pos": "-",
+    "meaning": "廣播"
+  },
+  {
+    "word": "browser",
+    "pos": "-",
+    "meaning": "瀏覽器"
+  },
+  {
+    "word": "buffer",
+    "pos": "-",
+    "meaning": "緩衝器"
+  },
+  {
+    "word": "business model",
+    "pos": "-",
+    "meaning": "商業模式"
+  },
+  {
+    "word": "cell",
+    "pos": "-",
+    "meaning": "儲存格"
+  },
+  {
+    "word": "central processing unit",
+    "pos": "-",
+    "meaning": "中央處理單元"
+  },
+  {
+    "word": "cloud computing",
+    "pos": "-",
+    "meaning": "雲端運算"
+  },
+  {
+    "word": "coaxial cable",
+    "pos": "-",
+    "meaning": "同軸電纜"
+  },
+  {
+    "word": "compatible",
+    "pos": "-",
+    "meaning": "相容的"
+  },
+  {
+    "word": "compile",
+    "pos": "-",
+    "meaning": "編譯"
+  },
+  {
+    "word": "computer vision",
+    "pos": "-",
+    "meaning": "電腦視覺"
+  },
+  {
+    "word": "constant",
+    "pos": "-",
+    "meaning": "常數"
+  },
+  {
+    "word": "conversion",
+    "pos": "-",
+    "meaning": "轉換"
+  },
+  {
+    "word": "copyright",
+    "pos": "-",
+    "meaning": "版權；著作權"
+  },
+  {
+    "word": "critical thinking",
+    "pos": "-",
+    "meaning": "批判性思考"
+  },
+  {
+    "word": "culture",
+    "pos": "-",
+    "meaning": "文化"
+  },
+  {
+    "word": "dashboard",
+    "pos": "-",
+    "meaning": "儀表板"
+  },
+  {
+    "word": "data center",
+    "pos": "-",
+    "meaning": "資料中心"
+  },
+  {
+    "word": "data mining",
+    "pos": "-",
+    "meaning": "資料探勘"
+  },
+  {
+    "word": "data processing",
+    "pos": "-",
+    "meaning": "資料處理"
+  },
+  {
+    "word": "data redundancy",
+    "pos": "-",
+    "meaning": "資料多餘"
+  },
+  {
+    "word": "data structure",
+    "pos": "-",
+    "meaning": "資料結構"
+  },
+  {
+    "word": "database",
+    "pos": "-",
+    "meaning": "資料庫"
+  },
+  {
+    "word": "debug",
+    "pos": "-",
+    "meaning": "除錯；偵錯"
+  },
+  {
+    "word": "decryption",
+    "pos": "-",
+    "meaning": "解密"
+  },
+  {
+    "word": "display",
+    "pos": "-",
+    "meaning": "顯示器"
+  },
+  {
+    "word": "disruptive",
+    "pos": "-",
+    "meaning": "破壞性的"
+  },
+  {
+    "word": "downstream",
+    "pos": "-",
+    "meaning": "下傳的（資料）"
+  },
+  {
+    "word": "e-learning",
+    "pos": "-",
+    "meaning": "數位學習"
+  },
+  {
+    "word": "encryption",
+    "pos": "-",
+    "meaning": "加密"
+  },
+  {
+    "word": "enterprise",
+    "pos": "-",
+    "meaning": "企業"
+  },
+  {
+    "word": "Ethernet",
+    "pos": "-",
+    "meaning": "乙太網路"
+  },
+  {
+    "word": "executable code",
+    "pos": "-",
+    "meaning": "可執行碼"
+  },
+  {
+    "word": "forensics",
+    "pos": "-",
+    "meaning": "鑑識"
+  },
+  {
+    "word": "gateway",
+    "pos": "-",
+    "meaning": "閘道器"
+  },
+  {
+    "word": "infomediary",
+    "pos": "-",
+    "meaning": "資訊中介"
+  },
+  {
+    "word": "macro",
+    "pos": "-",
+    "meaning": "巨集"
+  },
+  {
+    "word": "normalization",
+    "pos": "-",
+    "meaning": "正規化"
+  },
+  {
+    "word": "object-oriented language",
+    "pos": "-",
+    "meaning": "物件導向語言"
+  },
+  {
+    "word": "open source",
+    "pos": "-",
+    "meaning": "開放原始碼"
+  },
+  {
+    "word": "operating system",
+    "pos": "-",
+    "meaning": "作業系統"
+  },
+  {
+    "word": "outsourcing",
+    "pos": "-",
+    "meaning": "外包"
+  },
+  {
+    "word": "patent",
+    "pos": "-",
+    "meaning": "專利"
+  },
+  {
+    "word": "peripheral",
+    "pos": "-",
+    "meaning": "週邊設備"
+  },
+  {
+    "word": "pharming",
+    "pos": "-",
+    "meaning": "網址嫁接"
+  },
+  {
+    "word": "phishing",
+    "pos": "-",
+    "meaning": "網路釣魚"
+  },
+  {
+    "word": "pixel",
+    "pos": "-",
+    "meaning": "像素"
+  },
+  {
+    "word": "primary key",
+    "pos": "-",
+    "meaning": "主鍵"
+  },
+  {
+    "word": "processor",
+    "pos": "-",
+    "meaning": "處理器"
+  },
+  {
+    "word": "pseudocode",
+    "pos": "-",
+    "meaning": "虛擬碼"
+  },
+  {
+    "word": "queue",
+    "pos": "-",
+    "meaning": "佇列"
+  },
+  {
+    "word": "replication",
+    "pos": "-",
+    "meaning": "覆寫"
+  },
+  {
+    "word": "router",
+    "pos": "-",
+    "meaning": "路由器"
+  },
+  {
+    "word": "record",
+    "pos": "-",
+    "meaning": "紀錄"
+  },
+  {
+    "word": "search engine",
+    "pos": "-",
+    "meaning": "搜尋引擎"
+  }
+]

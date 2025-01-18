@@ -1,0 +1,302 @@
+[
+  {
+    "word": "adaptive predictive coding",
+    "pos": "-",
+    "meaning": "適應性預測編碼"
+  },
+  {
+    "word": "add-drop multiplexer",
+    "pos": "-",
+    "meaning": "分收多工器"
+  },
+  {
+    "word": "additive model",
+    "pos": "-",
+    "meaning": "加法模型"
+  },
+  {
+    "word": "adolescence",
+    "pos": "-",
+    "meaning": "青春期"
+  },
+  {
+    "word": "baseound",
+    "pos": "-",
+    "meaning": "基礎音"
+  },
+  {
+    "word": "basic actions",
+    "pos": "-",
+    "meaning": "基本行動"
+  },
+  {
+    "word": "B-frames",
+    "pos": "-",
+    "meaning": "雙向畫面"
+  },
+  {
+    "word": "billboard advertising",
+    "pos": "-",
+    "meaning": "路牌廣告"
+  },
+  {
+    "word": "call waiting",
+    "pos": "-",
+    "meaning": "來電待接"
+  },
+  {
+    "word": "caller ID",
+    "pos": "-",
+    "meaning": "來電顯示"
+  },
+  {
+    "word": "categorization",
+    "pos": "-",
+    "meaning": "分類法"
+  },
+  {
+    "word": "datagram",
+    "pos": "-",
+    "meaning": "數據包"
+  },
+  {
+    "word": "data-on-demand",
+    "pos": "-",
+    "meaning": "資料隨選"
+  },
+  {
+    "word": "deinterlace",
+    "pos": "-",
+    "meaning": "去交錯"
+  },
+  {
+    "word": "delta modulation",
+    "pos": "-",
+    "meaning": "增量調變"
+  },
+  {
+    "word": "edge magnitudes",
+    "pos": "-",
+    "meaning": "邊緣強度"
+  },
+  {
+    "word": "eigenimage",
+    "pos": "-",
+    "meaning": "特徵圖數空間"
+  },
+  {
+    "word": "eigenvalue",
+    "pos": "-",
+    "meaning": "固有值"
+  },
+  {
+    "word": "electron beam",
+    "pos": "-",
+    "meaning": "電子束"
+  },
+  {
+    "word": "feature vector",
+    "pos": "-",
+    "meaning": "特徵向量"
+  },
+  {
+    "word": "feature localization",
+    "pos": "-",
+    "meaning": "特徵局部化"
+  },
+  {
+    "word": "field of view",
+    "pos": "-",
+    "meaning": "視野"
+  },
+  {
+    "word": "grand alliance",
+    "pos": "-",
+    "meaning": "大聯盟"
+  },
+  {
+    "word": "global positioning system",
+    "pos": "-",
+    "meaning": "全球衛星定位系統"
+  },
+  {
+    "word": "granularity",
+    "pos": "-",
+    "meaning": "顆粒狀"
+  },
+  {
+    "word": "heterogeneous",
+    "pos": "-",
+    "meaning": "異質的"
+  },
+  {
+    "word": "hierarchical mode",
+    "pos": "-",
+    "meaning": "階層模式"
+  },
+  {
+    "word": "high dynamic range",
+    "pos": "-",
+    "meaning": "高動態範圍影像"
+  },
+  {
+    "word": "horizontal mode",
+    "pos": "-",
+    "meaning": "水平模式"
+  },
+  {
+    "word": "initial code",
+    "pos": "-",
+    "meaning": "初始編碼"
+  },
+  {
+    "word": "in-phase",
+    "pos": "-",
+    "meaning": "同相位"
+  },
+  {
+    "word": "intellectual property",
+    "pos": "-",
+    "meaning": "智慧財產"
+  },
+  {
+    "word": "intensity resolution",
+    "pos": "-",
+    "meaning": "密度解析度"
+  },
+  {
+    "word": "LMS",
+    "pos": "-",
+    "meaning": "學習管理系統"
+  },
+  {
+    "word": "leftover error",
+    "pos": "-",
+    "meaning": "殘餘錯誤"
+  },
+  {
+    "word": "line of purples",
+    "pos": "-",
+    "meaning": "紫線界線"
+  },
+  {
+    "word": "masking tone",
+    "pos": "-",
+    "meaning": "遮蔽音調"
+  },
+  {
+    "word": "mean absolute difference",
+    "pos": "-",
+    "meaning": "平均絕對差異值"
+  },
+  {
+    "word": "model order",
+    "pos": "-",
+    "meaning": "模型級數"
+  },
+  {
+    "word": "network number",
+    "pos": "-",
+    "meaning": "網路號碼"
+  },
+  {
+    "word": "network throughput",
+    "pos": "-",
+    "meaning": "網路傳輸量"
+  },
+  {
+    "word": "non-disjoint",
+    "pos": "-",
+    "meaning": "非分離的"
+  },
+  {
+    "word": "optical carrier",
+    "pos": "-",
+    "meaning": "光載波"
+  },
+  {
+    "word": "optical density",
+    "pos": "-",
+    "meaning": "光密度"
+  },
+  {
+    "word": "optical flow",
+    "pos": "-",
+    "meaning": "光流"
+  },
+  {
+    "word": "optical fiber",
+    "pos": "-",
+    "meaning": "光纖"
+  },
+  {
+    "word": "padded payload",
+    "pos": "-",
+    "meaning": "緩衝墊料"
+  },
+  {
+    "word": "paint program",
+    "pos": "-",
+    "meaning": "畫圖程式"
+  },
+  {
+    "word": "paint-by-number",
+    "pos": "-",
+    "meaning": "數字填空遊戲"
+  },
+  {
+    "word": "quality of service",
+    "pos": "-",
+    "meaning": "服務品質"
+  },
+  {
+    "word": "quality progressive",
+    "pos": "-",
+    "meaning": "品質遞進"
+  },
+  {
+    "word": "RAW",
+    "pos": "-",
+    "meaning": "數位相機原始影像"
+  },
+  {
+    "word": "recommendation",
+    "pos": "-",
+    "meaning": "建議書"
+  },
+  {
+    "word": "reconstruction",
+    "pos": "-",
+    "meaning": "重建"
+  },
+  {
+    "word": "scalable coding",
+    "pos": "-",
+    "meaning": "可調編碼"
+  },
+  {
+    "word": "scale model",
+    "pos": "-",
+    "meaning": "尺度模型"
+  },
+  {
+    "word": "set-top box",
+    "pos": "-",
+    "meaning": "機上盒"
+  },
+  {
+    "word": "template codebook",
+    "pos": "-",
+    "meaning": "模板碼書"
+  },
+  {
+    "word": "temporal masking",
+    "pos": "-",
+    "meaning": "時間遮蔽"
+  },
+  {
+    "word": "uniform sampling",
+    "pos": "-",
+    "meaning": "均勻取樣"
+  }
+]

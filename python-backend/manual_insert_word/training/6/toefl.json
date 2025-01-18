@@ -1,0 +1,202 @@
+[
+  {
+    "word": "beacon",
+    "pos": "n",
+    "meaning": "烽火台；燈塔；信號燈"
+  },
+  {
+    "word": "cave",
+    "pos": "n",
+    "meaning": "洞穴"
+  },
+  {
+    "word": "cliff",
+    "pos": "n",
+    "meaning": "（尤指海邊的）懸崖，峭壁"
+  },
+  {
+    "word": "inland",
+    "pos": "a",
+    "meaning": "（遠離海洋的）內陸的；內地的"
+  },
+  {
+    "word": "mountainous",
+    "pos": "a",
+    "meaning": "多山的"
+  },
+  {
+    "word": "sprawl",
+    "pos": "v",
+    "meaning": "（都市等）無計劃地擴展"
+  },
+  {
+    "word": "contour",
+    "pos": "a/n",
+    "meaning": "等高線的；（山脈等的）輪廓"
+  },
+  {
+    "word": "steppe",
+    "pos": "n",
+    "meaning": "沒有樹的大草原"
+  },
+  {
+    "word": "Mediterranean",
+    "pos": "n/a",
+    "meaning": "地中海；地中海的"
+  },
+  {
+    "word": "equator",
+    "pos": "n",
+    "meaning": "赤道"
+  },
+  {
+    "word": "taiga",
+    "pos": "n",
+    "meaning": "歐亞大陸和北美洲北方的大面積針葉林"
+  },
+  {
+    "word": "circumpolar",
+    "pos": "a",
+    "meaning": "極地附近的"
+  },
+  {
+    "word": "Antarctic",
+    "pos": "a/n",
+    "meaning": "南極的；南極"
+  },
+  {
+    "word": "saturate",
+    "pos": "v",
+    "meaning": "浸透；滲透"
+  },
+  {
+    "word": "boggy land",
+    "pos": "n",
+    "meaning": "沼澤地"
+  },
+  {
+    "word": "strait",
+    "pos": "n",
+    "meaning": "海峽；困境"
+  },
+  {
+    "word": "front",
+    "pos": "n",
+    "meaning": "鋒面"
+  },
+  {
+    "word": "delta",
+    "pos": "n",
+    "meaning": "（河口的）三角洲"
+  },
+  {
+    "word": "deposition",
+    "pos": "n",
+    "meaning": "堆積；堆積物"
+  },
+  {
+    "word": "heterogeneity",
+    "pos": "n",
+    "meaning": "異質性"
+  },
+  {
+    "word": "basin",
+    "pos": "n",
+    "meaning": "盆地；流域"
+  },
+  {
+    "word": "cavern",
+    "pos": "n",
+    "meaning": "大洞穴"
+  },
+  {
+    "word": "hinterland",
+    "pos": "n",
+    "meaning": "（海岸、河岸的）後方地區；腹地，內地"
+  },
+  {
+    "word": "meridian",
+    "pos": "n",
+    "meaning": "子午線"
+  },
+  {
+    "word": "sporadic",
+    "pos": "a",
+    "meaning": "零星的；時有時無的；分散的"
+  },
+  {
+    "word": "stretch",
+    "pos": "n",
+    "meaning": "（土地等）綿延"
+  },
+  {
+    "word": "isotherm",
+    "pos": "n",
+    "meaning": "等溫線"
+  },
+  {
+    "word": "subtropical",
+    "pos": "a",
+    "meaning": "亞熱帶的"
+  },
+  {
+    "word": "savanna",
+    "pos": "n",
+    "meaning": "（熱帶地區無樹的）大草原"
+  },
+  {
+    "word": "tundra",
+    "pos": "n",
+    "meaning": "（北極和其附近的）凍原"
+  },
+  {
+    "word": "ice cap",
+    "pos": "n",
+    "meaning": "（長年冰雪覆蓋的）冰原"
+  },
+  {
+    "word": "Arctic",
+    "pos": "a/n",
+    "meaning": "北極的；北極"
+  },
+  {
+    "word": "subarctic",
+    "pos": "a",
+    "meaning": "靠近北極的；北極附近的"
+  },
+  {
+    "word": "permafrost",
+    "pos": "n",
+    "meaning": "永久凍土層"
+  },
+  {
+    "word": "Atlantic",
+    "pos": "a/n",
+    "meaning": "大西洋的；大西洋"
+  },
+  {
+    "word": "trade wind",
+    "pos": "n",
+    "meaning": "信風；貿易風"
+  },
+  {
+    "word": "estuary",
+    "pos": "n",
+    "meaning": "河口"
+  },
+  {
+    "word": "glaciation",
+    "pos": "n",
+    "meaning": "冰河作用"
+  },
+  {
+    "word": "colonialism",
+    "pos": "n",
+    "meaning": "殖民主義；殖民政策"
+  },
+  {
+    "word": "ethnocentrism",
+    "pos": "n",
+    "meaning": "種族中心論；民族優越感"
+  }
+]

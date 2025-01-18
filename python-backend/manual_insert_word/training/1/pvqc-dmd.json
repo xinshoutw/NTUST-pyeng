@@ -1,0 +1,302 @@
+[
+  {
+    "word": "10-gigabit",
+    "pos": "-",
+    "meaning": "百億位元"
+  },
+  {
+    "word": "3D vector space",
+    "pos": "-",
+    "meaning": "三維向量空間"
+  },
+  {
+    "word": "absolute temperature scale",
+    "pos": "-",
+    "meaning": "絕對溫標"
+  },
+  {
+    "word": "adapter ring",
+    "pos": "-",
+    "meaning": "轉接環"
+  },
+  {
+    "word": "band-limited",
+    "pos": "-",
+    "meaning": "有限頻帶"
+  },
+  {
+    "word": "band-pass filter",
+    "pos": "-",
+    "meaning": "帶通濾波器"
+  },
+  {
+    "word": "Bark scale",
+    "pos": "-",
+    "meaning": "巴克量度"
+  },
+  {
+    "word": "base station",
+    "pos": "-",
+    "meaning": "基地台"
+  },
+  {
+    "word": "call forwarding",
+    "pos": "-",
+    "meaning": "來電轉接"
+  },
+  {
+    "word": "call number",
+    "pos": "-",
+    "meaning": "索書號碼"
+  },
+  {
+    "word": "carrier sense",
+    "pos": "-",
+    "meaning": "載波感測"
+  },
+  {
+    "word": "crosstalk",
+    "pos": "-",
+    "meaning": "串擾"
+  },
+  {
+    "word": "data expansion",
+    "pos": "-",
+    "meaning": "資料膨脹"
+  },
+  {
+    "word": "data mining",
+    "pos": "-",
+    "meaning": "資料挖掘"
+  },
+  {
+    "word": "data reduction",
+    "pos": "-",
+    "meaning": "資料減縮"
+  },
+  {
+    "word": "eccentricity",
+    "pos": "-",
+    "meaning": "離心率"
+  },
+  {
+    "word": "edge detection",
+    "pos": "-",
+    "meaning": "邊緣偵測"
+  },
+  {
+    "word": "edge effect",
+    "pos": "-",
+    "meaning": "邊界效應"
+  },
+  {
+    "word": "edge gradient",
+    "pos": "-",
+    "meaning": "邊緣斜率"
+  },
+  {
+    "word": "facial animation",
+    "pos": "-",
+    "meaning": "臉部動畫"
+  },
+  {
+    "word": "fast forward",
+    "pos": "-",
+    "meaning": "快轉"
+  },
+  {
+    "word": "feasibility study",
+    "pos": "-",
+    "meaning": "可行性研究"
+  },
+  {
+    "word": "gain factor",
+    "pos": "-",
+    "meaning": "增益係數"
+  },
+  {
+    "word": "gatekeeper",
+    "pos": "-",
+    "meaning": "閘道管理者"
+  },
+  {
+    "word": "geometry coding",
+    "pos": "-",
+    "meaning": "幾何編碼"
+  },
+  {
+    "word": "gold sequence",
+    "pos": "-",
+    "meaning": "黃金序列"
+  },
+  {
+    "word": "half-duplex",
+    "pos": "-",
+    "meaning": "半雙工"
+  },
+  {
+    "word": "harmonic number",
+    "pos": "-",
+    "meaning": "調和數"
+  },
+  {
+    "word": "harmonics",
+    "pos": "-",
+    "meaning": "和聲學"
+  },
+  {
+    "word": "image texture",
+    "pos": "-",
+    "meaning": "影像紋理"
+  },
+  {
+    "word": "impulse response",
+    "pos": "-",
+    "meaning": "脈衝響應"
+  },
+  {
+    "word": "infotainment",
+    "pos": "-",
+    "meaning": "資訊娛樂"
+  },
+  {
+    "word": "interoperability",
+    "pos": "-",
+    "meaning": "互通性"
+  },
+  {
+    "word": "joint-stereo",
+    "pos": "-",
+    "meaning": "共同立體聲"
+  },
+  {
+    "word": "key pressure",
+    "pos": "-",
+    "meaning": "鍵盤壓力"
+  },
+  {
+    "word": "kiosk",
+    "pos": "-",
+    "meaning": "多媒體導覽系統"
+  },
+  {
+    "word": "LAN",
+    "pos": "-",
+    "meaning": "區域網路"
+  },
+  {
+    "word": "latency",
+    "pos": "-",
+    "meaning": "延遲"
+  },
+  {
+    "word": "magenta",
+    "pos": "-",
+    "meaning": "洋紅色"
+  },
+  {
+    "word": "make up with color",
+    "pos": "-",
+    "meaning": "彩妝"
+  },
+  {
+    "word": "managing director",
+    "pos": "-",
+    "meaning": "總經理"
+  },
+  {
+    "word": "named marker",
+    "pos": "-",
+    "meaning": "姓名標籤"
+  },
+  {
+    "word": "NCC",
+    "pos": "-",
+    "meaning": "國家通訊傳播委員會"
+  },
+  {
+    "word": "needs assessment",
+    "pos": "-",
+    "meaning": "需求評估"
+  },
+  {
+    "word": "omnidirectional",
+    "pos": "-",
+    "meaning": "全方向性"
+  },
+  {
+    "word": "online system",
+    "pos": "-",
+    "meaning": "連線系統"
+  },
+  {
+    "word": "packaging design",
+    "pos": "-",
+    "meaning": "包裝設計"
+  },
+  {
+    "word": "packet addressing",
+    "pos": "-",
+    "meaning": "封包定址"
+  },
+  {
+    "word": "quad",
+    "pos": "-",
+    "meaning": "四分割"
+  },
+  {
+    "word": "quadrature",
+    "pos": "-",
+    "meaning": "正交"
+  },
+  {
+    "word": "quality factor",
+    "pos": "-",
+    "meaning": "品質因子"
+  },
+  {
+    "word": "rangefinder",
+    "pos": "-",
+    "meaning": "測距器"
+  },
+  {
+    "word": "rapid prototype",
+    "pos": "-",
+    "meaning": "快速原型"
+  },
+  {
+    "word": "raster field",
+    "pos": "-",
+    "meaning": "畫面掃描"
+  },
+  {
+    "word": "sample image",
+    "pos": "-",
+    "meaning": "範例影像"
+  },
+  {
+    "word": "sample looping",
+    "pos": "-",
+    "meaning": "樣本循環"
+  },
+  {
+    "word": "saturated",
+    "pos": "-",
+    "meaning": "飽和的"
+  },
+  {
+    "word": "sequence number",
+    "pos": "-",
+    "meaning": "序號"
+  },
+  {
+    "word": "talker overlap",
+    "pos": "-",
+    "meaning": "發話重疊"
+  },
+  {
+    "word": "target frame",
+    "pos": "-",
+    "meaning": "目標畫面"
+  }
+]

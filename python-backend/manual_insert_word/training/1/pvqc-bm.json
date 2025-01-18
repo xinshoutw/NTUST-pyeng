@@ -1,0 +1,302 @@
+[
+  {
+    "word": "account balance",
+    "pos": "-",
+    "meaning": "帳戶餘額"
+  },
+  {
+    "word": "accountability",
+    "pos": "-",
+    "meaning": "會計責任"
+  },
+  {
+    "word": "accrued expense",
+    "pos": "-",
+    "meaning": "應付費用"
+  },
+  {
+    "word": "accumulated deficit",
+    "pos": "-",
+    "meaning": "累積虧損"
+  },
+  {
+    "word": "baby boom",
+    "pos": "-",
+    "meaning": "嬰兒潮"
+  },
+  {
+    "word": "bailment",
+    "pos": "-",
+    "meaning": "委託"
+  },
+  {
+    "word": "balance of trade",
+    "pos": "-",
+    "meaning": "貿易盈餘"
+  },
+  {
+    "word": "bank overdraft",
+    "pos": "-",
+    "meaning": "銀行透支"
+  },
+  {
+    "word": "carbon copy",
+    "pos": "-",
+    "meaning": "副本"
+  },
+  {
+    "word": "cash advance",
+    "pos": "-",
+    "meaning": "預借現金"
+  },
+  {
+    "word": "cash cow",
+    "pos": "-",
+    "meaning": "搖錢樹"
+  },
+  {
+    "word": "cash dividend",
+    "pos": "-",
+    "meaning": "現金股利"
+  },
+  {
+    "word": "death benefit",
+    "pos": "-",
+    "meaning": "身故給付"
+  },
+  {
+    "word": "deflation",
+    "pos": "-",
+    "meaning": "通貨緊縮"
+  },
+  {
+    "word": "delivery receipt",
+    "pos": "-",
+    "meaning": "交貨收據"
+  },
+  {
+    "word": "denomination",
+    "pos": "-",
+    "meaning": "面額"
+  },
+  {
+    "word": "ECB",
+    "pos": "-",
+    "meaning": "歐洲中央銀行"
+  },
+  {
+    "word": "economic bottleneck",
+    "pos": "-",
+    "meaning": "經濟瓶頸"
+  },
+  {
+    "word": "economic fluctuation",
+    "pos": "-",
+    "meaning": "經濟波動"
+  },
+  {
+    "word": "FDI",
+    "pos": "-",
+    "meaning": "跨國直接投資"
+  },
+  {
+    "word": "financial history",
+    "pos": "-",
+    "meaning": "過去財務紀錄"
+  },
+  {
+    "word": "financial institution",
+    "pos": "-",
+    "meaning": "金融機構"
+  },
+  {
+    "word": "G10",
+    "pos": "-",
+    "meaning": "十大工業國"
+  },
+  {
+    "word": "GATT",
+    "pos": "-",
+    "meaning": "關稅貿易總協定"
+  },
+  {
+    "word": "GAAP",
+    "pos": "-",
+    "meaning": "一般公認會計原則"
+  },
+  {
+    "word": "general ledger",
+    "pos": "-",
+    "meaning": "總分類帳"
+  },
+  {
+    "word": "hedge",
+    "pos": "-",
+    "meaning": "規避"
+  },
+  {
+    "word": "high-end product",
+    "pos": "-",
+    "meaning": "高檔產品"
+  },
+  {
+    "word": "high-traffic",
+    "pos": "-",
+    "meaning": "高流量的"
+  },
+  {
+    "word": "IFA",
+    "pos": "-",
+    "meaning": "國際連鎖加盟協會"
+  },
+  {
+    "word": "idle assets",
+    "pos": "-",
+    "meaning": "閒置資產"
+  },
+  {
+    "word": "job enlargement",
+    "pos": "-",
+    "meaning": "工作擴大化"
+  },
+  {
+    "word": "job enrichment",
+    "pos": "-",
+    "meaning": "工作豐富化"
+  },
+  {
+    "word": "lagging indicator",
+    "pos": "-",
+    "meaning": "落後指標"
+  },
+  {
+    "word": "leading indicator",
+    "pos": "-",
+    "meaning": "領先指標"
+  },
+  {
+    "word": "leverage ratio",
+    "pos": "-",
+    "meaning": "槓桿比率"
+  },
+  {
+    "word": "mad cow disease",
+    "pos": "-",
+    "meaning": "狂牛病"
+  },
+  {
+    "word": "malpractice",
+    "pos": "-",
+    "meaning": "營私舞弊"
+  },
+  {
+    "word": "marginal cost",
+    "pos": "-",
+    "meaning": "邊際成本"
+  },
+  {
+    "word": "media press conference",
+    "pos": "-",
+    "meaning": "媒體記者會"
+  },
+  {
+    "word": "national holiday",
+    "pos": "-",
+    "meaning": "國定假日"
+  },
+  {
+    "word": "national tax administration",
+    "pos": "-",
+    "meaning": "國稅局"
+  },
+  {
+    "word": "natural monopoly",
+    "pos": "-",
+    "meaning": "自然獨占"
+  },
+  {
+    "word": "occupational opportunities",
+    "pos": "-",
+    "meaning": "職業機會"
+  },
+  {
+    "word": "office supplies",
+    "pos": "-",
+    "meaning": "文具用品"
+  },
+  {
+    "word": "offshore fund",
+    "pos": "-",
+    "meaning": "海外基金"
+  },
+  {
+    "word": "off-the-job training",
+    "pos": "-",
+    "meaning": "職外訓練"
+  },
+  {
+    "word": "packing list",
+    "pos": "-",
+    "meaning": "送貨明細"
+  },
+  {
+    "word": "pay off a loan",
+    "pos": "-",
+    "meaning": "償還貸款"
+  },
+  {
+    "word": "paycheck stub",
+    "pos": "-",
+    "meaning": "薪資支票存根"
+  },
+  {
+    "word": "quality-control",
+    "pos": "-",
+    "meaning": "品管"
+  },
+  {
+    "word": "quantity of demand",
+    "pos": "-",
+    "meaning": "需求量"
+  },
+  {
+    "word": "raw material",
+    "pos": "-",
+    "meaning": "原料"
+  },
+  {
+    "word": "reach a consensus",
+    "pos": "-",
+    "meaning": "達成共識"
+  },
+  {
+    "word": "recreational facilities",
+    "pos": "-",
+    "meaning": "休閒娛樂設施"
+  },
+  {
+    "word": "sales channel",
+    "pos": "-",
+    "meaning": "銷售通路"
+  },
+  {
+    "word": "sample sachet",
+    "pos": "-",
+    "meaning": "樣品包"
+  },
+  {
+    "word": "tackle",
+    "pos": "-",
+    "meaning": "著手處理"
+  },
+  {
+    "word": "tariff barrier",
+    "pos": "-",
+    "meaning": "關稅壁壘"
+  },
+  {
+    "word": "tax avoidance",
+    "pos": "-",
+    "meaning": "避稅"
+  }
+]
