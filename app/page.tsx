@@ -26,14 +26,14 @@ export default async function HomePage() {
     const heartbeatStatus = await fetchHeartbeat();
     if (heartbeatStatus === 502) {
         return (
-            <div className="flex justify-center items-center h-screen text-2xl text-pink-500">
+            <div className="flex justify-center items-center mt-6 text-2xl text-pink-500">
                 後端服務尚未啟動，請稍後再試
             </div>
         );
     } else if (heartbeatStatus !== 200) {
         // 處理其他非預期的狀態碼或錯誤
         return (
-            <div className="flex justify-center items-center h-screen text-2xl text-red-500">
+            <div className="flex justify-center items-center mt-6 text-2xl text-red-500">
                 無法連接到後端服務，請稍後再試
             </div>
         );
