@@ -5,6 +5,16 @@ export const DEFAULT_PART = "1";
 export const DEFAULT_TOPIC = "pvqc-ict";
 export const COOKIE_EXPIRY = 365;
 
+export async function fetchHeartbeat(): Promise<number> {
+    try {
+        const res = await fetch(`${API_ENDPOINT}/heartbeat`, {next: {revalidate: 300}});
+        return res.status;
+    } catch (error) {
+        console.error('Heartbeat fetch failed:', error);
+        return -1;
+    }
+}
+
 async function fetchJson(url: string) {
     const res = await fetch(url, {next: {revalidate: 300}});
     if (!res.ok) {
