@@ -95,7 +95,7 @@ async def verify_bearer_token(
 # -----------------------------
 
 @app.get(
-    "/heartbeat",
+    "/api/heartbeat",
     summary="心跳檢測",
     description="檢測後端伺服器狀態是否正常可訪問。",
     tags=["Health Check"]
