@@ -13,8 +13,8 @@ import {
 
 export const runtime = "edge";
 export const metadata = {
-    title: 'NTUST 英簡單',
-    description: '由台科語言中心每週單字整理，配合劍橋辭典了解更多字義解釋與讀音',
+    title: '英簡單',
+    description: '臺灣科技大學語言中心每週單字整理，配合劍橋辭典了解更多字義解釋與讀音。附加的題庫，能夠及時做練習，體驗不同的成效，使用者能夠有效提升英語單字量，增強語言運用能力。嘗試使用，享受全面且有趣的英語學習體驗，實現語言能力的飛躍成長。',
 };
 
 export default async function HomePage() {
