@@ -43,7 +43,7 @@ class FormSubmitter:
                     self._max_guess_count = max(self._max_guess_count, options_size)
                     continue
 
-                if ignore_out_bounded:
+                if self._ignore_out_bounded:
                     self._request_final[entry_id] = options[random.randrange(options_size)]
                     continue
 
@@ -101,7 +101,11 @@ class FormSubmitter:
         return self._request_final_url
 
     # 自動提交表單
-    def auto_submit(self, indicate_mapper: dict[tuple[str], str], keyword_mapper: dict[tuple[str], str]):
+    def auto_submit(
+            self,
+            indicate_mapper: dict[tuple[str], str] = None,
+            keyword_mapper: dict[tuple[str], str] = None
+    ):
         if indicate_mapper is None: indicate_mapper = {}
         if keyword_mapper is None: keyword_mapper = {}
 
@@ -110,7 +114,7 @@ class FormSubmitter:
         request_data = deepcopy(self._request_sample)
         request_data.update(self._request_final)
 
-        # {('A', 'B'): 'C'}
+        # {('a', 'b'): 'C'}
         # change to
         # {'a': 'C', 'b': 'C'}
         indicate_lookup_table = {
@@ -121,24 +125,24 @@ class FormSubmitter:
         }
 
         for key, value in request_data.items():
+            for mapK, mapV in indicate_lookup_table.items():
+                if mapK == self._question_mapper[key].lower():
+                    request_data[key] = mapV
+                    break
+
+        for key, value in request_data.items():
             if value != " ":
                 continue
 
-            inp = ""
-            for mapK, mapV in indicate_lookup_table.items():
-                if mapK == self._question_mapper[key].lower():
-                    inp = mapV
+            for mapK, mapV in keyword_lookup_table.items():
+                if mapK in self._question_mapper[key].lower():
+                    request_data[key] = mapV
                     break
 
-            if inp == "":
-                for mapK, mapV in keyword_lookup_table.items():
-                    if mapK in self._question_mapper[key].lower():
-                        inp = mapV
-                        break
-
-            if inp == "":
+        for key, value in request_data.items():
+            if value == " ":
                 inp = input(f'請輸入 "{self._question_mapper[key]}": ')
-            request_data[key] = inp
+                request_data[key] = inp
 
         print(request_data)
         input("\n檢查請求是否正確!! [ENTER]")

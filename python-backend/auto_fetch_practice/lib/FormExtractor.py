@@ -249,7 +249,7 @@ def extract_correct_answers(html_content: bytes, mapper: dict[str, str]) -> dict
             continue
 
         # 由問題文字 mapper 映射 entry_id
-        question_text = question_text_span.get_text(strip=True).strip().replace('\n', '')
+        question_text = question_text_span.get_text(strip=True).strip().replace('\n', '').replace('\xa0', ' ')
         entry_id = None
         for k, v in mapper.items():
             if v.strip().rstrip(" (required)") == question_text:
@@ -258,6 +258,7 @@ def extract_correct_answers(html_content: bytes, mapper: dict[str, str]) -> dict
 
         if entry_id is None:
             print(f"警告: mapper 中未找到問題 '{question_text}' 對應的 entry_id。")
+            print(f'當前的 mapper: {mapper.__repr__()}')
             continue
 
         # 找到選中的選項，通常具有 aria-checked="true"
