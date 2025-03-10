@@ -25,7 +25,7 @@ LOG_FILE_PATH = os.getenv('LOG_FILE_PATH')
 
 logging.basicConfig(
     level=logging.INFO,
-    # format='%(asctime)s - %(levelname)-5s -> %(message)s',
+    format='%(asctime)s - %(levelname)-5s -> %(message)s',
     handlers=[
         logging.StreamHandler(),
         RotatingFileHandler(LOG_FILE_PATH, maxBytes=10 ** 6, backupCount=5)

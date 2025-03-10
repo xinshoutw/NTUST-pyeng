@@ -103,6 +103,8 @@ def upsert(quiz: Quiz, api_endpoint: str, auth_token: str) -> None:
     :param auth_token: 用於授權的 Bearer Token。
     """
 
+    api_endpoint = api_endpoint.rstrip('/')
+
     try:
         if 'reurl' in quiz.ans_url:
             response = requests.get(quiz.ans_url, allow_redirects=True)
@@ -131,7 +133,7 @@ def upsert(quiz: Quiz, api_endpoint: str, auth_token: str) -> None:
 
     try:
         req = requests.post(
-            f"{api_endpoint}/api/add-practices",
+            f"{api_endpoint}/add-practices",
             params={"part": quiz.part, "topic": quiz.topic.lower()},
             json=dict_data,
             headers={"Authorization": f"Bearer {auth_token}"},

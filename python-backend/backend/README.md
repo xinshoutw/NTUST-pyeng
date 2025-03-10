@@ -27,7 +27,7 @@ backend/
     - 重要區塊：
         - 環境變數：載入 `.env` 以取得 `HOST`, `PORT`, `BEARER_TOKEN`, 以及 CORS 設定
         - CORS 設定：可在 `ALLOWED_ORIGINS` 加入白名單
-        - 路由：各項 API 如 `GET /api/words`, `POST /api/add-words`, `GET /api/practice/{part}/{topic}`等
+        - 路由：各項 API 如 `GET /api/v1/words`, `POST /api/v1/add-words`, `GET /api/v1/practice/{part}/{topic}`等
         - 驗證機制：`verify_bearer_token` 會檢查來自瀏覽器/客戶端的 Bearer Token 與伺服器設定相符與否
         - 例外處理：對 HTTP 例外、驗證錯誤、通用錯誤做統一回應
         - main 區塊：使用 `uvicorn.run` 啟動伺服器
@@ -60,7 +60,7 @@ backend/
 
 - HOST：伺服器監聽 IP (預設 `0.0.0.0`)
 - PORT：伺服器監聽 Port (預設 `8000`)
-- BEARER_TOKEN：後端接受的 Token，用於保護 `/api/add-words` 等路由
+- BEARER_TOKEN：後端接受的 Token，用於保護 `/api/v1/add-words` 等路由
 - ALLOWED_ORIGINS：CORS 白名單，允許的前端域名列表 (逗號分隔)
 
 也可在系統環境變數中設置或於 `.env` 檔案中定義。
@@ -95,8 +95,8 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 ### 測試
 
 - 開啟瀏覽器訪問 `http://127.0.0.1:8000/heartbeat` ，應回傳 `{"status":"ok"}`
-- 使用 Postman / curl 測試 `/api/words` 或 `/api/practice/{part}/{topic}`
-- 確保需要 Token 的路由 (如 `/api/add-words`) 要在 header 帶 `Authorization: Bearer abc123`
+- 使用 Postman / curl 測試 `/api/v1/words` 或 `/api/v1/practice/{part}/{topic}`
+- 確保需要 Token 的路由 (如 `/api/v1/add-words`) 要在 header 帶 `Authorization: Bearer abc123`
 
 ---
 
@@ -108,12 +108,12 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 
 ### 取得單字
 
-- `GET /api/words?part=1&topic=calculus`
+- `GET /api/v1/words?part=1&topic=calculus`
 - 透過 Query 參數篩選 part, topic
 
 ### 新增單字
 
-- `POST /api/add-words`
+- `POST /api/v1/add-words`
 - 需提供 Bearer Token
 - Body 為 `AddWordsRequestSchema` 格式：
     ```json
@@ -132,11 +132,11 @@ uvicorn app:app --host 0.0.0.0 --port 8000
 
 ### 取得練習題
 
-- `GET /api/practice/{part}/{topic}` → 回傳題目、選項
+- `GET /api/v1/practice/{part}/{topic}` → 回傳題目、選項
 
 ### 新增練習題
 
-- `POST /api/add-practices?part=1&topic=calculus`
+- `POST /api/v1/add-practices?part=1&topic=calculus`
 - Body 為 AddPracticesRequestSchema 格式
 
 ---

@@ -38,6 +38,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
+    root_path="/api/v1"
 )
 
 origins = [origin.strip() for origin in ALLOWED_ORIGINS.split(",") if origin.strip()]
@@ -95,7 +96,7 @@ async def verify_bearer_token(
 # -----------------------------
 
 @app.get(
-    "/api/heartbeat",
+    "/heartbeat",
     summary="心跳檢測",
     description="檢測後端伺服器狀態是否正常可訪問。",
     tags=["Health Check"]
@@ -105,7 +106,7 @@ async def heartbeat():
 
 
 @app.get(
-    "/api/practice/{part}/{topic}",
+    "/practice/{part}/{topic}",
     response_model=PracticeResponse,
     summary="取得練習題目",
     description="根據指定的 `part` 與 `topic`，回傳對應的練習題及選項內容。",
@@ -147,7 +148,7 @@ async def get_practice(part: int, topic: str, db: Session = Depends(get_db)):
 
 
 @app.get(
-    "/api/topics",
+    "/topics",
     response_model=TopicsResponse,
     summary="取得可用的主題",
     description=(
@@ -178,7 +179,7 @@ async def get_topics(
 
 
 @app.get(
-    "/api/parts",
+    "/parts",
     response_model=PartsResponse,
     summary="取得可用的 part",
     description=(
@@ -209,7 +210,7 @@ async def get_parts(
 
 
 @app.get(
-    "/api/words",
+    "/words",
     response_model=PartResponse,
     summary="取得單字資料",
     description=(
@@ -275,7 +276,7 @@ async def get_words(
 
 
 @app.post(
-    "/api/add-practices",
+    "/add-practices",
     response_model=AddPracticesResponseSchema,
     summary="新增練習題目",
     description=(
@@ -341,7 +342,7 @@ async def add_practices(
 
 
 @app.post(
-    "/api/add-words",
+    "/add-words",
     response_model=AddWordsResponseSchema,
     summary="新增單字",
     description=(

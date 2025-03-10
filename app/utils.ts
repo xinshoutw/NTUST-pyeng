@@ -1,6 +1,6 @@
 import {PracticeEntry, Word} from './types';
 
-export const API_ENDPOINT = "https://ntust-eng-backend.xinshou.tw/api";
+export const API_ENDPOINT = "https://ntust-eng-backend.xinshou.tw/api/v1";
 export const DEFAULT_PART = "1";
 export const DEFAULT_TOPIC = "pvqc-ict";
 export const COOKIE_EXPIRY = 365;
