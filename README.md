@@ -1,6 +1,6 @@
 # NTUST 英簡單
 
-> 網站: [NTUST 英簡單](https://pyeng.xserver.tw/)
+> 網站: [NTUST 英簡單](https://ntust-eng.xinshou.tw/)
 
 這是一個以 **Next.js + Tailwind CSS** 打造的前端專案，提供英文字卡學習與測驗功能，後端部分則由 **Python** 服務來支援資料庫與
 API。

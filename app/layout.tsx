@@ -38,7 +38,7 @@ export default async function RootLayout({children}: { children: ReactNode }) {
                         NTUST 英簡單
                     </a>
                     <nav className="space-x-4 flex items-center">
-                        <Link href="https://pygit.xserver.tw/"
+                        <Link href="https://r.xinshou.tw/ntust-eng-git"
                               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">
                             Repository
                         </Link>
