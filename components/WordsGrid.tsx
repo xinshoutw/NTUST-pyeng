@@ -86,34 +86,49 @@ export default function WordsGrid(
         (async () => {
             setLoading(true);
             try {
-                setWords((await fetchWords(selectedPart, selectedTopic)).words);
+                // 同時發送三個請求：
+                // 1. 一定要發送 fetchWords
+                // 2. 如果 selectedPart 有變動就發送 fetchTopics，否則傳 null
+                // 3. 如果 selectedTopic 有變動就發送 fetchParts，否則傳 null
+                const [wordData, topicsData, partsData] = await Promise.all([
+                    fetchWords(selectedPart, selectedTopic),
+                    selectedPart !== lastSelectedPart ? fetchTopics(selectedPart) : Promise.resolve(null),
+                    selectedTopic !== lastSelectedTopic ? fetchParts(selectedTopic) : Promise.resolve(null),
+                ]);
 
-                if (selectedPart !== lastSelectedPart) {
-                    setAvailableTopics(parseTopics(await fetchTopics(selectedPart)));
+                // 更新單字資料
+                setWords(wordData.words);
+
+                // 若有更新 part 時，更新 availableTopics 與 cookie
+                if (topicsData !== null) {
+                    setAvailableTopics(parseTopics(topicsData));
                     setLastSelectedPart(selectedPart);
                     setCookie('lastPart', selectedPart, COOKIE_EXPIRY);
                 }
 
-                if (selectedTopic !== lastSelectedTopic) {
-                    const partData = await fetchParts(selectedTopic);
-                    const newParts = parseParts(partData);
-                    setAvailableParts(newParts);
+                // 若有更新 topic 時，更新 availableParts 與 cookie
+                if (partsData !== null) {
+                    setAvailableParts(parseParts(partsData));
                     setLastSelectedTopic(selectedTopic);
                     setCookie('lastTopic', selectedTopic, COOKIE_EXPIRY);
                 }
             } catch (error) {
                 console.error("Failed to load data:", error);
-
+                // 失敗時回復預設值並重新發送請求
                 setLastSelectedPart(DEFAULT_PART);
                 setLastSelectedTopic(DEFAULT_TOPIC);
                 setSelectedPart(DEFAULT_PART);
                 setSelectedTopic(DEFAULT_TOPIC);
 
-                const wordData = await fetchWords(DEFAULT_PART, DEFAULT_TOPIC);
+                const [wordData, topicsData, partsData] = await Promise.all([
+                    fetchWords(DEFAULT_PART, DEFAULT_TOPIC),
+                    fetchTopics(DEFAULT_PART),
+                    fetchParts(DEFAULT_TOPIC),
+                ]);
                 setWords(wordData.words);
-                setAvailableTopics(parseTopics(await fetchTopics(DEFAULT_PART)));
+                setAvailableTopics(parseTopics(topicsData));
                 setCookie('lastPart', DEFAULT_PART, COOKIE_EXPIRY);
-                setAvailableParts(parseParts(await fetchParts(DEFAULT_TOPIC)));
+                setAvailableParts(parseParts(partsData));
                 setCookie('lastTopic', DEFAULT_TOPIC, COOKIE_EXPIRY);
             } finally {
                 setLoading(false);

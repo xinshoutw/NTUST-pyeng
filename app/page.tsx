@@ -41,18 +41,21 @@ export default async function HomePage() {
 
     let wordData, partData, topicData;
     try {
-        // 第一次嘗試用 cookie 中的 part / topic 來抓資料
-        wordData = await fetchWords(initialPart, initialTopic);
-        partData = await fetchParts(initialTopic);
-        topicData = await fetchTopics(initialPart);
+        [wordData, partData, topicData] = await Promise.all([
+            fetchWords(initialPart, initialTopic),
+            fetchParts(initialTopic),
+            fetchTopics(initialPart)
+        ]);
     } catch (error) {
         console.error('資料抓取失敗，使用預設值:', error);
         initialPart = DEFAULT_PART;
         initialTopic = DEFAULT_TOPIC;
 
-        wordData = await fetchWords(initialPart, initialTopic);
-        partData = await fetchParts(initialTopic);
-        topicData = await fetchTopics(initialPart);
+        [wordData, partData, topicData] = await Promise.all([
+            fetchWords(initialPart, initialTopic),
+            fetchParts(initialTopic),
+            fetchTopics(initialPart)
+        ]);
     }
 
     const initialParts = parseParts(partData);
