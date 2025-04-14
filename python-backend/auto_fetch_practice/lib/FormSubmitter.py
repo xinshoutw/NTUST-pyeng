@@ -72,8 +72,11 @@ class FormSubmitter:
 
     # 手動指定答案網站(str)
     def set_answer_url(self, result_url: str):
-        answers = extract_correct_answers(requests.get(result_url).content, self._question_mapper)
+        answers = extract_correct_answers(requests.get(result_url, allow_redirects=True).content, self._question_mapper)
         for (question, answer) in answers.items():
+            if question in self._require_entry_id:
+                continue
+
             self._request_final[question] = answer
 
         self._request_final_url = result_url
@@ -92,12 +95,18 @@ class FormSubmitter:
 
     # 印出答案網址
     def print_answer_web(self):
-        if not self.__guess: self.guess()
-        print(f"\nFinal ans: {self._request_final_url}\n")
+        print(f"\nFinal ans: {self.get_ans_url()}\n")
 
     # 取得答案網址
     def get_ans_url(self) -> str:
         if not self.__guess: self.guess()
+        if not self._request_final_url:
+            res = requests.post(self._url, data=self._request_final, timeout=10)
+            res.raise_for_status()
+            result_url = BeautifulSoup(res.content, 'html.parser', from_encoding='utf-8') \
+                .find('a', attrs={'aria-label': '查看分數'})['href']
+            self._request_final_url = result_url
+
         return self._request_final_url
 
     # 自動提交表單
