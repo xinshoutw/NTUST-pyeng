@@ -4,7 +4,7 @@ from typing import Dict, Any, List
 
 import requests
 
-from auto_fetch_practice.lib.FormExtractor import extract_questions_answers_and_choices
+from .FormExtractor import extract_questions_answers_and_choices
 
 
 @dataclass

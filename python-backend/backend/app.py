@@ -1,6 +1,9 @@
+import argparse
 import hashlib
 import json
+import logging
 import os
+from logging.handlers import RotatingFileHandler
 
 import uvicorn
 from dotenv import load_dotenv
@@ -17,15 +20,57 @@ import models
 from database import SessionLocal, engine
 from schemas import *
 
-load_dotenv()
-HOST = os.getenv("HOST")
-PORT = int(os.getenv("PORT"))
-REMOTE_HOST = os.getenv("REMOTE_HOST")
-REMOTE_PORT = int(os.getenv("REMOTE_PORT"))
+# 新增命令列參數處理
+parser = argparse.ArgumentParser(description="英簡單後端 API 服務")
+parser.add_argument('--env', type=str, default='.env', help='環境變數設定檔路徑')
+parser.add_argument('--log-file', type=str, default='api.log', help='日誌檔案路徑')
+parser.add_argument('--debug', action='store_true', help='啟用偵錯模式')
+args = parser.parse_args()
+
+# 設置日誌
+log_dir = os.path.dirname(args.log_file)
+if log_dir and not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+logging.basicConfig(
+    level=logging.DEBUG if args.debug else logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        RotatingFileHandler(args.log_file, maxBytes=10 ** 6, backupCount=5)
+    ]
+)
+logger = logging.getLogger("quiz-api")
+
+# 載入環境變數
+load_dotenv(args.env)
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", 8000))
+REMOTE_HOST = os.getenv("REMOTE_HOST", "api.example.com")
+REMOTE_PORT = int(os.getenv("REMOTE_PORT", 443))
 BEARER_TOKEN = os.getenv("BEARER_TOKEN")
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "")
+ROOT_PATH = os.getenv("ROOT_PATH", "/api/v1")
 
-models.Base.metadata.create_all(bind=engine)
+if not BEARER_TOKEN:
+    logger.warning("未設置 BEARER_TOKEN 環境變數，API 安全性受到影響")
+
+logger.info(f"啟動 API 伺服器於 {HOST}:{PORT}")
+logger.info(f"API 公開位址: {REMOTE_HOST}")
+logger.info(f"根路徑: {ROOT_PATH}")
+
+# 檢查資料庫
+if not os.path.exists(os.path.dirname(engine.url.database)):
+    os.makedirs(os.path.dirname(engine.url.database))
+    logger.info(f"已創建資料庫目錄: {os.path.dirname(engine.url.database)}")
+
+# 創建資料庫表格
+try:
+    models.Base.metadata.create_all(bind=engine)
+    logger.info("資料庫表格已創建或更新")
+except Exception as e:
+    logger.error(f"資料庫初始化錯誤: {e}")
+    raise
 
 app = FastAPI(
     title="NTUST 英簡單後端",
@@ -38,7 +83,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
-    root_path="/api/v1"
+    root_path=ROOT_PATH
 )
 
 origins = [origin.strip() for origin in ALLOWED_ORIGINS.split(",") if origin.strip()]
@@ -54,16 +99,19 @@ app.add_middleware(
 
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request, exc):
+    logger.error(f"HTTP 錯誤: {exc.status_code} - {exc.detail}")
     return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail}, )
 
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
+    logger.error(f"請求驗證錯誤: {exc.errors()}")
     return JSONResponse(status_code=400, content={"detail": exc.errors()}, )
 
 
 @app.exception_handler(Exception)
 async def generic_exception_handler(request, exc):
+    logger.error(f"伺服器錯誤: {str(exc)}", exc_info=True)
     return JSONResponse(status_code=500, content={"detail": "Internal Server Error"}, )
 
 
@@ -113,6 +161,7 @@ async def heartbeat():
     tags=["Metadata"]
 )
 async def get_practice(part: int, topic: str, db: Session = Depends(get_db)):
+    logger.info(f"查詢練習題: part={part}, topic={topic}")
     entries = db.query(models.Entry).filter(
         models.Entry.part == part,
         models.Entry.topic == topic
@@ -120,6 +169,7 @@ async def get_practice(part: int, topic: str, db: Session = Depends(get_db)):
 
     # No such practice
     if not entries:
+        logger.warning(f"未找到練習題: part={part}, topic={topic}")
         raise HTTPException(status_code=404, detail="No entries found for the specified part and topic")
 
     practice_entries = []
@@ -144,6 +194,7 @@ async def get_practice(part: int, topic: str, db: Session = Depends(get_db)):
         )
         practice_entries.append(practice_entry)
 
+    logger.info(f"找到 {len(practice_entries)} 個練習題")
     return PracticeResponse(entries=practice_entries)
 
 
@@ -162,6 +213,7 @@ async def get_topics(
         part: Optional[int] = Query(None, description="Part number"),
         db: Session = Depends(get_db)
 ):
+    logger.info(f"查詢主題: part={part if part else 'all'}")
     filters = []
     if part:
         filters.append(models.Word.part == part)
@@ -173,8 +225,10 @@ async def get_topics(
 
     topic_names = [topic[0] for topic in topics]
     if not topic_names:
+        logger.warning(f"未找到主題: part={part if part else 'all'}")
         raise HTTPException(status_code=404, detail="No topics found for the specified part")
 
+    logger.info(f"找到 {len(topic_names)} 個主題")
     return TopicsResponse(count=len(topic_names), topics=topic_names)
 
 
@@ -193,6 +247,7 @@ async def get_parts(
         topic: Optional[str] = Query(None, description="Topic name"),
         db: Session = Depends(get_db)
 ):
+    logger.info(f"查詢 parts: topic={topic if topic else 'all'}")
     filters = []
     if topic:
         filters.append(models.Word.topic == topic)
@@ -204,8 +259,10 @@ async def get_parts(
 
     part_numbers = [part[0] for part in parts]
     if not part_numbers:
+        logger.warning(f"未找到 parts: topic={topic if topic else 'all'}")
         raise HTTPException(status_code=404, detail="No parts found for the specified topic")
 
+    logger.info(f"找到 {len(part_numbers)} 個 parts")
     return PartsResponse(count=len(part_numbers), parts=part_numbers)
 
 
@@ -224,6 +281,7 @@ async def get_words(
         topic: Optional[str] = Query(None, description="Topic name"),
         db: Session = Depends(get_db)
 ):
+    logger.info(f"查詢單字: part={part if part else 'all'}, topic={topic if topic else 'all'}")
     # 動態構建過濾條件
     filters = []
     if part:
@@ -238,6 +296,7 @@ async def get_words(
     words = query.all()
 
     if not words:
+        logger.warning(f"未找到單字: part={part if part else 'all'}, topic={topic if topic else 'all'}")
         raise HTTPException(status_code=404, detail="No words found for the specified part and topic")
 
     word_schemas = []
@@ -272,6 +331,7 @@ async def get_words(
         )
         word_schemas.append(word_schema)
 
+    logger.info(f"找到 {len(word_schemas)} 個單字")
     return PartResponse(words=word_schemas)
 
 
@@ -300,6 +360,7 @@ async def add_practices(
             models.Entry.entry_id == entry_id
         ).first()
         if existing_entry:
+            logger.warning(f"練習題已存在: entry_id={entry_id}, part={part}, topic={topic}")
             raise HTTPException(
                 status_code=409,
                 detail=f"entry_id '{entry_id}' already exists in part {part} and topic '{topic}'"
@@ -334,7 +395,9 @@ async def add_practices(
         db.commit()
 
         added_entries.append(entry_id)
+        logger.info(f"已新增練習題: entry_id={entry_id}")
 
+    logger.info(f"成功新增 {len(added_entries)} 個練習題")
     return AddPracticesResponseSchema(
         message="Entries added successfully",
         added_entries=added_entries
@@ -361,6 +424,7 @@ async def add_words(
     每筆單字須包含 part, topic, word 等欄位。
     若資料庫已有相同 (part, topic, word)，則回傳 409 Conflict。
     """
+    logger.info(f"新增單字: 數量={len(request_data.words)}")
     added_words = []
 
     for word_item in request_data.words:
@@ -372,6 +436,7 @@ async def add_words(
         ).first()
 
         if existing_word:
+            logger.warning(f"單字已存在: word={word_item.word}, part={word_item.part}, topic={word_item.topic}")
             raise HTTPException(
                 status_code=409,
                 detail=f"Word '{word_item.word}' already exists under part {word_item.part} "
@@ -398,7 +463,9 @@ async def add_words(
         db.refresh(new_word)
 
         added_words.append(word_item.word)
+        logger.info(f"已新增單字: word={word_item.word}")
 
+    logger.info(f"成功新增 {len(added_words)} 個單字")
     return AddWordsResponseSchema(
         message="Words added successfully",
         added_words=added_words

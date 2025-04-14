@@ -1,3 +1,4 @@
+import argparse
 import json
 import logging
 import os
@@ -11,30 +12,62 @@ from apscheduler.triggers.cron import CronTrigger
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-from auto_fetch_practice.lib import DbAdder
-from auto_fetch_practice.lib.DbAdder import Quiz
+from lib import DbAdder
+from lib.DbAdder import Quiz
 from lib.FormSubmitter import FormSubmitter
 
-load_dotenv()
+# 新增命令列參數處理
+parser = argparse.ArgumentParser(description="自動獲取練習題的排程任務")
+parser.add_argument('--env', type=str, default='.env', help='環境變數設定檔路徑')
+parser.add_argument('--log-file', type=str, default='crawler.log', help='日誌檔案路徑')
+parser.add_argument('--debug', action='store_true', help='啟用偵錯模式')
+args = parser.parse_args()
+
+# 設置日誌
+log_dir = os.path.dirname(args.log_file)
+if log_dir and not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+logging.basicConfig(
+    level=logging.DEBUG if args.debug else logging.INFO,
+    format='%(asctime)s - %(levelname)-5s [%(name)s] -> %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        RotatingFileHandler(args.log_file, maxBytes=10 ** 6, backupCount=5)
+    ]
+)
+
+logger = logging.getLogger("quiz-crawler")
+
+# 載入環境變數
+load_dotenv(args.env)
 
 API_ENDPOINT = os.getenv('API_ENDPOINT')
 AUTH_TOKEN = os.getenv('AUTH_TOKEN')
 TARGET_URL = os.getenv('TARGET_URL')
 STATE_FILE = os.getenv('STATE_FILE')
-LOG_FILE_PATH = os.getenv('LOG_FILE_PATH')
+CRON_EXPRESSION = os.getenv('CRON_EXPRESSION', '0 0 * * 1')  # 預設每週一凌晨執行
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)-5s -> %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        RotatingFileHandler(LOG_FILE_PATH, maxBytes=10 ** 6, backupCount=5)
-    ]
-)
+# 檢查環境變數
+if not all([API_ENDPOINT, AUTH_TOKEN, TARGET_URL, STATE_FILE]):
+    logger.error("環境變數設定不完整，請檢查 .env 檔案")
+    logger.error(f"API_ENDPOINT: {API_ENDPOINT}")
+    logger.error(f"AUTH_TOKEN: {'已設置' if AUTH_TOKEN else '未設置'}")
+    logger.error(f"TARGET_URL: {TARGET_URL}")
+    logger.error(f"STATE_FILE: {STATE_FILE}")
+    exit(1)
 
-logger = logging.getLogger(__name__)
+# 確保狀態檔案目錄存在
+state_dir = os.path.dirname(STATE_FILE)
+if state_dir and not os.path.exists(state_dir):
+    os.makedirs(state_dir)
+    logger.info(f"已創建狀態檔案目錄: {state_dir}")
 
-scheduler = BlockingScheduler()
+logger.info(f"爬蟲服務已啟動")
+logger.info(f"API 端點: {API_ENDPOINT}")
+logger.info(f"目標網址: {TARGET_URL}")
+logger.info(f"狀態檔案: {STATE_FILE}")
+logger.info(f"排程設定: {CRON_EXPRESSION}")
 
 topics_mapper: Dict[str, str] = {
     '托福': 'toefl',
@@ -100,7 +133,7 @@ def extract_content_form_url(html_content: bytes) -> Set[Quiz]:
     從 HTML 中提取 Google Form 的 URL、Topic、Part，返回 Quiz 資料類型
 
     Args:
-        html_content (str): HTML 內容。
+        html_content (bytes): HTML 內容。
 
     Returns:
         Set[Quiz]: 包含提取結果的集合。
@@ -113,41 +146,45 @@ def extract_content_form_url(html_content: bytes) -> Set[Quiz]:
         if not href.startswith('https://forms.gle/'):
             continue
 
-        if previous_text := list(a_tag.previous_siblings)[0]:
-            topic_raw = previous_text.strip()
-        else:
-            topic_raw = ''
+        try:
+            if previous_text := list(a_tag.previous_siblings)[0]:
+                topic_raw = previous_text.strip()
+            else:
+                topic_raw = ''
 
-        topic: Optional[str] = None
-        part: Optional[int] = None
+            topic: Optional[str] = None
+            part: Optional[int] = None
 
-        # Extract "topic" from leading text
-        for key, value in topics_mapper.items():
-            if key in topic_raw:
-                topic = value
-                break
-        # Extract "topic" from page title
-        if topic is None:
+            # Extract "topic" from leading text
             for key, value in topics_mapper.items():
-                if key in soup.title.text:
+                if key in topic_raw:
                     topic = value
                     break
-        if topic is None:
-            logger.warning(f'    - 未匹配到主題的 URL: {href}')
-            continue
+            # Extract "topic" from page title
+            if topic is None and soup.title:
+                for key, value in topics_mapper.items():
+                    if key in soup.title.text:
+                        topic = value
+                        break
+            if topic is None:
+                logger.warning(f'    - 未匹配到主題的 URL: {href}')
+                continue
 
-        # Extract "part" from page title
-        for key, value in part_mapper.items():
-            if key in soup.title.text:
-                part = value
-                break
-        if part is None:
-            logger.warning(f'    - 未匹配到部分的 URL: {href}')
-            continue
+            # Extract "part" from page title
+            if soup.title:
+                for key, value in part_mapper.items():
+                    if key in soup.title.text:
+                        part = value
+                        break
+            if part is None:
+                logger.warning(f'    - 未匹配到部分的 URL: {href}')
+                continue
 
-        quiz = Quiz(part=part, topic=topic, form_url=href)
-        quiz_set.add(quiz)
-        logger.info(f"    - 提取到新的 Quiz: {quiz}")
+            quiz = Quiz(part=part, topic=topic, form_url=href)
+            quiz_set.add(quiz)
+            logger.info(f"    - 提取到新的 Quiz: {quiz}")
+        except Exception as e:
+            logger.error(f"    - 處理 URL 時發生錯誤 ({href}): {e}")
 
     return quiz_set
 
@@ -178,11 +215,14 @@ def extract_content_title_and_url(html_content: bytes) -> List[Dict[str, str]]:
 
     extracted_data = []
     for mtitle in mtitle_divs:
-        if a_tag := mtitle.find('a'):
-            title = a_tag.get_text(strip=True)
-            url = a_tag.get('href')
-            extracted_data.append({'title': title, 'url': url})
-            logger.debug(f"提取到標題和 URL: 標題={title}, URL={url}")
+        try:
+            if a_tag := mtitle.find('a'):
+                title = a_tag.get_text(strip=True)
+                url = a_tag.get('href')
+                extracted_data.append({'title': title, 'url': url})
+                logger.debug(f"提取到標題和 URL: 標題={title}, URL={url}")
+        except Exception as e:
+            logger.error(f"提取標題和 URL 時發生錯誤: {e}")
 
     logger.info(f"共提取到 {len(extracted_data)} 條標題和 URL。")
     return extracted_data
@@ -190,10 +230,10 @@ def extract_content_title_and_url(html_content: bytes) -> List[Dict[str, str]]:
 
 def check_for_updates() -> None:
     """檢查目標網站是否有新的內容"""
-    logger.info(f"開始檢查網站更新...")
+    logger.info(f"開始檢查網站更新 ({TARGET_URL})...")
 
     try:
-        response = requests.get(TARGET_URL, timeout=10)
+        response = requests.get(TARGET_URL, timeout=30)
         if response.status_code != 200:
             logger.error(f"無法訪問網站，狀態碼：{response.status_code}")
             return
@@ -210,14 +250,15 @@ def check_for_updates() -> None:
         if not new_items:
             logger.info("沒有新內容。")
             return
+
         logger.info(f"發現 {len(new_items)} 條新內容：")
         for item in new_items:
             logger.info(f"  - 標題：{item['title']} | URL：{item['url']}")
 
             try:
-                req = requests.get(item['url'], timeout=10)
+                req = requests.get(item['url'], timeout=30)
                 if req.status_code != 200:
-                    logger.error(f"    無法訪問 URL：{item['url']}，狀態碼：{response.status_code}")
+                    logger.error(f"    無法訪問 URL：{item['url']}，狀態碼：{req.status_code}")
                     continue
 
                 if not (quiz_set := extract_content_form_url(req.content)):
@@ -237,18 +278,21 @@ def check_for_updates() -> None:
         save_processed_urls(processed_urls)
 
     except requests.RequestException as e:
-        logger.error(f"    - 檢查過程中發生網路錯誤：{e}")
+        logger.error(f"檢查過程中發生網路錯誤：{e}")
     except Exception as e:
-        logger.error(f"    - 檢查過程中發生未知錯誤：{e}")
+        logger.error(f"檢查過程中發生未知錯誤：{e}", exc_info=True)
 
 
 def scheduled_job():
     """
     定義排程任務
     """
-    logger.info("開始執行 scheduled_job")
-    check_for_updates()
-    logger.info("完成執行 scheduled_job")
+    logger.info("開始執行排程任務")
+    try:
+        check_for_updates()
+        logger.info("排程任務執行完成")
+    except Exception as e:
+        logger.error(f"排程任務執行失敗：{e}", exc_info=True)
 
 
 def main():
@@ -256,31 +300,50 @@ def main():
     主函數，設定排程並啟動排程器。
     """
     scheduler = BlockingScheduler(timezone=ZoneInfo("Asia/Taipei"))  # UTC+8
-    check_for_updates()
 
-    # 每週一上午 00:05 執行
-    # trigger = CronTrigger(
-    #     day_of_week='mon',
-    #     hour=0,
-    #     minute=5,
-    # )
-    trigger = CronTrigger(
-        minute='*/1',  # 每分鐘執行一次
-    )
+    # 先執行一次檢查
+    try:
+        check_for_updates()
+    except Exception as e:
+        logger.error(f"初始檢查失敗：{e}", exc_info=True)
 
+    # 設定排程觸發器
+    if CRON_EXPRESSION == 'DEBUG':
+        # 測試模式：每分鐘執行一次
+        trigger = CronTrigger(minute='*/1')
+        logger.warning("使用測試模式排程 (每分鐘執行一次)，不建議在生產環境使用")
+    else:
+        # 解析 cron 表達式
+        try:
+            minute, hour, day, month, day_of_week = CRON_EXPRESSION.split()
+            trigger = CronTrigger(
+                minute=minute,
+                hour=hour,
+                day=day,
+                month=month,
+                day_of_week=day_of_week,
+            )
+            logger.info(f"使用排程: {CRON_EXPRESSION}")
+        except Exception as e:
+            logger.error(f"解析 CRON 表達式錯誤: {e}，使用預設排程 (每週一凌晨執行)")
+            trigger = CronTrigger(day_of_week='mon', hour=0, minute=0)
+
+    # 添加任務到排程器
     scheduler.add_job(
         scheduled_job,
         trigger=trigger,
-        id='weekly_process_task',
-        name='weekly_process_task',
+        id='quiz_fetch_task',
+        name='quiz_fetch_task',
         replace_existing=True,
     )
 
-    logger.info("已啟動")
+    logger.info("排程器已啟動")
     try:
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
-        logger.info("結束")
+        logger.info("應用程式結束")
+    except Exception as e:
+        logger.error(f"排程器執行時發生錯誤：{e}", exc_info=True)
 
 
 if __name__ == "__main__":

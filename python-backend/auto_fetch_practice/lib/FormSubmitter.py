@@ -19,7 +19,7 @@ class FormSubmitter:
         self._request_final_url = ""  # 最終提交結果 url
         self._require_entry_id: list[str] = []  # 填充題 id
         self._randomOffset: list[int] = []  # 隨機猜題偏移量
-        self.__guess = False  # 是否已經有答案
+        self.__guessed = False  # 是否已經有答案
 
         # 轉換為 response url
         self._url = get_form_response_url(url)
@@ -68,7 +68,7 @@ class FormSubmitter:
     # 手動指定答案(dict)
     def set_answer(self, final: dict[str, str]):
         self._request_final = final
-        self.__guess = True
+        self.__guessed = True
 
     # 手動指定答案網站(str)
     def set_answer_url(self, result_url: str):
@@ -80,17 +80,17 @@ class FormSubmitter:
             self._request_final[question] = answer
 
         self._request_final_url = result_url
-        self.__guess = True
+        self.__guessed = True
 
     # 印出答案(字串)
     def print_answer(self):
-        if not self.__guess: self.guess()
+        if not self.__guessed: self.guess()
         for (key, ans) in self._request_final.items():
             print(f'{(self._question_mapper[key]).strip()}\n {ans}\n')
 
     # 印出答案(dict)
     def print_answer_dict(self):
-        if not self.__guess: self.guess()
+        if not self.__guessed: self.guess()
         print(f"\nDict: {self._request_final.__repr__()}\n")
 
     # 印出答案網址
@@ -99,7 +99,7 @@ class FormSubmitter:
 
     # 取得答案網址
     def get_ans_url(self) -> str:
-        if not self.__guess: self.guess()
+        if not self.__guessed: self.guess()
         if not self._request_final_url:
             res = requests.post(self._url, data=self._request_final, timeout=10)
             res.raise_for_status()
@@ -118,7 +118,7 @@ class FormSubmitter:
         if indicate_mapper is None: indicate_mapper = {}
         if keyword_mapper is None: keyword_mapper = {}
 
-        if not self.__guess: self.guess()
+        if not self.__guessed: self.guess()
 
         request_data = deepcopy(self._request_sample)
         request_data.update(self._request_final)
@@ -154,7 +154,7 @@ class FormSubmitter:
                 request_data[key] = inp
 
         print(request_data)
-        input("\n檢查請求是否正確!! [ENTER]")
+        # input("\n檢查請求是否正確!! [ENTER]")
 
         res = requests.post(self._url, data=request_data, timeout=10)
         res.raise_for_status()
@@ -181,7 +181,13 @@ class FormSubmitter:
                 break
             time.sleep(1)
 
-        self.__guess = True
+        if len(self._request_final) != len(self._request_sample):
+            print("無法猜測所有答案，請手動輸入")
+            self.print_answer_dict()
+            exit(0)
+
+            # cannot guess all answers
+        self.__guessed = True
 
     # 根據選項爆破
     def _guess(self, select_index: int):
