@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import {HTTPAccessErrorFallback} from './error-fallback'
 
 export default function NotFound() {

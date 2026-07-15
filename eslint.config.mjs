@@ -1,17 +1,18 @@
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import nextTypeScript from "eslint-config-next/typescript";
+import {dirname} from "path";
+import {fileURLToPath} from "url";
+import {FlatCompat} from "@eslint/eslintrc";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({baseDirectory: __dirname});
 
 const eslintConfig = [
-    {ignores: [".next/**", ".open-next/**", ".vercel/**", ".wrangler/**", "out/**", "build/**"]},
-    ...nextCoreWebVitals,
-    ...nextTypeScript,
+    {ignores: [".next/**", ".vercel/**", ".wrangler/**", ".open-next/**", "out/**", "build/**"]},
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
     {
         rules: {
             "@next/next/no-html-link-for-pages": "off",
-            // ponytail: react-hooks v7 (via eslint-config-next 16) newly flags
-            // pre-existing mount-time cookie reads. Working code, perf nit only —
-            // keep as warning, not a build-blocking error. Refactor if it matters.
-            "react-hooks/set-state-in-effect": "warn",
         },
     },
 ];
