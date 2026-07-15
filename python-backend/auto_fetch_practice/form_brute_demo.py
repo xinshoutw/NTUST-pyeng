@@ -76,6 +76,7 @@ class UserData:
         self.email = data.get("email", "")
         self.phone = data.get("phone", "")
         self.motivation = data.get("motivation", "")
+        self.motivation_long = data.get("motivation_long", "")
 
     def get_indicate_mapper(self) -> Dict[Tuple[str, ...], str]:
         """
@@ -89,9 +90,10 @@ class UserData:
             ("科系", "科系 / Department"): self.department,
             ("學號", "學號 / Student ID", "student id"): self.student_id,
             ("系所", "系所／單位", "系所／單位 Department"): self.department_full,
-            ("E-mail", "Email", "電子郵件", "電子郵件 / E-mail"): self.email,
+            ("信箱 / E-mail", "E-mail", "Email", "電子郵件", "電子郵件 / E-mail"): self.email,
             ("手機", "手機號碼", "電話", "phone"): self.phone,
-            ("測驗動機", "測驗動機 (修讀整合式英語課程之同學請務必填寫正確)"): self.motivation,
+            ("測驗動機", "測驗動機(請務必填寫正確)", "測驗動機 (修讀整合式英語課程之同學請務必填寫正確)"): self.motivation,
+            ("測驗動機 (修讀整合式英語課程之同學請務必填寫正確，勾選錯誤一律不予計分)",): self.motivation_long,
         }
 
 
@@ -136,36 +138,24 @@ def extract_content_form_url(html_content: bytes) -> List[Dict[str, str]]:
             continue
 
         try:
-            if previous_text := list(a_tag.previous_siblings)[0]:
-                topic_raw = previous_text.strip()
-            else:
-                topic_raw = ''
-
             topic = None
             part = None
 
-            # Extract "topic" from leading text
-            for key, value in TOPICS_MAPPER.items():
-                if key in topic_raw:
-                    topic = value
-                    break
-
-            # Extract "topic" from page title
-            if topic is None and soup.title:
+            if soup.title:
                 for key, value in TOPICS_MAPPER.items():
                     if key in soup.title.text:
                         topic = value
                         break
-
-            # Extract "part" from page title
-            if soup.title:
                 for key, value in PART_MAPPER.items():
                     if key in soup.title.text:
                         part = value
                         break
 
-            form_title = a_tag.get_text(strip=True) or "未命名表單"
+            if topic is None or part is None:
+                topic = "unknown"
+                part = "unknown"
 
+            form_title = a_tag.get_text(strip=True) or "未命名表單"
             form_data = {
                 'title': form_title,
                 'url': href,
@@ -242,29 +232,24 @@ def process_google_form(form_data: Dict[str, str], users: List[UserData]) -> Non
 
         # 如果提供了部分和主題，從 API 獲取答案
         if part is not None and topic is not None:
-            print(f"從 API 獲取答案 (part={part}, topic={topic})...")
-            answers = get_answers_from_api(part, topic)
-            if answers:
-                print(f"成功獲取到 {len(answers)} 個答案")
-                form_submitter.guess()
-                # form_submitter.set_answer(answers)
-            else:
-                raise ValueError("獲取答案失敗，使用預設答案")
-                print("未能從 API 獲取答案，使用預設答案")
-                default_answers = {
-                    'entry.1000665440': 'labeled',
-                    # ... 其他預設答案
-                }
-                form_submitter.set_answer(default_answers)
+            # print(f"從 API 獲取答案 (part={part}, topic={topic})...")
+            # answers = get_answers_from_api(part, topic)
+            form_submitter.guess()
+            # form_submitter.set_answer({'entry.888057261': ' ', 'entry.189650637': ' ', 'entry.1772261375': ' ', 'entry.85150659': ' ', 'pageHistory': '0,1', 'entry.288994006': 'surpass', 'entry.1134952564': 'intuition', 'entry.666239487': 'contradiction', 'entry.1481434587': 'bizarre', 'entry.1158479677': 'flesh', 'entry.402506973': 'divine', 'entry.532516135': 'revision', 'entry.1169414716': 'throne', 'entry.1370864158': 'mythical', 'entry.13233643': 'depict', 'entry.467308399': 'narrative', 'entry.30587707': 'perplex', 'entry.835666262': 'folklore', 'entry.107799169': 'plausible', 'entry.1067855900': 'miscellaneous', 'entry.833493201': 'ensure', 'entry.612381888': 'portray', 'entry.1480040316': 'grudge', 'entry.1756021675': 'villain', 'entry.449600235': 'authorize', 'entry.1152774913': 'extravagant', 'entry.596103547': 'console', 'entry.796185650': 'spontaneous', 'entry.124946647': 'monotonous', 'entry.2129628175': 'resentment', 'entry.1963268958': 'haunted'})
+            #
+            # if answers:
+            #     print(f"成功獲取到 {len(answers)} 個答案")
+            #     # form_submitter.set_answer(answers)
+            # else:
+            #     raise ValueError("獲取答案失敗，使用預設答案")
+            #     print("未能從 API 獲取答案，使用預設答案")
+            #     default_answers = {
+            #         'entry.1000665440': 'labeled',
+            #         # ... 其他預設答案
+            #     }
+            #     form_submitter.set_answer(default_answers)
         else:
             raise ValueError("未提供部分或主題")
-            # 如果沒有提供部分和主題，使用預設答案
-            print("無法識別主題和部分，使用預設答案...")
-            default_answers = {
-                'entry.1000665440': 'labeled',
-                # ... 其他預設答案
-            }
-            form_submitter.set_answer(default_answers)
 
         # 打印答案
         print("\n表單答案:")
@@ -280,13 +265,6 @@ def process_google_form(form_data: Dict[str, str], users: List[UserData]) -> Non
                 keyword_mapper={}  # 可以根據需要擴展關鍵詞映射
             )
 
-            # 打印結果
-            # if result:
-            #     print(f"提交成功: {user.name}")
-            # else:
-            #     print(f"提交失敗: {user.name}")
-
-            # 等待一段時間，避免頻繁請求
             time.sleep(2)
 
     except Exception as e:
@@ -295,7 +273,7 @@ def process_google_form(form_data: Dict[str, str], users: List[UserData]) -> Non
 
 
 def main():
-    """
+    """q
     主函數：按照 app.py 中的 check_for_updates 邏輯獲取表單並處理
     """
     # 設置日誌
@@ -331,7 +309,7 @@ def main():
         # 讓用戶選擇要處理的連結
         while True:
             try:
-                choice = input("\n請選擇要處理的連結編號 (例如: 1,3,5 或 'all' 處理所有, 'q' 退出): ")
+                choice = input("\n請選擇要處理的連結編號 (例如: 1 3 5 或 'all' 處理所有, 'q' 退出): ")
 
                 if choice.lower() == 'q':
                     print("程序已退出。")
@@ -343,7 +321,7 @@ def main():
 
                 # 解析用戶的選擇
                 selected_indices = []
-                for part in choice.split(','):
+                for part in choice.split(' '):
                     part = part.strip()
                     if '-' in part:
                         start, end = map(int, part.split('-'))
@@ -363,7 +341,7 @@ def main():
                 break
 
             except ValueError:
-                print("無效的輸入格式。請輸入數字，例如: 1,3,5")
+                print("無效的輸入格式。請輸入數字，例如: 1 3 5")
                 continue
 
         # 第二步：處理選擇的連結，從中提取 Google Form
@@ -406,7 +384,7 @@ def main():
         # 讓用戶選擇要處理的表單
         while True:
             try:
-                choice = input("\n請選擇要處理的表單編號 (例如: 1,3,5 或 'all' 處理所有, 'q' 退出): ")
+                choice = input("\n請選擇要處理的表單編號 (例如: 1 3 5 或 'all' 處理所有, 'q' 退出): ")
 
                 if choice.lower() == 'q':
                     print("程序已退出。")
@@ -418,7 +396,7 @@ def main():
 
                 # 解析用戶的選擇
                 selected_form_indices = []
-                for part in choice.split(','):
+                for part in choice.split(' '):
                     part = part.strip()
                     if '-' in part:
                         start, end = map(int, part.split('-'))
@@ -438,7 +416,7 @@ def main():
                 break
 
             except ValueError:
-                print("無效的輸入格式。請輸入數字，例如: 1,3,5")
+                print("無效的輸入格式。請輸入數字，例如: 1 3 5")
                 continue
 
         # 處理選擇的表單

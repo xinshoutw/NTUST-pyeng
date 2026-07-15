@@ -1,5 +1,6 @@
 import json
 import re
+import textdistance
 from enum import Enum
 
 import requests
@@ -209,6 +210,12 @@ def generate_form_request_dict(entries):
     return result
 
 
+def is_similar(s1: str, s2: str, threshold: float = 0.7) -> bool:
+    sim = textdistance.levenshtein.normalized_similarity(s1, s2)
+    return sim >= threshold
+
+
+
 # 透過 HTML 取得正確的答案
 def extract_correct_answers(html_content: bytes, mapper: dict[str, str]) -> dict:
     """
@@ -256,6 +263,12 @@ def extract_correct_answers(html_content: bytes, mapper: dict[str, str]) -> dict
                 entry_id = k
                 break
 
+        # fallback
+        if entry_id is None:
+            for k, v in mapper.items():
+                if is_similar(v.strip().rstrip(" (required)"), question_text):
+                    entry_id = k
+                    break
         if entry_id is None:
             print(f"警告: mapper 中未找到問題 '{question_text}' 對應的 entry_id。")
             print(f'當前的 mapper: {mapper.__repr__()}')
