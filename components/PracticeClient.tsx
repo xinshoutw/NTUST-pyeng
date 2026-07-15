@@ -86,7 +86,7 @@ export default function PracticeClient() {
     if (showResults) {
         return (
             <div
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow relative select-none text-center transition-colors duration-300">
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm relative select-none text-center transition-colors duration-300">
                 <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-gray-100">Practice Complete!</h3>
                 <p className="text-md text-gray-700 dark:text-gray-300 mb-6">Accuracy: {accuracy}%</p>
                 {errors > 0 ? (
@@ -109,7 +109,7 @@ export default function PracticeClient() {
 
     return <div
         className={
-            'bg-white dark:bg-gray-800 p-6 rounded-lg shadow relative select-none transition-colors duration-300'
+            'bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm relative select-none transition-colors duration-300'
         }
     >
         <div className="mb-6 flex flex-col items-center space-y-2">
@@ -135,9 +135,9 @@ export default function PracticeClient() {
                 const buttonClasses = clsx(
                     'w-full text-left py-2 px-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition relative',
                     {
-                        'border-green-500 bg-green-300 dark:bg-green-700 hover:bg-green-400 hover:dark:bg-green-600':
+                        'border-green-500 bg-green-300 dark:bg-green-700 hover:bg-green-400 dark:hover:bg-green-600':
                             attempted && isCorrect,
-                        'border-red-500 bg-red-300 dark:bg-red-700 hover:bg-red-400 hover:dark:bg-red-600':
+                        'border-red-500 bg-red-300 dark:bg-red-700 hover:bg-red-400 dark:hover:bg-red-600':
                             attempted && isSelected && !isCorrect,
                         'opacity-70 cursor-not-allowed': attempted,
                     }
