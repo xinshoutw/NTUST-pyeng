@@ -6,7 +6,6 @@ import {cookies} from 'next/headers';
 import Image from 'next/image';
 import ThemeToggleButton from '../components/ThemeToggleButton';
 
-export const runtime = "edge";
 export const metadata = {
     title: 'NTUST 英簡單',
     description: '由台科語言中心每週單字整理，配合劍橋辭典了解更多字義解釋與讀音',

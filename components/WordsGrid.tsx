@@ -1,6 +1,6 @@
 "use client";
 import {useEffect, useMemo, useState} from 'react';
-import {motion} from 'framer-motion';
+import {motion, type Variants} from 'framer-motion';
 import {WordCard} from './WordCard';
 import {
     COOKIE_EXPIRY,
@@ -170,12 +170,12 @@ export default function WordsGrid(
 
     const staggerChildren = animatedWords.length <= 1 ? 0 : desiredStaggerDelay;
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: {},
         show: {transition: {staggerChildren}}
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: {opacity: 0, y: 10},
         show: {
             opacity: 1,
